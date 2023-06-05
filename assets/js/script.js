@@ -343,7 +343,7 @@ console.log(Number.isInteger(100.500));  // false
 console.log(Number.isInteger(100));      // true
 
 
--isNaN()
+- isNaN()
 
 console.log(Number.isNaN("alakel"));  // false
 console.log(Number.isNaN("alakel" / 20));  // true
@@ -351,5 +351,32 @@ console.log(Number.isNaN("alakel" / 20));  // true
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
+
+Math Object
+
+- console.log(Math.round(99.2));   // below .5 => 99
+- console.log(Math.round(99.5));   // equal or more than .5 => 100
+
+- console.log(Math.ceil(99.2));   // 100
+
+- console.log(Math.floor(99.9));  // 99
+
+- console.log(Math.min(5. 30, 100, -200, 95))   // -200
+- console.log(Math.max(5. 30, 100, -200, 95))   // 100
+
+- console.log(Math.pow(2, 4));    // 16
+- console.log(Math.pow(2, 2));    // 4
+
+- console.log(Math.random());     // between 0 and 1
+
+- console.log(Math.trunc(99.5));   // 99 (will return only the integer part)
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+String Methods
+
+
 
 *//*//*///*//*
