@@ -65,4 +65,25 @@ console.log(typeof(null))   OR   console.log(typeof null) // object
 *//*//*///*/*//*
 //-------------------------------------------------------------------------------------------------------------------------
 
+/*/*//*/*//*//*
+
+Variables:
+- Declare a Variable and how to use it (Syntax):
+Keyword | Variable Name | Assignment Operator | Variable Value
+
+Example:
+var myName = "Alakel";
+var myAge = 29;
+
+PS: With Creating an element inside html page and set an Id property to it. It means you set a global variable and you can access it with js.
+
+Example:
+console.log(hello);  // it prints the element with id hello inside the console
+
+hello.innterHTML = "World";  // change the content of html element with id hello (Global variable), and assign a new content to it.
+
+
+*(Javascript is Loosely type language because when you are initiating new variable, there is no need to write the type of this variable)
+
+*//*//*///*//*
 
