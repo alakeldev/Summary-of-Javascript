@@ -166,3 +166,54 @@ let myCard = `
 document.write(myCard);    // Add the value of myCard variable on the webpage
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+
+/*/*//*/*//*//*
+
+Arithmetic Operators:
+
++ Addition
+console.log(20 + 20);             // 40
+console.log(20 + "Abdullah");    //10Abdullah
+
+- Subtraction
+console.log(30 - 20);            // 10
+console.log(10 - "Abdullah");    // NaN (Not a Number)
+
+console.log(typeof NaN);         // number!   :D
+
+* Multiplication
+console.log(10 * 30);            // 300
+console.log(10 * -30);           // -300
+
+/ Division
+console.log(20 / 5);             // 4
+console.log(20 / 3);             //6.66666666667
+
+** Exponentiation
+console.log(2 ** 4);             // 16
+
+% Modulus
+console.log(10 % 2);             // 0
+console.log(11 % 2);             // 1
+
+++ Inrement [post / pre]
+
+let num = 1;
+num++; (POST) it will print the value first then will increase it
+++num; (PRE) it will increase first then will print it
+
+-- Decrement [post / pre]
+let num = 1;
+num--; (POST)it will print the value first then will decrease it
+--num; (POST)it will decrease the value first then print it
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+
+/*/*//*/*//*//*
+
+
+
+
+*//*//*///*//*
