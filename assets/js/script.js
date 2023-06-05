@@ -206,7 +206,7 @@ num++; (POST) it will print the value first then will increase it
 -- Decrement [post / pre]
 let num = 1;
 num--; (POST)it will print the value first then will decrease it
---num; (POST)it will decrease the value first then print it
+--num; (PRE)it will decrease the value first then print it
 
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
