@@ -213,7 +213,143 @@ num--; (POST)it will print the value first then will decrease it
 
 /*/*//*/*//*//*
 
+Unary Operator
+
++ Unary Plus
+console.log(+100);      // Number
+console.log(+"100");    // Number
+console.log(+"-100");   // Number
+console.log(+"Alakel");   // NaN
+console.log(+"15.1");   // Number
+console.log(+0xff);   // HexDecimal => 255
+console.log(+null);   // 0
+console.log(+true);   // 1
+console.log(+false);   //0
 
 
+- Unary Negation
+console.log(-100);      // Number
+console.log(-"100");    // - Number
+console.log(-"-100");   // +Number
+console.log(-"Alakel");   // NaN
+console.log(-"15.1");   // -Number
+console.log(-0xff);   // HexaDecimal Numeral System => -255
+console.log(-null);   // -0
+console.log(-true);   // -1
+console.log(-false);   //-0
+
+
+- Number Constructor
+
+Example: 
+console.log(Number("100"));    // Number
+
+*//*//*///*//*
+
+/*/*//*/*//*//*
+Type Coercion:
+
+Example:
+let a = "10";
+let b = 20;
+let c = true;
+
+console.log(a + b + c);     // 1020true
+console.log(+a + b + c);    // 31
+
+*//*//*///*//*
+
+
+/*/*//*/*//*//*
+
+Assignment Operators:
+
+let a = 10;  
+
+console.log(a);   // 10
+
+a = 20; 
+
+console.log(a);    // 20
+
+a = a + 20;  or a += 20;
+
+console.log(a);   // 40
+
+a -= 20;
+
+console.log(a);   // 20
+
+a /= 5;
+
+console.log(a);   // 4
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+/Number/
+
+Double Precision (All numbers in JS)
+
+- Syntactic Sugar "_"
+Example: 
+console.log(1_000_000);    // 1000000
+
+- e
+Example:
+console.log(1e6);       // 1000000
+console.log(1e3);       // 1000
+
+- Number (Function) using Constructor to intiat a number in JS
+console.log(typeof Number);    // function
+
+console.log(Number.MAX_SAFE_INTEGER);     // 9007199254740991
+console.log(Number.MAX_VALUE);            // 1.7976931348623157e+308
+
+
+/Number Methods/
+- toString()
+- Two Dots To Call A Methods
+
+console.log((100).toString());   // 100 as string
+console.log(100..toString());    // 100 as string
+console.log(100.10.toString());  // 100.1 as string
+
+- toFixed()
+
+console.log(100.5555555.toFixed(2));  // 100.56 as string
+console.log(100.5545555.toFixed(2));  // 100.55 as string
+
+- parseInt()
+
+console.log(parseInt("100"));   //  100 as Number
+
+Important Examples below:
+console.log(Number("100 Alakel"));   // NaN
+console.log(+"100 Alakel");    // NaN
+console.log(parseInt("100 Alakel"))  // 100
+console.log(parseInt("Alakel 100 Alakel"))  // NaN
+
+- parseFloat()
+
+console.log(parseInt(200.100 Alakel));    // 200
+console.log(parseFloat(200.100 Alakel));  // 200.1
+
+- isInteger()
+
+console.log(Number.isInteger("100"));    // false
+console.log(Number.isInteger(100.500));  // false
+console.log(Number.isInteger(100));      // true
+
+
+-isNaN()
+
+console.log(Number.isNaN("alakel"));  // false
+console.log(Number.isNaN("alakel" / 20));  // true
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
 
 *//*//*///*//*
