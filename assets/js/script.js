@@ -86,4 +86,83 @@ hello.innterHTML = "World";  // change the content of html element with id hello
 *(Javascript is Loosely type language because when you are initiating new variable, there is no need to write the type of this variable)
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
 
+/*/*//*/*//*//*
+* Var:
+- Redeclare (yes)
+- Access before declare (Undefined you cannot know the issue (confusing))
+- Variable Scope Drama (it will be Add to/inside  Window object!)
+
+* Let:
+- Redeclare (No => Error)
+- Access before declare (Error)
+- Variable Scope Drama (-)
+
+*Const:
+- Redeclare (No => Error)
+- Access before declare (Error)
+- Variable Scope Drama (-)
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+
+/*/*//*/*//*//*
+- Escape Operator : \
+Example:    console.log("Abdullah \"Alakel\"");  // Abdullah "Alakel"
+
+
+- Escape + continue in new line
+Example: console.log("Abdullah \
+Alakel \
+Developer");   // Abdullah Alakel Developer
+
+
+- Start new Line :\n
+Example: console.log("Abdullah\nAlakel\nDeveloper");
+
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+Concatenation:
+
+Example: 1
+
+let a = "Abdullah";
+let b = "Alakel";
+document.write(a + " " + b);  // print these variables on the webpage
+console.log(a, b);   // print these variables on the console
+
+Example: 2
+
+let a = "We Love";
+let b = "JavaScript":
+let c = "And";
+let d = "Python";
+
+console.log("a + " " + b + " " + c + " " + d ");    // We Love JavaScript And Python
+console.log("a + " " + b + "\n" + c + " " + d ");    // We Love JavaScript 
+                                                        And Python
+console.log(`${a} ${b} ${c} ${d}`);        // We Love JavaScript And Python
+console.log(`${a} ${b}                     // We Love JavaScript
+${c} ${d}`);                                  And Python
+
+console.log(`${a} ${b} "" '' \\ ${c} ${d}`);        // We Love JavaScript "" '' \ And Python
+
+Example: 3
+
+let lname = "Alakel";
+let fname = "Abdullah";
+
+let myCard = `
+<div class="container">
+<div class="child">
+<h2>${lname}</h2>
+<p>${fname}</p>
+</div>
+</div>`;
+
+document.write(myCard);    // Add the value of myCard variable on the webpage
+
+*//*//*///*//*
