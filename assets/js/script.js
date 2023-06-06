@@ -684,3 +684,38 @@ theAge > 20
 : console.log("unknow");
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Logical or || 
+
+It's Important to make alternative value for the main value as many situations may the main value not shown!! 
+so the alt value will be showing
+
+Example:
+let price = 0;
+
+console.log(`The Price Is ${price || 200}`); ///// the 200 will be showing in three cases: (Null + Undefined + Any Falsy Value)
+
+**How you can know the data if it's true of false:
+console.log(Boolean(100)); // true
+console.log(Boolean(-100)); // true
+console.log(Boolean(0));    // false
+console.log(Boolean(""));   // false
+console.log(Boolean(null));  // false
+
+
+
+Nullish Coalescing Operator:
+It will return the alt value only with Null and undefined
+
+price;
+price = null;
+
+console.log(`The Price Is ${price ?? 200}`);   // 200
+
+price = 0
+console.log(`The Price Is ${price ?? 200}`);   // 0
+
+
+*//*//*///*//*
