@@ -490,3 +490,66 @@ console.log(a.endsWith("a", 7));   // true becasue the length 6 ends with a (Abd
 console.log(a.endsWith("la", 7));   // true becasue the length 6 ends with la (Abdulla)
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Comparison Operators (Conditions)
+
+    == Equal
+    console.log(10 == "10");  // true  (it's compare value only)
+    console.log(-100 == "-100");  // true  (it's compare value only)
+
+    != Not Equal
+    console.log(10 != "10");  // false  (it's compare value only)
+
+    === Identical
+    console.log(10 === "10");  // false  (it's compare value and type)
+
+    !== Not Identical
+    console.log(10 !== "10");  // true  (it's compare value and type)
+    console.log(10 !== 10);  // false  (it's compare value and type)
+
+
+
+    > Larger Than
+    >= Larger Than or Equal
+    console.log(10 > 20);  // false
+    console.log(10 > 10);   // false
+    console.log(10 >= 10);  // true
+
+    < Smaller Than
+    <= smaller than or Equal
+    console.log(10 < 20);  // true
+    console.log(10 < 10);   // false
+    console.log(10 <= 10);  // true
+
+
+    Tricky example: 
+    console.log("Abdullah" === "Alakel"); // false
+    console.log(typeof "Abdullah" === typeof "Alakel");   // true
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Logical Operators
+
+    ! Not
+    console.log(true);           // true
+    console.log(!true);          // false
+    console.log(10 == "10");     // true
+    console.log(!(10 == "10")); // false
+
+
+    && And
+    console.log(10 == "10" && 10 > 8); // true
+    console.log(10 == "10" && 10 > 8 && 10 >= 10); // true
+    console.log(10 == "10" && 10 > 8 && 5 >= 10); // false
+
+
+    || Or
+    console.log(10 == "10" || 10 > 8 || 10 > 50); // true
+    console.log(10 == "10" || 10 > 80 || 10 > 50); // true
+    console.log(10 == "100" || 10 > 80 || 10 > 50); // false
+
+*//*//*///*//*
