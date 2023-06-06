@@ -414,7 +414,6 @@ console.log(myName.trim().charAt(2).toUpperCase());  // abOde
 - lastIndexOf(Value [Mandatory], Start [Optional] length)
 
 Examples:
-
 let a = "Abdullah Khaled Alakel";
 console.log(a.indexOf("Khaled"));         // 9
 console.log(a.indexOf("Khaled", 10));    // -1
@@ -424,7 +423,6 @@ console.log(a.lastIndexOf("a"));        // 18
 - slice(Start [Mandatory], End [Optional] *The End not Include)
 
 Examples:
-
 let a = "Abdullah Khaled Alakel";
 console.log(a.slice(0));         // Abdullah Khaled Alakel
 console.log(a.slice(3));        // ullah Khaled Alakel
@@ -433,20 +431,62 @@ console.log(a.slice(-1, -7 ))    // Alakel
 
 
 - repeat(Times)
-
+Example:
 let a = "Abdullah Khaled Alakel";
 console.log(a.repeat(3));   // Abdullah Khaled AlakelAbdullah Khaled AlakelAbdullah Khaled Alakel
 
 
-
 - split(separator [Optional], Limit [Optional]);
-
+Example:
 let a = "Abdullah Alakel";
 console.log(a.split());   // ["Abdullah Alakel"]  => Array
 console.log(a.split(""));   // ["A","b","d","u","l","l","a","h"," ","A","l","a","k","e","l"]
 console.log(a.split(" "));   //  ["Abdullah", "Alakel"]
+console.log(a.split("", 3));   // ["A","b","d"]
+
+
+//--------------------------------
+
+
+- substring(Start [Mandatory], End [opt] Not Including End)
+Example:
+let a = "Abdullah Alakel";
+console.log(a.substring(9));                         // Alakel
+console.log(a.substring(9, 12));                   // Ala
+console.log(a.substring(12, 9));                   // same result (Ala) because it makes swapping if the start bigger than end
+console.log(a.substring(-10, 7));                   // Abdullah - any number less than 0, it makes the start from 0
+console.log(a.substring(a.length - 1));                          // l
+console.log(a.substring(a.length - 6, a.length - 3));           // Ala
 
 
 
+- substr(Start INDEX [Mandatory], Number of characters to Extract)
+Example:
+let a = "Abdullah Alakel";
+console.log(a.substr(0));     // Abdullah Alakel
+console.log(a.substr(0, 6));     // Abdull
+console.log(a.substr(16));     // "empty"
+console.log(a.substr(-3));     // kel
+console.log(a.substr(-6, 5));     // Alake
+
+
+
+** ONLY Return True and False **
+- includes(Value[Mandatory, Start position [Optional] default 0])
+- startsWith(Value[Mandatory, Start position [Optional] default 0])
+- endsWith(Value[Mandatory, Length [Optional] default Full length])
+
+Examples:
+let a = "Abdullah Alakel";
+console.log(a.includes("Alakel")); // true
+
+console.log(a.startsWith("A"));  // true
+console.log(a.startsWith("A", 2));  // false
+console.log(a.startsWith("d", 2));  // true
+
+console.log(a.endsWith("a"));   // false becasue it ends with l not a (Abdullah Alakel)
+console.log(a.endsWith("l"));   // true becasue it ends with l (Abdullah Alakel)
+console.log(a.endsWith("a", 7));   // true becasue the length 6 ends with a (Abdulla) 
+console.log(a.endsWith("la", 7));   // true becasue the length 6 ends with a (Abdulla)
 
 *//*//*///*//*
