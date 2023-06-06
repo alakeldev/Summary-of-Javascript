@@ -487,6 +487,6 @@ console.log(a.startsWith("d", 2));  // true
 console.log(a.endsWith("a"));   // false becasue it ends with l not a (Abdullah Alakel)
 console.log(a.endsWith("l"));   // true becasue it ends with l (Abdullah Alakel)
 console.log(a.endsWith("a", 7));   // true becasue the length 6 ends with a (Abdulla) 
-console.log(a.endsWith("la", 7));   // true becasue the length 6 ends with a (Abdulla)
+console.log(a.endsWith("la", 7));   // true becasue the length 6 ends with la (Abdulla)
 
 *//*//*///*//*
