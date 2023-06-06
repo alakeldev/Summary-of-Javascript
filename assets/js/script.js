@@ -408,4 +408,45 @@ console.log(myName.toLowerCase()); // abode
 - Chain Methods  /Important/
 console.log(myName.trim().charAt(2).toUpperCase());  // abOde
 
+//--------------------------------
+
+- indexOf(Value [Mandatory], Start [Optional] 0)
+- lastIndexOf(Value [Mandatory], Start [Optional] length)
+
+Examples:
+
+let a = "Abdullah Khaled Alakel";
+console.log(a.indexOf("Khaled"));         // 9
+console.log(a.indexOf("Khaled", 10));    // -1
+console.log(a.lastIndexOf("a"));        // 18
+
+
+- slice(Start [Mandatory], End [Optional] *The End not Include)
+
+Examples:
+
+let a = "Abdullah Khaled Alakel";
+console.log(a.slice(0));         // Abdullah Khaled Alakel
+console.log(a.slice(3));        // ullah Khaled Alakel
+console.log(a.slice(9, 15));     // Khaled
+console.log(a.slice(-1, -7 ))    // Alakel
+
+
+- repeat(Times)
+
+let a = "Abdullah Khaled Alakel";
+console.log(a.repeat(3));   // Abdullah Khaled AlakelAbdullah Khaled AlakelAbdullah Khaled Alakel
+
+
+
+- split(separator [Optional], Limit [Optional]);
+
+let a = "Abdullah Alakel";
+console.log(a.split());   // ["Abdullah Alakel"]  => Array
+console.log(a.split(""));   // ["A","b","d","u","l","l","a","h"," ","A","l","a","k","e","l"]
+console.log(a.split(" "));   //  ["Abdullah", "Alakel"]
+
+
+
+
 *//*//*///*//*
