@@ -379,6 +379,33 @@ Math Object
 
 String Methods
 
+let myName = "abode";
+let myList = [1, 2, 3, 4, 5]
 
+- Access with Index:
+console.log(myName[1]);    // b
+console.log(myName[5]);    // undefined
+
+- Access with charAt():
+console.log(myName.charAt(0));   // a
+console.log(myName.charAt(5));   // "empty"
+
+- length
+console.log(myName.length);   // 5
+
+-trim()      /Removes the leading and trailing white space and line terminator characters from a string/
+myName = "  abode  ";
+console.log(myName.trim()); // abode   
+
+
+- toUpperCase()
+- toLowerCase()
+
+console.log(myName.toUpperCase()); // ABODE
+console.log(myName.toLowerCase()); // abode
+
+
+- Chain Methods  /Important/
+console.log(myName.trim().charAt(2).toUpperCase());  // abOde
 
 *//*//*///*//*
