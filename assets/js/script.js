@@ -719,3 +719,42 @@ console.log(`The Price Is ${price ?? 200}`);   // 0
 
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Switch Statement
+Syntax:
+switch(expression){
+    case 1:
+        //code block
+        break;
+    case 2:
+        //code block
+        break;
+    case 3:
+        //code block
+        break;
+    default:
+        //code block
+}
+
+Example:
+let day = 2;  Identical operator (checking if it's the same type and same value to match with cases)
+
+******if check all the cases and no matching to it will run the code inside the default 
+switch (day) {
+    case 0:
+        console.log("Saturday");
+        break;
+    case 1:
+        console.log("Sunday"):
+        break;
+    case 2:
+    case 3:                    // if matching with case 2 or case 3 the code inside it will running
+        console.log("Monday");
+        break;
+    default:
+        console.log("Unknow Day!")
+}
+
+*//*//*///*//*
