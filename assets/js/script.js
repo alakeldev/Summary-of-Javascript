@@ -119,7 +119,9 @@ Developer");   // Abdullah Alakel Developer
 
 
 - Start new Line :\n
-Example: console.log("Abdullah\nAlakel\nDeveloper");
+Example: console.log("Abdullah\nAlakel\nDeveloper");  //    Abdullah
+                                                            Alakel
+                                                            Developer
 
 
 *//*//*///*//*
@@ -163,7 +165,7 @@ let myCard = `
 </div>
 </div>`;
 
-document.write(myCard);    // Add the value of myCard variable on the webpage
+document.write(myCard);    // Add/creat the value of myCard variable on the webpage
 
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
@@ -221,7 +223,7 @@ console.log(+"100");    // Number
 console.log(+"-100");   // Number
 console.log(+"Alakel");   // NaN
 console.log(+"15.1");   // Number
-console.log(+0xff);   // HexDecimal => 255
+console.log(+0xff);   // HexaDecimal => 255
 console.log(+null);   // 0
 console.log(+true);   // 1
 console.log(+false);   //0
@@ -301,7 +303,7 @@ Example:
 console.log(1e6);       // 1000000
 console.log(1e3);       // 1000
 
-- Number (Function) using Constructor to intiat a number in JS
+- Number (Function) it's using Constructor to intiat a number in JS
 console.log(typeof Number);    // function
 
 console.log(Number.MAX_SAFE_INTEGER);     // 9007199254740991
