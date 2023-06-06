@@ -5,7 +5,7 @@ Javascript In Two Lines:
 */
 
 /*
-With JS you can do: 
+With JS you can do:
 - Dynamically Update Content
 - Manipulating HTML and CSS
 - Animate Images, Content and Creat Image Gallery
@@ -18,17 +18,17 @@ With JS you can do:
 /*
 The Main Sections In JS:
 - Vanilla JS
-- DOM 
-- BOM 
+- DOM
+- BOM
 - OOP
 */
 
 //------------------------------------------------------------------------------------------------------------------------
 /*
-- window.alert("Write here your Message");    "to show alert Message to user,,,,,using alert property inside window object" 
+- window.alert("Write here your Message");    "to show alert Message to user,,,,,using alert property inside window object"
 - document.write("<h1>Hello <span>World</span></h1>");     "Creat new Element, Text,,,, inside the document object"
 
-- console.log("Hello World")  "Print Message on console,,,,,inside console object we used log property"  
+- console.log("Hello World")  "Print Message on console,,,,,inside console object we used log property"
 - console.error("Error");      "Print Error Message on console,,,,,inside console object we use error property"
 - console.table(["Alakel", "Abode", "Ghost"])     "Print the array with its indexes in console as a table"
 - console.log("%cHello %cWorld", "color: red; font-size: 40px", "color: blue; font-size: 20px")
@@ -53,7 +53,7 @@ Data Types:
 - null => Object
 
 // Important Operator and Function : typeof()
-console.log(typeof("Alakel Abdullah"))   OR   console.log(typeof "5000")  // string 
+console.log(typeof("Alakel Abdullah"))   OR   console.log(typeof "5000")  // string
 console.log(typeof(5000))   OR   console.log(typeof 5000.55)  // number
 console.log(typeof([10, 15, 17]))   OR   console.log(typeof [10, 15, 17])  // array (=> Object)
 console.log(typeof(["Abdullah", "Alakel", "SOSO"]))   OR   console.log(typeof ["Abdullah", "Alakel", "SOSO"])  // array (=> Object)
@@ -144,7 +144,7 @@ let c = "And";
 let d = "Python";
 
 console.log("a + " " + b + " " + c + " " + d ");    // We Love JavaScript And Python
-console.log("a + " " + b + "\n" + c + " " + d ");    // We Love JavaScript 
+console.log("a + " " + b + "\n" + c + " " + d ");    // We Love JavaScript
                                                         And Python
 console.log(`${a} ${b} ${c} ${d}`);        // We Love JavaScript And Python
 console.log(`${a} ${b}                     // We Love JavaScript
@@ -243,7 +243,7 @@ console.log(-false);   //-0
 
 - Number Constructor
 
-Example: 
+Example:
 console.log(Number("100"));    // Number
 
 *//*//*///*//*
@@ -266,11 +266,11 @@ console.log(+a + b + c);    // 31
 
 Assignment Operators:
 
-let a = 10;  
+let a = 10;
 
 console.log(a);   // 10
 
-a = 20; 
+a = 20;
 
 console.log(a);    // 20
 
@@ -295,7 +295,7 @@ console.log(a);   // 4
 Double Precision (All numbers in JS)
 
 - Syntactic Sugar "_"
-Example: 
+Example:
 console.log(1_000_000);    // 1000000
 
 - e
@@ -395,7 +395,7 @@ console.log(myName.length);   // 5
 
 -trim()      /Removes the leading and trailing white space and line terminator characters from a string/
 myName = "  abode  ";
-console.log(myName.trim()); // abode   
+console.log(myName.trim()); // abode
 
 
 - toUpperCase()
@@ -486,7 +486,7 @@ console.log(a.startsWith("d", 2));  // true
 
 console.log(a.endsWith("a"));   // false becasue it ends with l not a (Abdullah Alakel)
 console.log(a.endsWith("l"));   // true becasue it ends with l (Abdullah Alakel)
-console.log(a.endsWith("a", 7));   // true becasue the length 6 ends with a (Abdulla) 
+console.log(a.endsWith("a", 7));   // true becasue the length 6 ends with a (Abdulla)
 console.log(a.endsWith("la", 7));   // true becasue the length 6 ends with la (Abdulla)
 
 *//*//*///*//*
@@ -524,7 +524,7 @@ Comparison Operators (Conditions)
     console.log(10 <= 10);  // true
 
 
-    Tricky example: 
+    Tricky example:
     console.log("Abdullah" === "Alakel"); // false
     console.log(typeof "Abdullah" === typeof "Alakel");   // true
 
@@ -551,5 +551,136 @@ Logical Operators
     console.log(10 == "10" || 10 > 8 || 10 > 50); // true
     console.log(10 == "10" || 10 > 80 || 10 > 50); // true
     console.log(10 == "100" || 10 > 80 || 10 > 50); // false
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Control Flow: (Conditions)
+
+- if
+Syntax:
+if(Condition) {
+    //Block Of Code
+}
+
+Example:
+
+let price = 20;
+let disc = true;
+let discamount = 5;
+let country = "Syria";
+
+if(discamount === true) {
+    price -= disc;   // 15
+}
+
+console.log(price);
+
+
+
+- else if  // another condition if the first condition not proceed
+
+Example:
+
+disc = false;
+
+if(discamount === true) {
+    price -= disc;   // 15
+} else if (country === "Syria") {
+    price -= disc;
+} else if (county === "Germany") {
+    price -= 3;
+}
+
+console.log(price);
+
+
+-else
+
+Example:
+
+if(discamount === true) {
+    price -= disc;   // 15
+} else if (country === "Syria") {
+    price -= disc;
+} else if (county === "Germany") {
+    price -= 3;
+} else {
+    price -= 1;
+}
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+*****Nested If
+
+Example:
+
+let price = 20;
+let disc = false;
+let discamount = 5;
+let country = "Syria";
+let student = true;
+
+if (disc === true) {
+    price -= discamount;
+} else if (county === "Syria") {
+    if (student === true) {
+        price -= discamount + 40;
+    }else {
+        price -= discamount + 10;
+    }
+}
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+Conditional /Ternary/ Operator
+
+Syntax:
+Condition ? If True : If False
+
+Example: (Normal if)
+let theName = "Abdullah";
+let theGender = "Male";
+let theAge = 29;
+
+if(theGender === "Male") {
+    console.log("Mr");
+} else {
+    console.log("Mrs");
+}
+
+
+Example: (short if)
+
+- theGender === "Male" ? console.log("Mr") : console.log("Mrs");   // Mr
+
+
+- let result = theGender === "Male" ? "Mr" : "Mrs";
+    console.log(result)  // Mr
+
+
+- console.log(theGender === "Male" ? "Mr" : "Mrs"); // Mr
+
+
+- console.log(`Hello ${theGender === "Male" ? "Mr" : "Mrs"} ${theName}`);  // Hello Mr Abdullah
+
+
+
+
+if - else if - else (short way)
+
+Example:
+
+theAge > 20 
+? console.log(20) 
+: theAge > 20 && theAge < 60 
+? console.log("20 to 60") 
+: theAge > 60 
+? console.log("Larger Than 60") 
+: console.log("unknow");
 
 *//*//*///*//*
