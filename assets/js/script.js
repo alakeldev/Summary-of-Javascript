@@ -783,10 +783,116 @@ console.log(myFriends);  // [["SOSO", "FOFO"], "Sami", "Ahmad", "Layan"]
 
 
 -------console.log(typeof(myFriends)); // Object
--------console.log(Array.isArray(myFriends));   // true   (Array.isArray())
+-------console.log(Array.isArray(myFriends));   // true  to check if it's array or not by using method (Array.isArray()) 
 
 let str = "Abode";
 -------console.log(Array.isArray(str));   // false   
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Array Methods
+- Length:
+
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Maya"];
+
+console.log(myFriends.length);   // 4
+
+myFriends[6] = "Lana";
+
+console.log(myFriends.length); // 7   //after we set index number 6 = "Lana", it leave also two empty element inside the array
+which are index number 4 and 5.
+
+- If you want to add in dynamic way a new element to your array you can use as below:
+myFriends[myFriends.length] = "Sana";      // so Sana it will add to the end of your array without adding empty elements inside your array
+
+----if you want to update the last element in your array:
+myFriends[myFriends.length - 1] = "Layla";
+
+-----  myFriends.length = 2;  // here we say that the array contains only 2 elements.
+
+//----------------------------------------------------
+
+Arrays Methods [Adding and Removing]
+
+- unShift("The elements that you want to add","The elements that you want to add", " ",) Add Elements to the First
+Example:
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Maya"];
+
+console.log(myFriends);  // ["Abdullah", "Alakel", "Ahmad", "Maya"]
+
+myFriends.unshift("Mona", "Sana"); 
+
+console.log(myFriends); // ["Mona", "Sana","Abdullah", "Alakel", "Ahmad", "Maya"]
+
+- push("The elements that you want to add","The elements that you want to add", " ",) add Elements to the End
+
+myFriends.push("Saya", "Faya"); 
+
+console.log(myFriends); // ["Mona", "Sana","Abdullah", "Alakel", "Ahmad", "Maya","Saya", "Faya"]
+
+- shift()   Remove First Element from Array
+
+let fname = myFriends.shift();
+
+console.log(myFriends)  // ["Sana","Abdullah", "Alakel", "Ahmad", "Maya","Saya", "Faya"]
+
+console.log(fname);  // Mona
+
+- pop() Remove last Element from Array
+
+let lname = myFriends.pop();
+
+console.log(myFriends)  // ["Sana","Abdullah", "Alakel", "Ahmad", "Maya","Saya"]
+
+console.log(lname);  // Faya
+
+//----------------------------------------------------
+
+Arrays Methods [Search]
+    - indexOf(Search Element [Mandatory], from Index [optional])
+
+Example: 
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Ahmad", "Maya","Alaa"];
+
+console.log(myFriends);
+
+console.log(myFriends.indexOf("Ahmad")); // 2   the search will start from index 0 as default value 
+console.log(myFriends.indexOf("Ahmad", 1)); // 2   the search will start from index 1 
+
+    - lastIndexOf(Search Element [Mandatory], from Index [optional])         // the search will start from the end to begin
+Example:
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Ahmad", "Maya","Alaa"];
+console.log(myFriends.lastIndexOf("Ahmad"));   // 3       the search will start from the end so he will took the second ahmad
+console.log(myFriends.lastIndexOf("Ahmad", -4));  // 2      the search will start from the end so he will took the first ahmad because of
+the search will start from index -4
+
+
+    - includes(ValueToFind [Mandatory], from index [optional])
+Example:
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Ahmad", "Maya","Alaa"];
+
+console.log(myFriends.includes("Ahmed"));  // true
+console.log(myFriends.includes("Ahmed", 3));  // true
+
+Important Example:
+let myFriends = ["Abdullah", "Alakel", "Ahmad", "Ahmad", "Maya","Alaa"];
+if (myFriends.indexOf("Ahmad") === -1) {
+    console.log("Not Found");               // this code will not be excute because ahmad is inside the array
+}else if (myFriends.indexOf("Samaya") === -1){
+    console.log("Not Found");               // this code will excute because Samaya is not inside the arraay 
+}
+
+The result to understand:
+console.log(myFriends.indexOf("Samaya"));     // -1   always if not found will return -1
+console.log(myFriends.lastIndexOf("Samaya"));   // -1 always if not found will return -1
+
+//----------------------------------------------------
+
+
+
+
 
 
 *//*//*///*//*
