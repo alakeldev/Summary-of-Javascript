@@ -758,3 +758,35 @@ switch (day) {
 }
 
 *//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Arrays
+
+let myFriends = ["Abdullah", "Alakel", "Ahmad", ["Maya", "Sara"]];   // creat an array and nested Array
+console.log(`Hello ${myFriends[0]}`);    // Hello Abdullah
+console.log(`Hello ${myFriends[2]}`);    // Hello Ahmad
+console.log(`${myFriends[1][1]}`);    // A
+console.log(`Hello ${myFriends[3]`);    // Hello Maya, Sara
+console.log(`Hello ${myFriends[3][1]]`);    // Hello Sara
+console.log(`${myFriends[3][1][0]]`);    // S
+
+myFriends[1] = "Sami";
+
+console.log(myFriends); // ["Abdullah", "Sami", "Ahmad", ["Maya", "Sara"]]
+
+myFriends[3] = "Layan";
+console.log(myFriends);  // ["Abdullah", "Sami", "Ahmad", "Layan"]
+
+myFriends[0] = ["SOSO", "FOFO"];
+console.log(myFriends);  // [["SOSO", "FOFO"], "Sami", "Ahmad", "Layan"]
+
+
+-------console.log(typeof(myFriends)); // Object
+-------console.log(Array.isArray(myFriends));   // true   (Array.isArray())
+
+let str = "Abode";
+-------console.log(Array.isArray(str));   // false   
+
+
+*//*//*///*//*
