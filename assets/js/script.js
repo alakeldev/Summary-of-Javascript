@@ -1171,5 +1171,128 @@ console.log(i);         // 1
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
 
+- Function:
+What is Function: it's block of code to apply specific task follow DRY (Don't repeat your self).
+there is two types:
+
+-- build in functions: console.log(typeof console.log);  // function //,,,,,,,,,,there are many examples 
+-- user defined function:
+
+Syntax and basic usage of user defined function
+
+function sayHello() {
+    console.log(`Hello Alakel`)
+}
+
+sayHello();             // Hello Alakel
+
+Example: 1
+
+function sayHello(userName) {               // *function with Parameter
+    console.log(`Hello ${userName}`);       // Hello Alakel
+}
+
+sayHello("Alakel");                         // *argument; the value of fucntion parameter or variable
+
+Example: 2
+
+function sayHello(userName, age) {
+    console.log(`Hello ${userName} your Age is ${age}`);
+    if(age < 20) {
+        console.log(`Sorry The App is Not suitable for you!`);
+    } else {
+        console.log(`The App Is Suitable for you please Next `);
+    }
+}
+
+sayHello("Alakel");   // Hello Alakel your Age is undefined
+sayHello("Alakel", 29);   // Hello Alakel your Age is 29
+                          // The App Is Suitable for you please Next
+                        
+sayHello("Abdullah", 15);   // Hello Abdullah your Age is 29
+                            // Sorry The App is Not suitable for you!
+
+
+
+Example: 3
+
+function generateYears(start, end) {
+    for(let i = start; i <= end; i++) {
+        console.log(i);
+    }
+}
+
+generateYears(1993, 2023);      // 1993 , 1994 ------> 2023
+
+
+Example: 4
+
+function generateYears(start, end, exclude) {
+    for(let i = start; i <= end; i++) {
+        if(i === exclude) {
+            continue;
+        }
+        console.log(i);
+    }
+}
+
+generateYears(1993, 2023, 2020);     // 1993, 1994 ------->2023   but without 2020 it's excluding as per the condition
+
+
+--------------------------------------------
+
+Function and return inside function
+
+- sometimes we want from function to do not execution direct, sometimes we want from it to only return a value or result to store it and use it later.
+
+- you cannot put anything after(below) the return because it's stopping the excution for the code inside the function and 
+anything after it will not run.
+
+- you can use return to make Interruptting to the function  (Example 3 below will explain)
+Example: 1
+
+function sayHello(userName) {
+    return `Hello ${userName}`;
+}
+
+sayHello("Alakel");
+
+console.log(sayHello("Alakel"));  // Hello Alakel
+
+or let result = sayHello("Alakel");
+
+console.log(result);        // Hello Alakel
+
+
+Example: 2 
+
+function calc(num1, num2) {
+    return num1 + num2;
+
+}
+
+let result = calc(20, 25);
+
+console.log(result);    // 45
+
+console.log(result + 100);    // 145
+
+
+Example: 3
+
+function generateNumber(start, end) {
+    for(let i = start; i <= end; i++) {
+        console.log(i);
+        if(i === 15) {
+            return `exit the function, Interruptting`;
+        }
+    }
+}
+
+generateNumber(10, 20);      // 10 ------> 15  then will exit the function 'interrupted'
+
+
+--------------------------------------------
+
 
 *//*//*///*//*
