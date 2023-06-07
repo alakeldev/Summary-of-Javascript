@@ -891,7 +891,90 @@ console.log(myFriends.lastIndexOf("Samaya"));   // -1 always if not found will r
 //----------------------------------------------------
 
 
+Array Methods: ([Sort])
 
+- Sort (Fucntion [optional])
+
+Example:
+let myFriends = [10, "Alakel", "Abdullah", "90", 1000, 100, 20, "10, -20, -10"];
+
+console.log(myFriends); //   [10, "Alakel", "Abdullah", "90", 1000, 100, 20, "10, -20, -10"];
+console.log(myFriends.srot());  // [-10, -20, 10, '10', 100, 1000, 20, '90', 'Abdullah', 'Alakel']
+
+- Reverse 
+
+Example:
+let myFriends = [10, "Alakel", "Abdullah", "90", 1000, 100, 20, "10, -20, -10"];
+console.log(myFriends); //   [10, "Alakel", "Abdullah", "90", 1000, 100, 20, "10, -20, -10"];
+console.log(myFriends.reverse()); //  ['10, -20, -10', 20, 100, 1000, '90', 'Abdullah', 'Alakel', 10]
+
+
+-- Note: you can use both in same time as below:
+console.log(myFriends.sort().reverse());  // here it will make sort for the array then it will reverse it
+
+//----------------------------------------------------
+
+Arrays Methods [Slicing]
+
+- slice(start [optional], end [optional] not including the end)
+slice() =====> meaning all array
+Example:
+
+let myFriends = ["Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"];
+console.log(myFriends); // ["Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"]
+
+console.log(myFriends.slice());  // ["Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"]
+console.log(myFriends.slice(1));  // ["Alakel", "Sana", "Ahmad", "Maya","Alaa"]
+console.log(myFriends.slice(1, 3));  // ["Alakel", "Sana"]
+console.log(myFriends.slice(-3));  // ["Ahmad", "Maya","Alaa"]
+console.log(myFriends.slice(1, -2));  // ["Alakel", "Sana", "Ahmad"]
+console.log(myFriends.slice(-5, -2 ));  // ["Alakel", "Sana", "Ahmad"]
+
+console.log(myFriends); // ["Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"];
+
+* all previouse slicing return a new array and you can store it in a avariable
+
+
+
+- splice (start [Mandatory], deleteCount [optional] [0 No Remove], The Items to Add [Optional])
+(Add and Remove, it's effecting on the original array not same as slice)
+Example:
+
+let myFriends = ["Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"];
+
+myFriends.splice(0, 0, "Faten", "MOMO");
+
+console.log(myFriends);   // ["Faten", "MOMO","Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"]
+
+myFriends.splice(0, 1);
+console.log(myFriends);   // ["MOMO","Abdullah", "Alakel", "Sana", "Ahmad", "Maya","Alaa"]
+
+myFriends.splice(1, 2, "Layan"); 
+console.log(myFriends);   // ["MOMO","Layan","Sana", "Ahmad", "Maya","Alaa"]
+
+
+//----------------------------------------------------
+
+Arrays Methods [Joining]
+- Concat(array, array) => return a new array
+
+let myUniFriends = ["Mazen", "Faten", "Wafaa", "Ahmad"];
+let myNewFriends = ["Samar", "Layan", "Shady" ];
+let mySchoolFriends = ["Rawan", "Sawsan", "George"];
+
+let allFriends = myUniFriends.concat(myNewFriends, mySchoolFriends , "Jomana", ["Saya","Faya"]);
+
+console.log(allFriends);  //["Mazen", "Faten", "Wafaa", "Ahmad","Samar", "Layan", "Shady", "Rawan", "Sawsan", "George","Jomana", "Saya","Faya"]
+
+
+- join(Seprator)  return STRING default seprator in ,
+
+related to previous Example:
+
+console.log(allFriends.join());  //Mazen,Faten,Wafaa,Ahmad,Samar,Layan,Shady,Rawan,Sawsan,George,Jomana,Saya,Faya
+console.log(allFriends.join(""));  //MazenFatenWafaaAhmadSamarLayanShadyRawanSawsanGeorgeJomanaSayaFaya
+console.log(allFriends.join(" @ "));  //Mazen @ Faten @ Wafaa @ Ahmad @ Samar @ Layan @ Shady @ Rawan @ Sawsan @ George @ Jomana @ Saya @ Faya
+console.log(allFriends.join("@").toUpperCase()); // //MAZEN@FATEN@WAFAA@AHMAD@SAMAR@LAYAN@SHADY@RAWAN@SAWSAN@GEORGE@JOMANA@SAYA@FAYA
 
 
 
