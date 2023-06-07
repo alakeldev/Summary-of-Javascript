@@ -1103,8 +1103,73 @@ mainLoop: for(let i = 0; i < products.length; i++) {
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
+Loop
+- While
+
+Example:
+Syntax:
+
+while (condition) {
+
+    // block of code
+
+    #increasing (change the checking to not making infinit loop)
+}
+Example:1
+
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "Iphone"];
+
+let index = 0;
+
+while (index < 10) {
+
+    console.log(index);       // 0 -------> 9
+
+    index++;
+}
+
+Example: 2
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "Iphone"];
+
+let index = 0;
+
+while (index < 10) {
+    
+    console.log(index);     // 0 ---> 2
+    index++;
+    if(index === 3) {
+        break;
+    }
+}
+
+Example: 3
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "Iphone"];
+
+let index = 0;
+
+while(i < products.length) {
+    console.log(products[index]);     //   Keyboard ------> Iphone
+    index++;
+}
+
+--------------------------------------------
 
 
+- Do / While
+
+Small Example:
+
+let i = 0;
+do {
+    console.log(i);     // 0
+    i++
+} while (false);
+
+console.log(i);         // 1
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
 
 
 *//*//*///*//*
