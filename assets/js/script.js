@@ -976,6 +976,135 @@ console.log(allFriends.join(""));  //MazenFatenWafaaAhmadSamarLayanShadyRawanSaw
 console.log(allFriends.join(" @ "));  //Mazen @ Faten @ Wafaa @ Ahmad @ Samar @ Layan @ Shady @ Rawan @ Sawsan @ George @ Jomana @ Saya @ Faya
 console.log(allFriends.join("@").toUpperCase()); // //MAZEN@FATEN@WAFAA@AHMAD@SAMAR@LAYAN@SHADY@RAWAN@SAWSAN@GEORGE@JOMANA@SAYA@FAYA
 
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+Loop
+- For
+Syntax:
+for([1] [2] [3]) {
+    //block of code
+}  // [1] = Initialiazation , [2] = condition, [3] = the action after run the code inside block
+
+Example: 1
+
+for(let i = 0; i < 10; i++) {
+    console.log(i);         // 0 , 1 ,2 ,3 , 4 , 5, 6 ,7 ,8 ,9 
+}
+
+Example: 2 
+
+let myFriends = ["Mazen", "Faten", "Wafaa", "Ahmad", "Alakel"];
+
+for(let i = 0; i < myFriends.length; i++) {
+    console.log(myFriends[i]);  //  Mazen  Faten  Wafaa  Ahmad  Alakel
+}
+
+Example: 3 
+
+let myFriends = [1, 2, "Mazen", "Faten",3, 4, "Wafaa", "Ahmad", "Alakel"];
+let onlyNames = [];
+
+for(let i = 0; i < myFriends.length; i++){
+    if(typeof myFriends[i] === "string") {
+        onlyNames.push(myFriends[i])
+    }
+}
+console.log(onlyNames); // Mazen  Faten  Wafaa  Ahmad  Alakel
+
+//----------------------------------------------------
+
+Nested Loops:
+Important to understand the example below to be clear the idea of nested loop.
+
+Example:
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];#
+
+let colors = ["Red", "Green", "Black"];
+
+let models = [2022, 2023];
+
+for(let i = 0; i < products.length; i++) {
+    console.log("#".repeat(15)); // ######################
+    console.log(`# ${products[i]}`); # product name
+    console.log("#".repeat(15)); // ######################
+    console.log("Colors: ");   // Colors: 
+    for(let j = 0; j < colors.length; j++) {
+        console.log(` - ${colors[j]}`);
+    }
+    for(let k = 0; k < models.length; k++) {
+        console.log(`- ${models[k]}`);
+    }
+
+}
+
+//----------------------------------------------------
+
+Loop Control:
+- break  (exit and break the loop)
+
+let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor"];
+
+let colors = ["Red", "Green", "Black"];
+Ex:
+for(let i = 0; i < products.length; i++) {
+    if(products[i] === "Pen") {
+        break;
+    }
+
+    console.log(products[i]);                           // Keyboard    
+}                                                           Mouse
+
+another Example: 
+
+for(let i = 0; i < products.length; i++) {
+    console.log(products[i]);                        // Keyboard                
+                                                        Mouse
+    if(products[i] === "Pen") {                         Pen
+        break;
+    }
+
+}
+
+--------------------------------------------
+
+- Continue (get over of the value)
+Ex:
+
+let products = ["Keyboard", "Mouse", "Pen",20, 30, "Pad",40 , 5, "Monitor"];
+
+let colors = ["Red", "Green", "Black"];
+
+for(let i = 0; i < products.length; i++) {                          // Keyboard                             
+    if(typeof products[i] === "number") {                               Mouse
+        continue;                                                        Pen
+    }                                                                    Pad
+                                                                        Monitor
+    console.log(products[i]);                           
+}
+--------------------------------------------
+
+- Label (Identifire for your loop and you can control the break and continue through it) 
+Example:
+
+mainLoop: for(let i = 0; i < products.length; i++) {
+    if(typeof products[i] === "number") {
+        continue;
+    }
+    console.log(products[i]);
+    nestedLoop: for(let j = 0; j < products.length; j++) {                  // Keyboard
+        console.log(`- ${colors[j]}`);                                          - Red
+        if(colors[i] === "Green") {                                             - Green
+            break mainLoop;
+        }
+    }
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+
 
 
 *//*//*///*//*
