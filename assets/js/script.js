@@ -1294,5 +1294,102 @@ generateNumber(10, 20);      // 10 ------> 15  then will exit the function 'inte
 
 --------------------------------------------
 
+Default function parameters:
+- default value of the parameters is always undefined if is not set
+
+
+function sayHello(username, age = "Unknown") {
+    reutrn `Hello ${username} Your Age IS $ {age}`;
+}
+
+console.log(sayHello("Alakel", 29)); // Hello Alakel Your Age IS 29
+console.log(sayHello("Alakel")); // Hello Alakel Your Age IS Unknown
+
+
+another two logic ways to edit the default value of the fucntion parameters related to the previous Example:
+
+1-   if(age === undefined) {
+        age = "Unknown"
+    }
+2-    age = age || "Unknown";
+
+--------------------------------------------
+
+Rest Parameters:
+if you don't know the exact number of the arguments that you want to add so you will not know the exact number of the function parameters
+so you will use the Rest parameters:
+
+- it's only one rest parameter allowed 
+- it must be the last element or parameter
+
+Example: 1
+
+function calc(...numbers) {         // Array.isArray(numbers); ===> true  so it's array
+    
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);                      // 10, 20, 50, 60 , 70
+    }
+}
+
+calc(10, 20, 50, 60 , 70);
+
+Example: 2
+
+function calc(...numbers) {         // Array.isArray(numbers); ===> true  so it's array
+    let result = 0;
+
+    for (let i = 0; i < numbers.length; i++) {
+        result += numbers[i]                      // result = result + numbers[i]
+    }
+
+    return `Final Result Is $ {result}`;
+
+}
+
+console.log(calc(10, 20, 50, 60 , 70));       // 210
+
+--------------------------------------------
+
+Anonymous Function: Function without name
+
+let calculator = function (num1, num2) {
+    return num1 + num2;
+};
+
+console.log(calculator(10, 10));     // 20
+
+//////// use cases: we use it for example when we want make an action like when we press button to make specific action
+so this action made specially for this click or task and i will not use it in another place so here you can use anonymous function here
+another case to use anonymous function:
+Example: 1
+
+document.getElementById("button").onclick = function () {
+    console.log("button action")
+}
+
+Example: 2
+
+setTimeout(function () {
+    console.log("Hello")
+}, 2000);                   // after two seconds it will print in console Hello
+
+
+Example: 3   Normal Function Example
+
+function sayHello() {
+    console.log("Hello Alakel");
+}
+
+document.getElementById("button").onclick = sayHello;  // on button click it will print on console    Hello Alakel
+
+
+
+
+--------------------------------------------
+
+Return Nested Function:
+Function inside function
+
+
 
 *//*//*///*//*
