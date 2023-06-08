@@ -92,17 +92,17 @@ hello.innterHTML = "World";  // change the content of html element with id hello
 * Var:
 - Redeclare (yes)
 - Access before declare (Undefined you cannot know the issue (confusing))
-- Variable Scope Drama (it will be Add to/inside  Window object!)
+- Variable Scope Drama (it will be Add to/inside  Window object!) - Not respect its scope and make over write on global scope variables
 
 * Let:
 - Redeclare (No => Error)
 - Access before declare (Error)
-- Variable Scope Drama (-)
+- Variable Scope Drama (-) - respect its scope and not make over write on global scope variables
 
 *Const:
 - Redeclare (No => Error)
 - Access before declare (Error)
-- Variable Scope Drama (-)
+- Variable Scope Drama (-) - respect its scope and not make over write on global scope variables
 
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
@@ -436,7 +436,8 @@ let a = "Abdullah Khaled Alakel";
 console.log(a.repeat(3));   // Abdullah Khaled AlakelAbdullah Khaled AlakelAbdullah Khaled Alakel
 
 
-- split(separator [Optional], Limit [Optional]);
+- split(separator [Optional], Limit [Optional]);  
+It' Always return Array
 Example:
 let a = "Abdullah Alakel";
 console.log(a.split());   // ["Abdullah Alakel"]  => Array
@@ -1503,6 +1504,107 @@ console.log(print(50,10))       // 60
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
+
+Higher Order Functions:
+*It's a function that accepts fucntions as parameters and/ or returns a fucntion*
+
+- Map:  
+
+-- Method Creats a new array
+-- Populated with the results of calling a provided function on every element
+-- in the calling array 
+
+Syntax:     arrayname.map(call back function(Element, Index, Array){ }, this argument)
+Element => the current element being processed in the array.
+Index => thei ndex of the current element being processed in the array.
+Array => the current Array.
+
+Note : Map Always return a NEW ARRAY
+
+Example: Nomrla way
+
+let myNums = [1, 2, 3, 4, 5, 6];
+
+let newArray = [];
+for(let i = 0; i < myNums.length; i++) {
+    newArray.push(myNums[i] + myNums[i]);
+}
+
+console.log(newArray);     //2, 4 , 6, 8 , 10, 12
+
+
+Example: Idea of previous example but with using Map
+
+let addSelf = myNums.map(function (element, index, array){
+1,   console.log(`Current Element => ${element}`);
+2,    console.log(`Current Index => ${index}`);                   // the line 1,2,3 and 4 run it to understand the work way of map function
+3,    console.log(`Array => ${array}`);
+4,    console.log(`This => ${this}`);
+    return element + element;        
+}, 10)
+
+console.log(addSelf);               // 2, 4, 6, 8, 10, 12
+
+
+Example of Map fucntion but using the arrow type:
+
+let addSelf = myNums.map((element) => element + element);
+
+console.log(addSelf);            // 2, 4, 6, 8, 10, 12
+
+
+
+
+Advanced Example: 1
+
+let myNums = [1, 2, 3, 4, 5, 6];
+
+function addition(ele) {
+    return ele + ele;
+}
+
+let add = myNums.map(addition);
+
+console.log(add);     // 2, 4, 6, 8, 10, 12
+
+
+
+Advanced Examples: 
+
+    /1/
+let swappingCases = "aLAKEl";
+let sw = swappingCases.split("").map(function (ele){
+    return ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase()
+}).join("");
+
+console.log(sw);     // AlakeL
+
+
+    /2/
+let invertedNumbers = [1, -10, -20, 15, 100, -30];
+let inv = invertedNumbers.map(function(ele){
+    return -ele;
+})
+
+console.log(inv);     // -1, 10, 20, -15, -100, 30
+
+
+    /3/  this Example need more focus to understand it
+
+let ignoreNumbers = "Ala123ke4l";
+
+let ign = ignoreNumbers.split("").map(function(ele){
+    return isNaN(parseInt(ele)) ? ele : "";
+}).join("")
+
+console.log(ign);     //Alakel
+
+----------------------------------------------------------------------------------------
+
+
+- Filter:
+
+
 
 
 
