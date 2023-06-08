@@ -1677,6 +1677,25 @@ let add = nums.reduce(function (acc, current, index, arr) {
 
 console.log(add);    // 80
 
+----------------------------------------------------------------------------------------
+
+forEach:
+*IT'S NOT MAKING NEW ARRAY
+Method executes a provided function once for each array element.
+
+user case : it's usually use when don't make any change on data of the array 
+
+
+Syntax:
+forEach(Call back function(Element, Index, Array) { }, this argument)
+- Element => the current element being processed in the array.
+- Index => the index of the current element being processed in the array.
+- Array => the current array.
+
+Note: it doesn't return anything [undefined], Also break will not break the loop
+
+- it's very important higher order function and examples will be in real life scenarios.
+
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
