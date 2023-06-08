@@ -1601,10 +1601,85 @@ console.log(ign);     //Alakel
 
 ----------------------------------------------------------------------------------------
 
-
 - Filter:
+-- Method Creats a new array
+-- with all elements that pass the test implemented by the provided function.
+
+Syntax:
+filter(callBackFunction (Element, Index, Array) { }, this Argument)
+- Element => the currene element being processed in the array.
+- Index => the index of current element being processed in the array.
+- Array => the current array.
+
+Example: 1
+in this example you check if the friends name is start with A (True of False) make test so if true it will take the value 
+if not so it will drop it.
+
+let friends = ["Faten", "Abdullah", "Abdulrahman", "Maya", "Amjad", "Lana"];
+
+let filterFreinds = friends.filter(function(ele) {
+    return el.startsWith("A");
+})
+
+console.log(filterFriends);    // ["Abdullah", "Abdulrahman", "Amjad"]
 
 
+Example: 2
+Get even numbers only 
+
+let numbers = [11, 20, 2, 5, 17, 10];
+
+let evenNumbers = numbers.filter(function (ele) {
+    return ele % 2 === 0 ? true : false;
+});
+
+console.log(evenNumbers);   // 20, 2, 10
+
+----------------------------------------------------------------------------------------
+
+- Reduce
+-- Method Executes a reducer function on each element of the array-
+-- resulting in a single output value.
+
+Syntax:
+reduce (CallbackFucntion(accumulator, current val, current index, source array) {}, initial value)
+- accumulator => the accumulated value previously returned in the last invocation
+- current val => the current element being processed in the array
+- index => the index of the current element being processed in the array.
+------------Starts from index 0 if an intialvalue is provided.
+------------Otherwaisem it starts from index 1-
+- array => the current Array
+
+
+Example: 
+let nums = [10, 20, 15, 30];
+
+let add = nums.reduce(function (acc, current, index, arr) {
+1,    console.log(`Acc => ${acc}`);
+2,    console.log(`Current Element => ${current}`);
+3,    console.log(`Current Element Index => ${index}`);                 // the lines from 1 to 6 is to understand the process only
+4,    console.log(`Array => ${arr}`);                                    // run the example to understand it
+5,    console.log(acc + current);
+6,    console.log(`###############`);
+    return acc + current;
+}, );
+
+console.log(add);    // 75
+
+
+** Same previouse Example but we add initial value:
+
+let nums = [10, 20, 15, 30];
+
+let add = nums.reduce(function (acc, current, index, arr) {
+
+}, 5);
+
+console.log(add);    // 80
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
 
 
 
