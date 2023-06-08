@@ -1390,6 +1390,120 @@ document.getElementById("button").onclick = sayHello;  // on button click it wil
 Return Nested Function:
 Function inside function
 
+Example: 1
+
+function sayMessage(fName, lName) {
+    let message = `Hello`;
+
+    // NESTED FUNCTION 
+    function concatMsg() {
+    
+        message = `${message} ${lName} ${fName}`;
+    }
+    concatMsg();
+
+    return message;
+}
+
+console.log(sayMessage("Abdullah", Alakel));   // Hello Abdullah Alakel
+
+Example: 2
+
+function sayMessage(fName, lName) {
+    let message = `Hello`;
+    
+    // NESTED FUNCTION 
+    function concatMsg() {
+    
+        return `${message} ${lName} ${fName}`;
+    }
+
+    return concatMsg;
+}
+
+console.log(sayMessage("Abdullah", Alakel));   // Hello Abdullah Alakel
+
+
+Example: 3
+
+function sayMessage(fName, lName) {
+    let message = `Hello`;
+    
+    // NESTED FUNCTION 
+    function concatMsg() {
+
+        // NESTED in NESTED FUNCTION
+        function getFullName() {
+            return `${fName} ${lName}`
+        }
+    
+        return `${message} ${getFullName()}`;
+    }
+
+    return concatMsg;
+}
+
+console.log(sayMessage("Abdullah", Alakel));   // Hello Abdullah Alakel
+
+--------------------------------------------
+
+Arrow Function:
+it's alt for regular function but it has limitation with using so it's not good in all situations
+
+
+
+
+Example:1 Regular fun
+
+let print = function () {
+    return 10;
+}
+console.log(print());     // 10
+
+
+
+
+Example:1 arrow function related to the previous Example:
+
+let print = () => 10;      // when you have only one statement
+    OR
+let print = () => {         // if you have more than one statement
+    let a = 10;
+    return 10;
+}
+    OR
+let print = _ => 10;       // if you don't have any parameters
+
+console.log(print());     // 10
+
+
+
+
+Example:2 Regular fun
+
+let print = function (num) {
+    return num;
+}
+
+
+
+Example:2 arrow function related to the previous Example:
+
+let print = num => num;       // if you has one parameter
+
+console.log(print(100));    // 100
+
+OR
+
+let print = (num1, num2) => num1 + num2;  // if you have two parameters and more you must put () 
+
+console.log(print(50,10))       // 60
+
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
 
 
 *//*//*///*//*
