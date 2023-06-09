@@ -1700,6 +1700,155 @@ Note: it doesn't return anything [undefined], Also break will not break the loop
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
 
+Object
+
+What is Object:
+properties and methods
+properties: any type of data (return details)  // window.location.href   only return details 
+methods: fucntions (actions, behaviour)         // window.location.assign("https://google.com")
+
+Simple Example:
+
+let user = {
+    // properties
+    theName: "Alakel",
+    theAge: 29,
+    // Methods
+    sayHello: function() {
+        return `Hello`;
+    },
+};
+
+conosle.log(user.theName);      // Alakel
+conosle.log(user.theAge);       // 29
+conosle.log(user.sayHello());   // Hello
+
+
+Another Example:
+
+the advantage of using bracket notation
+
+let user = {
+    theName: "Abdullah",
+    "my country": "Syria",
+};
+conosle.log(user.theName);      // Abdullah
+conosle.log(user["theName"]);      // Abdullah
+conosle.log(user["my country"]);      // Syria  it will not couse an error if you have space inside the property name
+
+
+Another Example:
+Dynamic property Name:
+In the example below you will know the difference between Dot Notation and Bracket Notation
+
+let myVar = "country";
+
+let user = {
+    theName: "Alakel",
+    country: "Syria",
+};
+
+console.log(user.theName);    // Alakel
+console.log(user.country);    // Syria
+console.log(user.myVar);    // undefined
+conosle.log(user[myVar]);    // Syria
+
+
+----------------------------------------------------------------------------------------
+
+Nested Object: very important example:
+
+let user = {
+    name: "Alakel",
+    age: 29,
+    skills: ["HTML", "CSS", "JS"],
+    available: false
+    addresses: {                        // Addresses is nested object inside the user object
+        uae: "Dubai",
+        syria: {                        // syria is nested object inside addresses object
+            one: "Damascus",
+            two: "Lattakia",
+        },
+    },
+    checkAv: fucntion() {                // Method
+        if (user.available === true) {                  * important to write user.available not only available 
+            retrun  `Free for Work`;                     because if you write only avilable it will search on this 
+        } else {                                         variable on global scope and it not find it so it will return an error said
+            return `Not Free for Work`;                  available isnot defined *
+        }
+    },                                   
+}
+
+
+console.log(user.name);        // Alakel
+console.log(user.age);        // 29
+console.log(user.skills.join(" | "));        // HTML | CSS | JS
+console.log(user.skills[2]);        // JS      access with index
+console.log(user.addresses.uae);        //   Dubai
+console.log(user.addresses.syria);        // {one: "Damascus", two: Lattakia} 
+console.log(user.addresses.syria.one);        // Damscus    Dot notation way
+console.log(user["addresses"].syria.one);        // Damscus    mix between dot notation and bracket notation
+console.log(user["addresses"]["syria"]["one"]);        // Damscus       bracket notation way
+
+
+console.log(user.checkaV())                 // Not Free for Work
+
+
+----------------------------------------------------------------------------------------
+
+Create with New keyword new Object:
+
+Normal way without using New kewWord:
+
+let user = {
+    age: 10,
+};              // object
+
+console.log(user);        // {age: 10}  
+
+user.age = 29;              // update on property value
+user["country"] = "Syria";
+
+console.log(user);          // {age: 29 , country: "Syria"}
+
+user.sayHello = function () {
+    return `Hello`;
+}
+
+conosle.log(user);          // {age: 29 , country: "Syria", sayHello: f}
+conosle.log(user.age);      // 29    
+conosle.log(user.country);      // Syria
+conosle.log(user.sayHello());   // Hello
+
+
+
+Same previouse Example but with using New Keyword:
+
+let user = new object({                              // creat object using object constructor
+    age:10,
+});           
+
+console.log(user);        // {age: 10}  
+
+user.age = 29;              // update on property value
+user["country"] = "Syria";
+
+console.log(user);          // {age: 29 , country: "Syria"}
+
+user.sayHello = function () {
+    return `Hello`;
+}
+
+conosle.log(user);          // {age: 29 , country: "Syria", sayHello: f}
+conosle.log(user.age);      // 29    
+conosle.log(user.country);      // Syria
+conosle.log(user.sayHello());   // Hello
+
+----------------------------------------------------------------------------------------
+
+THIS keyword:
+
+
 
 
 *//*//*///*//*
