@@ -2147,6 +2147,42 @@ Ex:
 DOM [Creat Elements]
 
 
+- creatElement          // create new element
+- creatAttribute        // create new my attribute and use later and you can use setAtrribute too
+
+
+let myElement = document.creatElement("div");                   // (1)   Creat Element <div> </div>
+let myText = document.creatTextNode("Product One")          // (2) Here we creat new text content and set it to the variable
+                                                                            "Product One"
+
+let myAttr = document.creatAttribute("data-custom")                //   -1
+myElement.setAttributeNode(myAttr);                               //    -2     it appears on element attributes without value
+
+myElement.setAttribute("data-test", "test");                      //  -1      it appears data-test attribute with value test
+
+
+myElement.className = "product";                                  // -1       add attribute but it's build in attribute not mine
+
+// Append text to Element
+
+myElement.appendChild(myText);                              // (3) <div> Product One </div>
+
+// Append element to Body
+
+document.body.appendChild(myElement);                       // (4) now append my element with all attributes and text inside body page
+
+
+
+- You can Write Comment and add it to the body in html page:
+
+let myComment = document.creatComent("This is Div");
+
+// Append comment to element
+
+myElement.appendChild(myComment);
+
+--------------
+
 
 
 *//*//*///*//*
