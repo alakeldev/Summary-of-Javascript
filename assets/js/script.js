@@ -1846,8 +1846,185 @@ conosle.log(user.sayHello());   // Hello
 
 ----------------------------------------------------------------------------------------
 
-THIS keyword:
+Function THIS keyword:
 
+console.log(this);      // windows object
+console.log(this === window);     // true
+
+myVar = 100;
+
+console.log(window.myVar);        // 100
+console.log(this.myVar);        // 100
+
+function sayHello() {
+    console.log(this);     // this is window object
+    return this;
+}
+
+sayHello();     // window
+console.log(sayHello() === window) ;     // true
+
+
+
+Example: 1
+
+document.getElementById("btn1").onclick = function() {
+    console.log(this);                      // this is to btn (owner of the function) it will return button with id "btn1"
+};
+
+Example: 2
+
+let user = {
+    age: 29,
+    agInDays: function() {
+        console.log(this);            // {age:29, ageInDays: f}      / user Object just for clarify
+        return this.age * 365;      // this is to user object / this === user
+    },
+};
+
+console.log(user.age);    // 29
+console.log(user.ageInDays());  // 10585
+
+
+----------------------------------------------------------------------------------------
+
+Strict Mode
+it's important to read about this mode becuase it will reduce the errors that you gonna face, please open below link
+
+https://www.geeksforgeeks.org/strict-mode-javascript/
+
+also you can read about it on w3school website too
+
+----------------------------------------------------------------------------------------
+
+
+Example: Object part/section
+
+
+let user = {
+    age: 29,
+    doubleAge: function() {
+        return user.age * 2;    
+    },
+};
+
+console.log(user);          // {age:29, doubleAge: f}
+console.log(user.age);          //  29
+console.log(user.doubleAge());  //  58
+
+--
+let obj = Object.create({});           // inside create method take an object to use as prototype and it's accept empty object too
+console.log(obj);    // {}
+
+obj.a = 100;
+console.log(obj);   // {a: 100}
+
+--
+let copyObj = Object.create(user);
+
+console.log(copyObj);              // {} => proto type age:29 , doubleAge: f() // if you change in original object it will change the values
+console.log(copyObj.age);          // 29
+console.log(copyObj.doubleAge());  // 58
+
+
+copyObj.age = 30;
+console.log(copyObj);             // {age: 30} => proto type age: 29, doubleAge: f()
+console.log(copyObj.age);          // 30
+console.log(copyObj.doubleAge());   // 58
+
+
+* here the problem here that if we change the value of the age inside the copyObj to 30 it will not return doubleAge function 60 value 
+the reason of that because when we call the function inside the function doubleAge its type user.age and it's search on age
+inside the scope of user object not inside the copyObj scope so here it made problem
+so the sloution here to avoid these issues we are using this becuase this is related to an object that we are in *
+
+again the previouse Emaples with Solitoion to this issue
+
+let user = {
+    age: 29,
+    doubleAge: function() {
+        return this.age * 2;    
+    },
+};
+
+
+let copyObj = Object.create(user);
+
+copyObj.age = 30;
+console.log(copyObj);             // {age: 30} => proto type age: 29, doubleAge: f()
+console.log(copyObj.age);          // 30
+console.log(copyObj.doubleAge());   // 60    // now the age will bring from the object that i'm in because of this inside the original obj
+
+----------------------------------------------------------------------------------------
+
+Creat Object with Assign method:
+
+let obj1 = {
+    prop1: 1,
+    meth1: function () {
+        return this.prop1;
+    },
+};
+
+let obj2 = {
+    prop2: 2;
+    meth2: function () {
+        return this.prop2;
+    },
+};
+
+let targetObject = {
+    prop1: 100,
+    prop3: 3,
+};
+
+
+let finalObject = object.assign(targetObject, obj1);               // target object to copy to , source object one or more 
+                                                                //   that take these copies to target object
+
+console.log(finalObject);   // meth1: f ()
+                                prop1: 1        // if two property same name as example prope1 the value takes from the first property 
+                                prop3: 3            // with this name so the value of prop1: 1 
+
+
+let finalObject = object.assign(targetObject, obj1, obj2);
+
+console.log(finalObject);               //  meth1: f()
+                                            meth2: f()
+                                            prop1: 1
+                                            prop2: 2
+                                            prop3: 3
+
+finalObject.prop1 = 200;
+                                          //meth1: f()
+                                            meth2: f()
+                                            prop1: 200
+                                            prop2: 2
+                                            prop3: 3
+finalObject.prop4 = 400;
+                                          //meth1: f()
+                                            meth2: f()
+                                            prop1: 200
+                                            prop2: 2
+                                            prop3: 3
+                                            prop4: 400
+
+-----------
+
+Another Example 
+if the target object is a new object (empty):
+
+            --target Object-- --source obj-- --properties to add on the empty object--
+let newObject = Object.assing({}, obj1, {prop5: 5, prop6: 6});
+
+console.log(newObject);    // meth1: f ()
+                            prop1: 1
+                            prop5: 5
+                            prop6: 6
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
 
 
 
