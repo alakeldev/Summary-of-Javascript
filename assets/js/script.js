@@ -2026,6 +2026,127 @@ console.log(newObject);    // meth1: f ()
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
 
+DOM: Document Object Model
+DOM Selectors:
+
+- Find Element By ID:
+let myIDElement = document.getElementById("my-button1");   // one element
+
+- Find Element By Tag Name:
+let myTagElement = document.getElementsByTagName("p");      // array you access to array by index
+console.log(myTagElement[1]);   // get the element with index 1 inside the array
+
+- Find Element By Class Name:
+let myClassElement = document.getElementsByClassName("my-span");     // array you can acces to array by index
+console.log(myClassElement[2]);    // get the element with index 2 inside the array
+
+
+- Find Element By CSS Selectors:
+NOTE: it's only bring one element and it's the first element that she got it and leave the first
+
+let myQueryElement = document.querySelector(".special");       // it's from the CSS/ get the element with class speical
+let myQueryElement = document.querySelector("#my-button1");       // it's from the CSS/ get the element with ID my-button1
+
+
+NOTE: to get all elements (Not Only One Element) from Selectors:
+
+let myQueryAllElements = document.querySelectorAll(".my-span");   // here you will got a list of you items that and you can access from index
+
+console.log(myQueryAllElements[1]);
+
+
+--------------
+
+console.log(document.title);    // get main page title
+console.log(document.body);    // get main page body and you can make append child on it
+console.log(document.forms);        // you get form collection if you have more than one form in your page
+console.log(document.forms[0].one);  // you get specific form and specific element inside this form         
+console.log(document.forms[0].one.value);  // you get specific form and specific element inside this form and get its value
+console.log(document.links);            // you get collection
+console.log(document.links[1].href);            // you get link with index 1 and its value of href attribute
+
+
+--------------
+
+
+DOM [Get, Set Elements content and attributes]:
+
+let myElement = document.querySelector(".js");
+
+console.log(myElement.innerHTML);     // return HTML elements and also the text if exist and it return the       &lt; &gr;
+console.log(myElement.textContent);     // return only text content as text and it return thses too      < >
+
+myElement.innerHTML = "Text from <span>Main.js</span> File";   // over write and it's add text and html elements too
+                                                                                Text from Main.js File
+
+myElement.textContent = "Text from <span>Main.js</span> File"; // return as text / Text from <span>Main.js</span> File /
+
+--
+bring images inside the page and each page using índex,
+document.images[0].src = "https://google.com";
+document.images[0].alt = "alternative";                         // if the attributes already exist it will make over write on it
+document.images[0].title = "Picture";                                  // if it's not exist so it will add it
+document.images[0].id = "pic";                                  
+document.images[0].className = "image";                                  
+
+
+--
+
+let myLink = document.querySelector(".link");
+
+myLink.getAttribute("class");        // it's bring the value of the class attribute
+myLink.getAttribute("href");       // it'S bring the value of the href attribute
+
+
+myLink.setAttribute("href", "https://twitter.com");   // in set you need two things (attribute name, its new value);
+myLink.setAttribute("title", "Twitter");      // if the attribute not exist so it will initiate and set it
+
+--------------
+
+DOM [Check Attributes]
+    - Element.attributes      // make a list of all attributes of specific element
+Ex:
+document.getElementByTagName("p")[0].attributes);  // list of all exist attributes
+
+    - Element.hasAttribute  // check for a specific attribute if it's exist or not   (true, false)
+Ex:                                                     it'S important to take a decision
+let myP = document.getElementByTagName("p")[0];
+
+if(myP.hasAttribute("data-src")) {
+    console.log("found");
+}else {
+    console.log("not found");
+}
+
+    - Element.removeAttribute       // it's using for remove a spesific attribute from element 
+Ex:                                 // by using set you can leave it empty only but remove it will remove it so it's not same action
+et myP = document.getElementByTagName("p")[0];
+
+if(myP.hasAttribute("data-src")) {
+    if(myP.getAttribute("data-src") === "") {
+        myP.removeAttribute("data-src")
+    } else {
+        myP.setAttribute("data-src", "New-Value") 
+    }
+}else {
+    console.log("not found");
+}
+
+
+    - Element.hasAttributes        // it tells that if the element has attributes or not     true or false only 
+Ex: 
+    if(myP.hasAttributes()) {               // it's only checking if myP element has attributes or not return true or false
+        console.log(`HAS ATTRIBUTES`);
+} else {
+    console.log(`HAS NOT ATTRIBUTES`);
+}
+
+
+--------------
+
+DOM [Creat Elements]
+
+
 
 
 *//*//*///*//*
