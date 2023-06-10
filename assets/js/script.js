@@ -2315,5 +2315,89 @@ element.classList.toggle("class-four");  // if class-four there it will remove i
 
 //-------------------------------------------------------------------------------------------------------------------------
 
+DOM [CSS]  
+
+-- style            inline style
+Ex:
+let element = document.getElementById("my-div");
+
+element.style.color = "red";
+element.style.backgroundColor = "gray";
+element.style.fontWeight = "bold";
+
+-- cssText      it will make over write (group of properties inline style too)
+
+element.style.cssText = "font-weight: bold; color: green; opacity: 0.9";
+
+
+-- setProperty     (to set specific property)
+syntax: setProperty(propertyName, Value, Priority)
+
+-inline style
+ex:
+element.style.setProperty("font-size", "40px", "important");   
+
+
+-CSS file style
+
+document.styleSheets[0].rules[0].style.removeProperty("background-color", "red"); //inside css file
+
+
+-- removeProperty   (to remove specific property)
+Syntax: removeProperty(propertyName)  [Inline, styleSheet]
+
+-inline style:
+ex:
+element.style.removeProperty("color");   
+
+
+
+-inside CSS file style:
+
+document.styleSheets[0].rules[0].style.removeProperty("line-height");           //inside css file
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+DOM [Dear With Elements]
+
+
+before [Element || String]
+after [Element || String]
+
+Ex:
+
+let element = document.getElementById("my-div");
+let createdP = document.createElement("p");
+
+
+- element.before("Hello From JS");         // it will add this text before the element my-div (before the element not inside it) 
+- element.before(createdP);         // it will add element createdP before the element my-div (before the element not inside it) 
+- element.after("Hello From JS");         // it will add this text after the element my-div (after the element not inside it) 
+- element.after(createdP);         // it will add element createdP after the element my-div (before the element not inside it) 
+
+
+append [Element || String]
+prepend [Element || String]
+
+Ex:
+
+- element.append(createdP);   // it will add element createdP inside the element my-div but in the last element inside it (last one)
+- element.append("Hello from JS");   // it will add the text inside the element my-div but in the last inside it (last one)
+
+
+- element.prepend("Hello from JS");    // it will add the text inside the element my-div but in the first inside it (first one)
+- element.prepend(createdP);    // it will add element createdP inside the element my-div but in the first inside it (first one)
+
+
+remove      // it will remove the element from DOM3 at all not only hide it
+
+element.remove();      // it will remove completely the element my-div from the page
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
 
 *//*//*///*//*
