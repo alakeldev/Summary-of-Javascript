@@ -2398,6 +2398,126 @@ element.remove();      // it will remove completely the element my-div from the 
 
 //-------------------------------------------------------------------------------------------------------------------------
 
+DOM [Traversing]
+
+
+let span = document.querySelector(".two");
+
+- nextSibling:
+- nextElementSibling:
+
+span.nextSibling;   // the next sibling whatever be (comment, space, text, element,,,,,)  
+span.nextElementSibling;   // the next element Sibling and it will ignore anything not element like (comment,text,space,,,,) 
+
+- previousSibling:
+- previousElementSibling:
+
+span.previousSibling;   // the previous sibling whatever be (comment, space, text, element,,,,,)  
+span.previousElementSibling;   // the previous element Sibling and it will ignore anything not element like (comment,text,space,,,,) 
+
+- parentElement:        // it will bring the parent element for the targeted element
+
+span.parentElement;     // it will return the parent element of span
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+DOM [Cloning]
+
+- cloneNode(Deep)   // it will take a copy from element with its all attributes    // Deep= boolean value (true of false /
+false === take all attributes but it will not take the element inside the targeted element) and please be note this is a copy
+and it's not effect the original element.
+
+
+let myP = document.querySelector("p").cloneNode(true);
+let myDiv = document.querySelector("div");
+
+myP.id = `${myP.id}-clone1`;
+
+myDiv.appendChild(myP);
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+DOM [Add Event Listener] // we want to add more than one event on one element
+
+
+/
+Here problem we gonna face with normal events:
+let myP = document.querySelector("p");
+
+myP.onclick = one;
+myP.onclick = two;
+
+function one() {
+    console.log("Message from onclick 1");
+};
+function two() {
+    console.log("Message from onclick 2");
+};
+
+// here we gonna see that the function two will over write on function one and it wil show on console only message (Message from onclick 2)
+/
+
+
+
+examples events lisetener:
+
+myP.addEventListener("click", function() {
+    console.log("Message from onclick 1 Event Listener");
+});
+
+
+below the previouse issue but with event listener it will not cause over write and one of two will not work, so below both will 
+work and show messages on console.
+
+function one() {
+    console.log("Message from onclick 1");          // normal function
+};
+function two() {
+    console.log("Message from onclick 2");
+};
+
+myP.addEventListener("click", one);                 // event listener and use normal function in it
+myP.addEventListener("click", two);                 // event listener and use normal function in it
+
+myP.addEventListener("click", "String Hello");    // here you gonna see error because it accept only (object or JS fucntion)
+
+
+-- Important point with eventListener
+I have Paragraph when i click on this Paragraph so it will make a copy from this paragraph below it:
+
+/ here we have an error because the cloned is not already on the page and created so it's an error
+let myP = document.quesrySelector("p");
+
+myP.onclick = function () {
+    let newP = myP.cloneNode(true);
+    newP.className = "clone";
+    document.body.appendChild(newP);
+}
+
+**let cloned = document.quesrySelector(".clone");
+
+cloned.onclick = fucntion () {                      // the code between the ** ** it's the error 
+    console.log("Iam Cloned");
+}**
+
+/
+
+HERE WE CAN USE EVENT LISTENER ON ELEMENT IS NOT YET ON MY PAGE OR IS NOT CREATED YET
+
+document.addEventListener("click", function(e) {
+    if(e.target.className === "clone"){        // here e.target is the element that I clicked on it (what ever the element that i clicked)
+        console.log("Iam Cloned");                  e.target.className the element that i clicked if it has a class name clone so
+    }                                                               run the block code inside if condition
+
+})
+
+*//*//*///*//*
+//-------------------------------------------------------------------------------------------------------------------------
+/*/*//*/*//*//*
+
+
+
 
 
 *//*//*///*//*
