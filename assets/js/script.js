@@ -2059,7 +2059,7 @@ console.log(myQueryAllElements[1]);
 
 console.log(document.title);    // get main page title
 console.log(document.body);    // get main page body and you can make append child on it
-console.log(document.forms);        // you get form collection if you have more than one form in your page
+console.log(document.forms);        // you get forms collection if you have more than one form in your page
 console.log(document.forms[0].one);  // you get specific form and specific element inside this form         
 console.log(document.forms[0].one.value);  // you get specific form and specific element inside this form and get its value
 console.log(document.links);            // you get collection
@@ -2158,7 +2158,7 @@ let myText = document.creatTextNode("Product One")          // (2) Here we creat
 let myAttr = document.creatAttribute("data-custom")                //   -1
 myElement.setAttributeNode(myAttr);                               //    -2     it appears on element attributes without value
 
-myElement.setAttribute("data-test", "test");                      //  -1      it appears data-test attribute with value test
+myElement.setAttribute("data-test", "test");                      //  -1      it appears data-test attribute with its value test
 
 
 myElement.className = "product";                                  // -1       add attribute but it's build in attribute not mine
@@ -2181,8 +2181,139 @@ let myComment = document.creatComent("This is Div");
 
 myElement.appendChild(myComment);
 
+//-------------------------------------------------------------------------------------------------------------------------
+
+DOM [Deal With Childrens]
+
+Examples:
+
+-- children
+
+let myElement = document.querySelector("div");    // select one div inside my html page
+
+myElement.children;     // return all elements (Children) inside the parent div
+
+myElement.children[0];   // you can access each element inside the parent through using index
+
+-- childNodes
+
+myElement.childNodes;   // return all nodes inside the div parent (element,textm,comment, also the space between tag as text)
+
+myElement.childNodes[0];   // access nodes by index as example the node index 0
+
+-- firstChild
+-- lastChild
+myElement.firstChild;    // return first child what ever the type (text,comment,element,)
+myElement.lastChild;    // return last child what ever the type (text,comment,element,)
+
+-- firstElementChild
+-- lastElementChild
+myElement.firstElementChild;  // return first element child (only the element)
+myElement.lastElementChild;  // return last element child (only the element)
+
 --------------
 
+DOM [Events] veryImportantSection 
+
+Events are all actions inside page example: onload, onclick,,,,,,,
+
+-- Use Events on HTML: 
+
+<button onclick="console.log("clicked")">Button</button>   // when press on button it will show on console clicked
+
+-- use Events On JS
+
+-onclick
+
+let myButton = document.getElementById("btn");
+
+myButton.onclick = function () {                    // event onclick ,,,,use anonymus function
+    console.log("clicked")                          // when press on button it will show on console clicked
+};
+
+-oncontextmenu            // mouse right click
+
+myButton.oncontextmenu  = function () {                    // event on right click ,,,,use anonymus function
+    console.log("clicked")                          // when press right button on it will show on console clicked
+
+-onmouseenter            // when the cursor(mouse) enter on it
+
+myButton.onmouseenter  = function () {                    // event when your cursor or mouse enter the button ,,,,use anonymus function
+    console.log("clicked")                          // when cursor enter button area so it will show on console clicked
+
+-onmouseleave       // when the cursor(mouse) enter the area start when leave the cursor
+myButton.onmouseleave  = function () {                    // event when your cursor or mouse leave the button area ,,,,use anonymus function
+    console.log("clicked")                          // when cursor leave button area so it will show on console clicked
+
+
+--onscroll        // when you make scroll on your webpage
+window.onscroll = function() {                      
+    console.log("scrolling");                       // when you make scroll page so it will show on console scrolling
+};
+
+--onresize    // when you make resize for the webpage
+
+
+Events For Form:
+--onfocus
+--onblur
+--onsubmit
+
+--------------
+
+DOM [Events Simulation]
+
+very Important section (simulated Events) 
+-- click
+-- focus
+-- blur
+
+let inputTwo = document.querySelector(".input-two");
+let inputOne = document.querySelector(".input-one");
+
+window.onload = function () {            // when the page load it will auo focus on input two field
+    inputTwo.focus();
+};
+
+
+inputOne.onblur = function () {             // when i go out (mouse cursor) out of the field make action(start function)
+    document.links[0].click();              // when i go out from the field one it will open the link on the page with index 0
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+DOM [Class List]
+-classList          // through this you can add new class on the elements classes or delete it or search on class inside its classes
+
+let element = document.getElementById("my-div");
+                                                     //all class names inside class attribute and it will show each class name 
+console.log(element.classList);                              with index,,, and its length too,,,,,,all methods class list object
+console.log(typeof element.classList);              // object
+
+--length
+--contains                      // contains needs class name and check if it's there or not so it's return true or false
+console.log(element.classList.contains("div-class1"));   // check if div-class is from classList of this item so if it'S there
+                                                                it will return true if it's not false
+
+--item(index)                   // item needs index of the class name
+console.log(element.classList.item("0"));    // it will return class name with index 0 so it will return the class name
+
+--add   // add classes names
+Example:
+
+element.onclick = function () {
+    element.classList.add("class-one", "class-two");  // it will add these two classes on my element 
+};
+
+--remove    // remove classes names
+    element.classList.remove("class-one", "class-two", "class-three") // it will remove the classes on my element;
+
+--toggle  // it needs only one token   (make add and remove) if it's there it will remove it and if it's not it will add it
+element.classList.toggle("class-four");  // if class-four there it will remove it, if not it will add it
+
+//-------------------------------------------------------------------------------------------------------------------------
 
 
 *//*//*///*//*
