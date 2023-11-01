@@ -2516,8 +2516,265 @@ document.addEventListener("click", function(e) {
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
 
+Advanced JS concepts: review old info with give a new ones too,,,,important for framworks and advanced js ES6
+
+Popular JS Framworks
+*Angular.JS
+*React.JS
+
+-Heigh level review Prerequisites:
+Functions:
+function add(a,b) {
+	let sum = a + b;
+	return sum;
+}
+
+let result = add(1,2);
+
+-Arrow Functions  ES6 (less verbose)
+const addTwoNumbers = (a,b) => a + b;
+
+-The Spread Operator:
+	this keyword:
+	you must understand this:
+	- Inside and outside a function
+	- Inside a JS Object
+
+-Destructuring:
+	Arrays and Objects
+	Navigation and Manupulation
+	map(), filter(), reduce()
+
+-Ternary Conditionals:
+
+Boolean Experssion ? True Part : False Part
+
+
+ES6: Modern, less verbose form of JS.
+
+1- var, let and const:
+
+var => Global Scope
+let and const => Block Scope
+
+
+2- Template Literals:
+Example:
+`Hello, ${props.name}!`;
+
+3- Arrow Functions:
+
+4- Spread Operator & ...rest:
+{...} spread
+
+Example:
+let numbers = [1, 2, 3, 4, 5];
+let [a, b, ...rest] = numbers;
+
+console.log(a);  //1
+console.log(b);   //2
+console.log(rest); // [3, 4, 5]
+
+Note: ES6 is transpiled (converted) to Vanilla JavaScript when the application runs
+
+- If you write on the terminal node file name to run the js file on terminal without need to create a web page
+
+Example to review:
+let students = [
+    {
+        name: 'John',
+        subjects: ['maths', 'english', 'cad'],
+        teacher: {maths: 'Harry', english: 'Joan', cad: 'Paul'},
+        results: {maths: 90, english: 75, cad: 87},
+    },
+    {
+        name: 'Emily',
+        subjects: ['science', 'maths','english', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', english: 'Joan', art: 'Simon'},
+        results: {science: 93, maths: 95, english: 80, art: 95},
+    },
+    {
+        name: 'Adam',
+        subjects: ['science', 'maths', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
+        results: {science: 63, maths: 79, art: 95},
+    }
+];
+
+const averagePoints = (arr, subject) => {
+    let sum = 0;
+    let counter = 0;
+    
+    for(let i = 0; i < arr.length; i++) {
+        if (arr[i].results[subject]) {
+            sum += arr[i].results[subject];
+            counter++;
+        }
+    }
+    
+    return sum / counter;
+};
+
+let averageMarks = averagePoints(students, "english");
+console.log(averageMarks);
+
+
+-------------------------------------
+Spread Operator: example
+let arr3 = [4, 5, 6]:
+let arr4 = [...arr3];
+
+rest Parameter Syntax:
+const sumRest = (a, b, c, ...rest) => {
+	let sum = a + b + c;
+	for(let i of rest) {
+sum += i;
+  }
+return sum;
+}
 
 
 
+Example: of spread operator
+
+let students = [
+    {
+        name: 'John',
+        subjects: ['maths', 'english', 'cad'],
+        teacher: {maths: 'Harry', english: 'Joan', cad: 'Paul'},
+        results: {maths: 90, english: 75, cad: 87},
+    },
+    {
+        name: 'Emily',
+        subjects: ['science', 'english', 'art'],
+        teacher: {science: 'Iris', english: 'Joan', art: 'Simon'},
+        results: {science: 93, english: 80, art: 95},
+    },
+    {
+        name: 'Adam',
+        subjects: ['science', 'maths', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
+        results: {science: 63, maths: 87, art: 95},
+    }
+];
+
+let subjects = [...students[0].subjects];
+
+const update = (item, val) => [...item, val];
+
+let updatedSubjects = update(subjects, 'Electronics');
+
+console.log(updatedSubjects);
+
+console.log(students[0]);
+
+
+
+Example: rest Parameter Syntax
+
+let mixedLetters = ['b', 'd', 'a', 'c', 'f', 'e'];
+
+let moreMixedLetters = [...mixedLetters, 'h', 'k', 'g', 'j', 'i', 'l' ];
+
+console.log(moreMixedLetters);
+
+const updateSortReverse = (arr, ...letters) => {
+    let combinedArray = [...arr, ...letters];
+    return combinedArray.sort().reverse();
+}
+
+let reverseSort = updateSortReverse(moreMixedLetters, 'n', 'm', 'o');
+console.log(reverseSort);
+console.log(mixedLetters);
+
+
+
+
+Example for destructuring:
+let students = [
+    {
+        name: 'Emily',
+        subjects: ['science', 'english', 'art'],
+        teacher: {science: 'Iris', english: 'Joan', art: 'Simon'},
+        results: {science: 93, english: 80, art: 95},
+    },
+    {
+        name: 'John',
+        subjects: ['art', 'cad', 'english', 'maths', 'science'],
+        teacher: {maths: 'Harry', english: 'Joan', cad: 'Paul'},
+        results: {maths: 90, english: 75, cad: 87},
+    },
+    {
+        name: 'Adam',
+        subjects: ['science', 'maths', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
+        results: {science: 93, maths: 77, art: 95},
+    },
+    {
+        name: 'Fran',
+        subjects: ['science', 'english', 'art'],
+        teacher: {science: 'Iris', english: 'Joan', art: 'Simon'},
+        results: {science: 93, english: 87, art: 95},
+    }
+];
+
+const makeList = (arr, student) => {
+  let studentObj = arr.find(obj => obj.name === student);
+  return studentObj.subjects;
+};
+
+let [first, second, ...rest] = makeList(students, 'John');
+console.log(first);
+console.log(second);
+console.log(rest);
+-------------------------------------------------------------------------------
+
+const numbers = [1, 2, 3, 4, 5];
+const found = numbers.find(element => element > 3);
+console.log(found); // Output: 4
+In this example, the find() method is used to find the first element in the numbers array that is greater than 3. The method returns 4, which is the first element that satisfies this condition.
+
+--------------------------------------------------------------------------------------
+
+map();
+filter();
+reduce();
+
+all three of these methods are array methods that means which means they operate on an array of elements, the array can be strings, numbers, objects containing properties and values or even other arrays but it must be an array in order to work on it.
+
+map, filter and reduce are all designed to be able to accomplished the same things that can be accomplished with a for loop or while loop using less code.
+
+they are iterator methods which basics means that they provide a nice elegent way to iterate through and array of items and profrom some action on each item.
+
+
+
+map(): First we have map(). The map method is called  on an array, and takes a single parameter,  
+a callback function, which is a function you  want to execute on every element in the array.  
+The map() method then iterates over the array,  calls this callback function on every element,  
+and returns a new array containing  all the results of that process. 
+A simple example usage of the map method, which  we’ll look at in more detail in the next video,  
+would be to take an array of numbers and multiply  each number by two. The function to “map”  
+to each array element, that is, the one being  called on each element, would multiply it by two,  
+and the result of the whole process would  be an array of all the results. 
+I’ll show you this example in detail in the next video. For now, just remember that the map method executes a  
+provided callback function on each array item and  returns a new array containing all the results.
+
+
+filter(): iterates over an array of items, and filters the  array to only a specified set of results. 
+If you had an array of numbers, you could use filter()  to filter the array down to only the even numbers.  
+If you had an array of names, you could filter  it to only those names that begin with a certain letter.
+Basically, the filter method is for  filtering an array. Like the map method,  
+it does this by taking a callback function as a  parameter. Each item in the array will be passed  
+into the callback function, and if the callback  function returns true when given that element,  
+that element will be included in the results.  Otherwise, the element will be filtered out.  
+When the filter method is complete, the result  is a new array containing the filtered results.
+
+
+reduce(): This is a more complex method, but its purpose  is simple: it reduces all the elements of an array 
+into a single output value, according to a  callback function you provide. The simplest usage  
+of this method might be if you wanted to reduce an  array of numbers to their total sum. In this case,  
+you would call the reduce() method on the array  of numbers, and the callback function you pass  
+as its parameter would serve the purpose of adding  each number to the last and keeping track of the total.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *//*//*///*//*
