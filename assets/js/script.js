@@ -2048,7 +2048,20 @@ const obj = {
 
 delete obj.key1;
 delete obj['key2'];
+-----------------------------------------------------------------------------------------------------------------------
+Looping Through an Object
+There is a special for...in loop to iterate over all keys of an object.
 
+const obj = {
+  name: 'Ali',
+  age: 65,
+};
+
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+// name Ali
+// age 65
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
