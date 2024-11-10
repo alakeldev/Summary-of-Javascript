@@ -2022,6 +2022,33 @@ console.log(newObject);    // meth1: f ()
                             prop5: 5
                             prop6: 6
 
+
+-------------------------------------------------------------------------------------------------------------------------
+Checking Whether a Key Exists
+You can check whether a certain key exists in an object with the hasOwnProperty method.
+
+const obj = { greeting: 'hello world' };
+
+obj.hasOwnProperty('greeting');
+// => true
+
+obj.hasOwnProperty('age');
+// => false
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Deleting an Entry
+You can delete a key-value pair from an object using the delete keyword.
+
+const obj = {
+  key1: 'value1',
+  key2: 'value2',
+};
+
+delete obj.key1;
+delete obj['key2'];
+
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
