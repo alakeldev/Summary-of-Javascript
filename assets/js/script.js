@@ -2838,3 +2838,114 @@ as its parameter would serve the purpose of adding  each number to the last and 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *//*//*///*//*
+
+// Promises
+
+const myPormise = new Promise((resolvedFunction, rejectFunction) => {
+	let connect = true;
+	if(connect) {
+		resolvedFunction("Connection Established");
+	} else {
+		rejectFunction("Connection Failed");
+	}
+}).then(
+	(resolveValue) => console.log(`Good ${resolveValue}`),
+	(rejectValue) => console.log(`Bad ${rejectValue}`)
+	
+);
+
+console.log(myPromise); // pending state here while it print first before the previous code start run
+
+// Promise, then, catch, finally   (Here need to focus and use it always with promises)
+/*
+Important to understand the three status below to good deal with Promises
+Then => Promise is successful use the resolved data
+catch => Promise is failed, catch the error
+Finally => Promise successfull or failed finally do something
+*/
+
+
+/*
+Example in real life:
+We will go to the meeting, promise me that we will find the 4 employees
+.then(we will choose two people)
+.then(we will test them to get one of them)
+.catch(No one came)
+
+*/
+
+const myPromise = new Promise((resolveFunction, rejectFunction) => {
+	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
+	if(employees,length == 4) {
+		resolveFunction(employees)
+	} else {
+		rejectFunction(Error("The Number of Employees are not 4"))
+	}
+});
+
+
+myPromise.then(
+	(resolveValue) => {
+		resolveValue.length = 2;
+		return resolveValue;
+	});
+
+myPromise.then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		return resolveValue;
+	});
+
+myPromise.then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		console.log(`The choosen Employee is ${resolveValue}`)
+	});
+
+
+/* بالمثال اللي قبل اذا شفت ال
+then
+مالن تشاين يعني مالن متصلين مشان هيك كل وحدة فين بترجع اييرور بالكونسول كل وحدة فين يعني بينطلع 3 مررات اذا كان الشرط ما تحقق و راح عالايلس
+
+*/
+
+
+myPromise.then(
+	(resolveValue) => {
+		resolveValue.length = 2;
+		return resolveValue;
+	}).then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		return resolveValue;
+	}).then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		console.log(`The choosen Employee is ${resolveValue}`)
+	});
+/*
+بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين 
+chaining
+*/
+
+
+myPromise.then(
+	(resolveValue) => {
+		resolveValue.length = 2;
+		return resolveValue;
+	}).then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		return resolveValue;
+	}).then(
+	(resolveValue) => {
+		resolveValue.length = 1;
+		console.log(`The choosen Employee is ${resolveValue}`)
+	}).catch((rejectedReason) => console.log(rejectedReason))
+	.finally(console.log("the operation is done!"));
+
+/*
+هون بالمثال اللي قبل استعملنا 
+catch and finally
+الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
+*/
