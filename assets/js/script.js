@@ -2949,3 +2949,190 @@ myPromise.then(
 catch and finally
 الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
 */
+
+
+
+// What is the BOM:
+/*
+Browser Object Model: Window Object
+Window Object is the Browser window
+window contain the document object
+All global variables and objects and functions are members of window object
+
+you can test document and console
+
+what can we do with window object
+open window
+close window
+resize window
+print document
+run code after period of time one or more
+full control the URL
+save data inside browser to use later
+*/
+
+window.console.log("good");
+window.document.title = "Hello JS";
+
+
+/*
+BOM:
+
+alert(message) => need no response only ok available
+confirm(message) => need response and return boolean
+prompt(message, default message) => collect data
+*/
+// all the three below are the same the alert will stop everything till press ok it's very bad
+window.alert("test");
+this.alert("test");
+alert("alert");
+
+
+// instead of using alert you can use : sweetalert2.github.io
+
+
+let confirmMsg = confirm("Are you sure?");
+
+console.log(confirmMsg); // here will print true if clicked on yes and will return false if clicked on cancel
+
+if(confirmMsg) {
+    console.log("Item delelted")
+} else {
+    console.log("Operation canceled")
+}
+
+
+
+let promptMsg = prompt("Which suitable day to you ?", "write day with three characters");
+
+console.log(promptMsg); // will return what use write so it will collect the user enter, the second parameter is same placeholder
+
+/*
+call function after waiting a period of a time
+setTimeout()
+clearTimeout()
+*/
+
+setTimeout(function () {
+    console.log("msg");
+}, 2000);
+
+//
+setTimeout(sayMsg, 2000);
+
+function sayMsg() {
+    console.log("I am Message");
+}
+
+//
+
+setTimeout(sayMsg, 2000, "Alakel", 30);
+
+function sayMsg(user, age) {
+    console.log(`I am Message For ${user} his age is ${age}`);
+}
+
+
+
+/* clearTimeout() will stop the setTimeout() */
+
+/* use with button to stop */
+
+let counter = setTimeout(sayMsg, 2000);
+
+function sayMsg() {
+    console.log("I am Message");
+}
+
+let btn = document.querySelector("button");
+
+btn.onclick = function () {
+    clearTimeout(counter);
+}
+
+
+////////////////////////////////////////////////////////
+
+
+/*
+the setInterval and setTimeout are both same but the difference is setTimeout will execute the code one after period then stop
+but the setInterval will execute the code then wait period then excute it again then wait then excute it again till the clearInterval call
+
+
+setInterval(function, millseconds, additional params)
+clearInterval(Identifire)
+*/
+
+setInterval(function() {
+    console.log("Msg");
+}, 1000);
+
+
+//
+setInterval(sayMsg, 1000);
+
+function sayMsg(user, age) {
+    console.log(`Hello I'm Message for ${user} his age is ${age}`);
+}
+
+//
+
+
+let div = document.querySelector("div");
+
+function countDown() {
+    div.innerHTML -= 1;
+    if(div.innerHTML === "0") {
+        clearInterval(counterDiv);
+    }
+}
+
+
+let counterDiv = setInterval(countDown, 1000);
+
+////////////////////////////////////////////////////
+
+// Location Object
+/*
+href get / set [URL || Hash || File || Mail]
+host 
+hash  #
+protocol
+reload()
+replace()
+assign()
+
+*/
+
+console.log(location); // here you gonna see location object on the console and you gonna see its properties to check it and know about them more 
+
+console.log(location.href); // will print your current url location
+
+// location.href = "https://google.com"; // here you will redirect to the google and also note that here will not delete the previos location from the history
+
+
+location.href = "/#sec02"; // here you will redirect you in the page on specific section using the hash # of this section
+
+
+console.log(location.host); // host name + the port we using
+console.log(location.hostname); // host name  important becuase you can target the host name like google.com and change it without change the subdomain the after slash /documentation
+
+
+console.log(location.protocol); // https or http
+
+console.log(location.hash); // will print # from the url link that related to section or specific page/section
+
+// window.location.reload() // will make reload to the page and you need it to make reload to page after save some data
+
+window.location.replace("https://google.com"); // it needs to pass a url that you want to replace and redirect you from your current url to this url also it will remove it from the history and this is the diffrenece between this and href
+
+
+window.location.assign("https://google.com"); // assign it need to pass a url that you want to redirect you without replace so you keep it in history and redirect you to the new url you provided in assign function
+
+
+////////////////////////////////////////////////
+
+/*
+window open and close
+
+*/
