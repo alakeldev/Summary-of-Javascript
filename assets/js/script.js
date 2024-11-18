@@ -3135,4 +3135,114 @@ window.location.assign("https://google.com"); // assign it need to pass a url th
 /*
 window open and close
 
+open(URL [opt], window name or target attr [opt], win features [opt], history replace[boolean value] )
+close()
+window features:
+    width[Num]
+    height[Num]
+    left[Num]
+    top[Num]
+
+search
+    window.open window features
 */
+
+setTimeout(function() {
+    window.open("https://google.com", "_blank", "width=400, top=100",); // all the arguements you want to pass are optional()
+}, 2000);
+
+////////////////////////////////////////////////////////////////////////////
+
+/*
+window history object
+History API
+    properties
+        length
+    methods
+        back()
+        forward()
+        go(Delta) => position in history
+
+    you can search [for advanced knowledge]
+    pushState() + replaceState()
+
+
+*/
+
+// console.log(history); // print the properties of the history object
+
+// console.log(history.length); // print the length of the history how many site i visit
+
+// console.log(history.back()); // will step you back one stop backward
+
+// console.log(history.forward()); // will take you forward stop
+
+// console.log(history.go(0)); // here you will make reload to the current page becuase you give 0
+
+// console.log(history.go(-1)); // will take you backward one step
+
+// console.log(history.go(-2)); // will take you backward two steps
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+stop() // window.stop()  to stop loading the content of the page at some point of the loading
+print() // window.print()  to print the page
+focus() // 
+
+// the both scrollTo and scroll are same but the different is not in all browsers work her will scroll to specific point x,y
+scrollTo(x,y || options)
+scroll(x,y || options)
+
+example: window.scrollTo(500, 200);
+
+
+scrollBy(x,y || options) here it will scroll but from the current place will increase the x and y
+
+window.scrollBy(500,200);
+
+
+ */
+
+// let myNewWindow = window.open("https://google.com", "", "width=500, height=500");
+// myNewWindow.focus() // to focus on a specific page
+
+
+
+
+// example for the options
+
+window.scrollTo({
+    left: 500,
+    top:200,
+    behavior: "smooth",
+});
+
+/*
+scrollX
+scrollY
+*/
+
+let btn = document.querySelector("button")
+
+window.onscroll = function() {
+    if(window.scrollY >= 600) {
+        console.log(`Scrolling Y value is ${window.scrollY}`);
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+btn.onclick = function() {
+    window.scrollTo({
+        left:0,
+        righ:0,
+        behavior: "smooth",
+    });
+};
+
+/////////////////////////////////////////////////////
+
+// local storage
