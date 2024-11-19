@@ -2841,66 +2841,66 @@ as its parameter would serve the purpose of adding  each number to the last and 
 
 // Promises
 
-const myPormise = new Promise((resolvedFunction, rejectFunction) => {
-	let connect = true;
-	if(connect) {
-		resolvedFunction("Connection Established");
-	} else {
-		rejectFunction("Connection Failed");
-	}
-}).then(
-	(resolveValue) => console.log(`Good ${resolveValue}`),
-	(rejectValue) => console.log(`Bad ${rejectValue}`)
+// const myPormise = new Promise((resolvedFunction, rejectFunction) => {
+// 	let connect = true;
+// 	if(connect) {
+// 		resolvedFunction("Connection Established");
+// 	} else {
+// 		rejectFunction("Connection Failed");
+// 	}
+// }).then(
+// 	(resolveValue) => console.log(`Good ${resolveValue}`),
+// 	(rejectValue) => console.log(`Bad ${rejectValue}`)
 	
-);
+// );
 
-console.log(myPromise); // pending state here while it print first before the previous code start run
+// console.log(myPromise); // pending state here while it print first before the previous code start run
 
-// Promise, then, catch, finally   (Here need to focus and use it always with promises)
-/*
-Important to understand the three status below to good deal with Promises
-Then => Promise is successful use the resolved data
-catch => Promise is failed, catch the error
-Finally => Promise successfull or failed finally do something
-*/
-
-
-/*
-Example in real life:
-We will go to the meeting, promise me that we will find the 4 employees
-.then(we will choose two people)
-.then(we will test them to get one of them)
-.catch(No one came)
-
-*/
-
-const myPromise = new Promise((resolveFunction, rejectFunction) => {
-	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
-	if(employees,length == 4) {
-		resolveFunction(employees)
-	} else {
-		rejectFunction(Error("The Number of Employees are not 4"))
-	}
-});
+// // Promise, then, catch, finally   (Here need to focus and use it always with promises)
+// /*
+// Important to understand the three status below to good deal with Promises
+// Then => Promise is successful use the resolved data
+// catch => Promise is failed, catch the error
+// Finally => Promise successfull or failed finally do something
+// */
 
 
-myPromise.then(
-	(resolveValue) => {
-		resolveValue.length = 2;
-		return resolveValue;
-	});
+// /*
+// Example in real life:
+// We will go to the meeting, promise me that we will find the 4 employees
+// .then(we will choose two people)
+// .then(we will test them to get one of them)
+// .catch(No one came)
 
-myPromise.then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		return resolveValue;
-	});
+// */
 
-myPromise.then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		console.log(`The choosen Employee is ${resolveValue}`)
-	});
+// const myPromise = new Promise((resolveFunction, rejectFunction) => {
+// 	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
+// 	if(employees,length == 4) {
+// 		resolveFunction(employees)
+// 	} else {
+// 		rejectFunction(Error("The Number of Employees are not 4"))
+// 	}
+// });
+
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	});
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	});
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	});
 
 
 /* بالمثال اللي قبل اذا شفت ال
@@ -2910,39 +2910,39 @@ then
 */
 
 
-myPromise.then(
-	(resolveValue) => {
-		resolveValue.length = 2;
-		return resolveValue;
-	}).then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		return resolveValue;
-	}).then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		console.log(`The choosen Employee is ${resolveValue}`)
-	});
-/*
-بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين 
-chaining
-*/
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	});
+// /*
+// بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين 
+// chaining
+// */
 
 
-myPromise.then(
-	(resolveValue) => {
-		resolveValue.length = 2;
-		return resolveValue;
-	}).then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		return resolveValue;
-	}).then(
-	(resolveValue) => {
-		resolveValue.length = 1;
-		console.log(`The choosen Employee is ${resolveValue}`)
-	}).catch((rejectedReason) => console.log(rejectedReason))
-	.finally(console.log("the operation is done!"));
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	}).catch((rejectedReason) => console.log(rejectedReason))
+// 	.finally(console.log("the operation is done!"));
 
 /*
 هون بالمثال اللي قبل استعملنا 
@@ -2971,84 +2971,84 @@ full control the URL
 save data inside browser to use later
 */
 
-window.console.log("good");
-window.document.title = "Hello JS";
+// window.console.log("good");
+// window.document.title = "Hello JS";
 
 
-/*
-BOM:
+// /*
+// BOM:
 
-alert(message) => need no response only ok available
-confirm(message) => need response and return boolean
-prompt(message, default message) => collect data
-*/
-// all the three below are the same the alert will stop everything till press ok it's very bad
-window.alert("test");
-this.alert("test");
-alert("alert");
-
-
-// instead of using alert you can use : sweetalert2.github.io
+// alert(message) => need no response only ok available
+// confirm(message) => need response and return boolean
+// prompt(message, default message) => collect data
+// */
+// // all the three below are the same the alert will stop everything till press ok it's very bad
+// window.alert("test");
+// this.alert("test");
+// alert("alert");
 
 
-let confirmMsg = confirm("Are you sure?");
-
-console.log(confirmMsg); // here will print true if clicked on yes and will return false if clicked on cancel
-
-if(confirmMsg) {
-    console.log("Item delelted")
-} else {
-    console.log("Operation canceled")
-}
+// // instead of using alert you can use : sweetalert2.github.io
 
 
+// let confirmMsg = confirm("Are you sure?");
 
-let promptMsg = prompt("Which suitable day to you ?", "write day with three characters");
+// console.log(confirmMsg); // here will print true if clicked on yes and will return false if clicked on cancel
 
-console.log(promptMsg); // will return what use write so it will collect the user enter, the second parameter is same placeholder
-
-/*
-call function after waiting a period of a time
-setTimeout()
-clearTimeout()
-*/
-
-setTimeout(function () {
-    console.log("msg");
-}, 2000);
-
-//
-setTimeout(sayMsg, 2000);
-
-function sayMsg() {
-    console.log("I am Message");
-}
-
-//
-
-setTimeout(sayMsg, 2000, "Alakel", 30);
-
-function sayMsg(user, age) {
-    console.log(`I am Message For ${user} his age is ${age}`);
-}
+// if(confirmMsg) {
+//     console.log("Item delelted")
+// } else {
+//     console.log("Operation canceled")
+// }
 
 
 
-/* clearTimeout() will stop the setTimeout() */
+// let promptMsg = prompt("Which suitable day to you ?", "write day with three characters");
 
-/* use with button to stop */
+// console.log(promptMsg); // will return what use write so it will collect the user enter, the second parameter is same placeholder
 
-let counter = setTimeout(sayMsg, 2000);
+// /*
+// call function after waiting a period of a time
+// setTimeout()
+// clearTimeout()
+// */
 
-function sayMsg() {
-    console.log("I am Message");
-}
+// setTimeout(function () {
+//     console.log("msg");
+// }, 2000);
 
-let btn = document.querySelector("button");
+// //
+// setTimeout(sayMsg, 2000);
 
-btn.onclick = function () {
-    clearTimeout(counter);
-}
+// function sayMsg() {
+//     console.log("I am Message");
+// }
+
+// //
+
+// setTimeout(sayMsg, 2000, "Alakel", 30);
+
+// function sayMsg(user, age) {
+//     console.log(`I am Message For ${user} his age is ${age}`);
+// }
+
+
+
+// /* clearTimeout() will stop the setTimeout() */
+
+// /* use with button to stop */
+
+// let counter = setTimeout(sayMsg, 2000);
+
+// function sayMsg() {
+//     console.log("I am Message");
+// }
+
+// let btn = document.querySelector("button");
+
+// btn.onclick = function () {
+//     clearTimeout(counter);
+// }
 
 
 ////////////////////////////////////////////////////////
@@ -3063,32 +3063,32 @@ setInterval(function, millseconds, additional params)
 clearInterval(Identifire)
 */
 
-setInterval(function() {
-    console.log("Msg");
-}, 1000);
+// setInterval(function() {
+//     console.log("Msg");
+// }, 1000);
 
 
-//
-setInterval(sayMsg, 1000);
+// //
+// setInterval(sayMsg, 1000);
 
-function sayMsg(user, age) {
-    console.log(`Hello I'm Message for ${user} his age is ${age}`);
-}
+// function sayMsg(user, age) {
+//     console.log(`Hello I'm Message for ${user} his age is ${age}`);
+// }
 
-//
-
-
-let div = document.querySelector("div");
-
-function countDown() {
-    div.innerHTML -= 1;
-    if(div.innerHTML === "0") {
-        clearInterval(counterDiv);
-    }
-}
+// //
 
 
-let counterDiv = setInterval(countDown, 1000);
+// let div = document.querySelector("div");
+
+// function countDown() {
+//     div.innerHTML -= 1;
+//     if(div.innerHTML === "0") {
+//         clearInterval(counterDiv);
+//     }
+// }
+
+
+// let counterDiv = setInterval(countDown, 1000);
 
 ////////////////////////////////////////////////////
 
@@ -3104,30 +3104,30 @@ assign()
 
 */
 
-console.log(location); // here you gonna see location object on the console and you gonna see its properties to check it and know about them more 
+// console.log(location); // here you gonna see location object on the console and you gonna see its properties to check it and know about them more 
 
-console.log(location.href); // will print your current url location
+// console.log(location.href); // will print your current url location
 
-// location.href = "https://google.com"; // here you will redirect to the google and also note that here will not delete the previos location from the history
-
-
-location.href = "/#sec02"; // here you will redirect you in the page on specific section using the hash # of this section
+// // location.href = "https://google.com"; // here you will redirect to the google and also note that here will not delete the previos location from the history
 
 
-console.log(location.host); // host name + the port we using
-console.log(location.hostname); // host name  important becuase you can target the host name like google.com and change it without change the subdomain the after slash /documentation
+// location.href = "/#sec02"; // here you will redirect you in the page on specific section using the hash # of this section
 
 
-console.log(location.protocol); // https or http
+// console.log(location.host); // host name + the port we using
+// console.log(location.hostname); // host name  important becuase you can target the host name like google.com and change it without change the subdomain the after slash /documentation
 
-console.log(location.hash); // will print # from the url link that related to section or specific page/section
+
+// console.log(location.protocol); // https or http
+
+// console.log(location.hash); // will print # from the url link that related to section or specific page/section
 
 // window.location.reload() // will make reload to the page and you need it to make reload to page after save some data
 
-window.location.replace("https://google.com"); // it needs to pass a url that you want to replace and redirect you from your current url to this url also it will remove it from the history and this is the diffrenece between this and href
+// window.location.replace("https://google.com"); // it needs to pass a url that you want to replace and redirect you from your current url to this url also it will remove it from the history and this is the diffrenece between this and href
 
 
-window.location.assign("https://google.com"); // assign it need to pass a url that you want to redirect you without replace so you keep it in history and redirect you to the new url you provided in assign function
+// window.location.assign("https://google.com"); // assign it need to pass a url that you want to redirect you without replace so you keep it in history and redirect you to the new url you provided in assign function
 
 
 ////////////////////////////////////////////////
@@ -3147,9 +3147,9 @@ search
     window.open window features
 */
 
-setTimeout(function() {
-    window.open("https://google.com", "_blank", "width=400, top=100",); // all the arguements you want to pass are optional()
-}, 2000);
+// setTimeout(function() {
+//     window.open("https://google.com", "_blank", "width=400, top=100",); // all the arguements you want to pass are optional()
+// }, 2000);
 
 ////////////////////////////////////////////////////////////////////////////
 
@@ -3213,35 +3213,35 @@ window.scrollBy(500,200);
 
 // example for the options
 
-window.scrollTo({
-    left: 500,
-    top:200,
-    behavior: "smooth",
-});
+// window.scrollTo({
+//     left: 500,
+//     top:200,
+//     behavior: "smooth",
+// });
 
 /*
 scrollX
 scrollY
 */
 
-let btn = document.querySelector("button")
+// let btn = document.querySelector("button")
 
-window.onscroll = function() {
-    if(window.scrollY >= 600) {
-        console.log(`Scrolling Y value is ${window.scrollY}`);
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-};
+// window.onscroll = function() {
+//     if(window.scrollY >= 600) {
+//         console.log(`Scrolling Y value is ${window.scrollY}`);
+//         btn.style.display = "block";
+//     } else {
+//         btn.style.display = "none";
+//     }
+// };
 
-btn.onclick = function() {
-    window.scrollTo({
-        left:0,
-        righ:0,
-        behavior: "smooth",
-    });
-};
+// btn.onclick = function() {
+//     window.scrollTo({
+//         left:0,
+//         righ:0,
+//         behavior: "smooth",
+//     });
+// };
 
 /////////////////////////////////////////////////////
 
@@ -3264,36 +3264,36 @@ Info
 
 
 // set
-window.localStorage.setItem("color", "red");
-window.localStorage.fontweight = "bold";
-window.localStorage["fontSize"] = "20px";
+//window.localStorage.setItem("color", "red");
+//window.localStorage.fontweight = "bold";
+//window.localStorage["fontSize"] = "20px";
 
-console.log(typeof window.localStorage);
+//console.log(typeof window.localStorage);
 
 
 // get
-console.log(window.localStorage.getItem("color"));
-console.log(window.localStorage.color);
-console.log(window.localStorage["color"]);
+//console.log(window.localStorage.getItem("color"));
+//console.log(window.localStorage.color);
+//console.log(window.localStorage["color"]);
 
 
 
 // set color in page  example:
-document.body.style.backgroundColor = window.localStorage.getItem("color"); // here you set the background of the page to red
+//document.body.style.backgroundColor = window.localStorage.getItem("color"); // here you set the background of the page to red
 
 // remove  to use when you want to remove a specific key from the local strage
-window.localStorage.removeItem("color");
+//window.localStorage.removeItem("color");
 
 
 // clear to clear and the local storage clear all 
 
-window.localStorage.clear();
+//window.localStorage.clear();
 
 
 
 // get key will give the index of the element to know it exactly
 
-window.localStorage.key(0); //it will return the key so you gonna know the index 0 what has key
+//window.localStorage.key(0); //it will return the key so you gonna know the index 0 what has key
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -3315,5 +3315,108 @@ Info
 
 */
 
-window.sessionStorage.setItem("color", "blue");
+// window.sessionStorage.setItem("color", "blue");
+
+/////////////////////////////////////////////////////////////////
+
+// Destructuring
+/*
+Is a JS expression that allows to extract data from arrays, objects
+and maps and set them into new, distinct variables
+*/
+
+// Array Destructuring:
+
+// let myFriends = ["Alakel", "Abode", "Akel", "Abdullah"];
+
+// let [a, b, c, d, e] = myFriends;
+
+// console.log(a); //Alakel
+// console.log(b); //Abode
+// console.log(c); //Akel
+// console.log(d); //Abdullah
+// console.log(e); //undefined
+
+
+// let [a, b, c, d, e= "Maya"] = myFriends; //here we set default value for e variable if no value inside the array will set this value to it
+
+
+// let [x, y, , z] = myFriends; // here if you want to skip element inside the array
+
+// here will set the z to value abdullah , akel not set to variable because we put empty for its place
+
+
+
+// advanced examples
+
+// let myFriends = ["Alakel", "Abode", "Akel", ["Abdullah", "Maya", ["Somaya", "Layan"]]];
+
+// console.log(myFriends[3][2]); // ["Somaya", "Layan"]
+// console.log(myFriends[3][2][1]); // Layan
+
+
+// let [, , , [a, , [, b]]] = myFriends
+
+// console.log(a);
+// console.log(b);
+
+/*
+Destructuring array => swapping variables
+
+*/
+
+// let book = "Video";
+// let video = "Book";
+
+// let stash = book;
+// book = video; // Book
+// video = stash; // Video
+
+
+//////////////////////
+
+// [book, video] = [video, book]; // swapping with destructuring IMPORTANT
+
+
+/////////////////////////////////////////////////////////////////
+
+/*
+Desctructuring Object (IMPORTANT)
+*/
+
+// const user = {
+//     theName: "Alakel",
+//     theAge: 32,
+//     theTitle: "Developer",
+//     theCountry: "Syria"
+// };
+
+// console.log(user.theName);
+// console.log(user.theAge);
+// console.log(user.theTitle);
+// console.log(user.theCountry);
+
+// let theName = user.theName;
+// let theAge = user.theAge;
+// let theTitle = user.theTitle;
+// let theCountry = user.theCountry;
+
+
+
+// with using destructuring:
+
+
+// ({theName, theAge, theTitle, theCountry} = user); // here if you declared this before
+
+
+// let { theName, theAge, theTitle, theCountry } = user // here if not declared before use let word
+
+// here if you want to skip key you can don't write its key just don't write its key so it will skip it with destructuring
+// console.log(theName);
+// console.log(theAge);
+// console.log(theTitle);
+// console.log(theCountry);
+
+
+
 
