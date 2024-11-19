@@ -3463,3 +3463,24 @@ const user = {
         css: 80
     }
 };
+
+showDetails(user);     
+
+// function showDetails(obj) {
+//     console.log(`Your name is ${obj.theName}`);
+//     console.log(`Your age is ${obj.theAge}`);
+//     console.log(`Your css skill progress is ${obj.skills.css}`);
+// }
+
+
+//
+
+function showDetails({theName: n, theAge: e, skills: {css}} = user) {
+    console.log(`Your name is ${n}`);
+    console.log(`Your age is ${e}`);
+    console.log(`Your css skill progress is ${css}`);
+}
+
+
+///////////////////////////////////
+
