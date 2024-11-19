@@ -3246,3 +3246,74 @@ btn.onclick = function() {
 /////////////////////////////////////////////////////
 
 // local storage
+
+// property in window will give access to storage object you gonna give to it data to use it in our application
+
+/*
+setItem
+getItem
+removeItem
+clear
+key
+
+Info
+    no expiration time
+    HTTP and HTTPS
+    private tab (all local storage data will remove direct)
+*/
+
+
+// set
+window.localStorage.setItem("color", "red");
+window.localStorage.fontweight = "bold";
+window.localStorage["fontSize"] = "20px";
+
+console.log(typeof window.localStorage);
+
+
+// get
+console.log(window.localStorage.getItem("color"));
+console.log(window.localStorage.color);
+console.log(window.localStorage["color"]);
+
+
+
+// set color in page  example:
+document.body.style.backgroundColor = window.localStorage.getItem("color"); // here you set the background of the page to red
+
+// remove  to use when you want to remove a specific key from the local strage
+window.localStorage.removeItem("color");
+
+
+// clear to clear and the local storage clear all 
+
+window.localStorage.clear();
+
+
+
+// get key will give the index of the element to know it exactly
+
+window.localStorage.key(0); //it will return the key so you gonna know the index 0 what has key
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Session Storage  will save your data in the same session only 
+
+setItem
+getItem
+removeItem
+clear
+key
+
+Info
+    new tab = new session
+    dublicate tab = copy session the only way to take the session data to another tab
+    new tab with same url = new session
+
+*/
+
+window.sessionStorage.setItem("color", "blue");
+
