@@ -2851,7 +2851,7 @@ as its parameter would serve the purpose of adding  each number to the last and 
 // }).then(
 // 	(resolveValue) => console.log(`Good ${resolveValue}`),
 // 	(rejectValue) => console.log(`Bad ${rejectValue}`)
-	
+
 // );
 
 // console.log(myPromise); // pending state here while it print first before the previous code start run
@@ -2924,7 +2924,7 @@ then
 // 		console.log(`The choosen Employee is ${resolveValue}`)
 // 	});
 // /*
-// بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين 
+// بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين
 // chaining
 // */
 
@@ -3104,7 +3104,7 @@ assign()
 
 */
 
-// console.log(location); // here you gonna see location object on the console and you gonna see its properties to check it and know about them more 
+// console.log(location); // here you gonna see location object on the console and you gonna see its properties to check it and know about them more
 
 // console.log(location.href); // will print your current url location
 
@@ -3285,7 +3285,7 @@ Info
 //window.localStorage.removeItem("color");
 
 
-// clear to clear and the local storage clear all 
+// clear to clear and the local storage clear all
 
 //window.localStorage.clear();
 
@@ -3419,4 +3419,47 @@ Desctructuring Object (IMPORTANT)
 
 
 
+//
+// const user = {
+//     theName: "Alakel",
+//     theAge: 32,
+//     theTitle: "Developer",
+//     theCountry: "Syria",
+//     skills: {
+//         html: 70,
+//         css: 80
+//     }
+// };
 
+// here we use aliase name for the variable we use n and a as alias name
+// const {theName: n, theAge: a, theCountry, theColor: co = "Red", skills: { html: h, css }} = user; // here we set new property theColor to the object user and we set default value for it
+
+// console.log(n);
+// console.log(a);
+// console.log(theCountry);
+// console.log(co);
+
+// console.log(`My HTML Skill progress ${h} and my CSS skill progress is ${css}`)
+
+
+// const {html: skillOne, css: skillTwo} = user.skills;  // here if you want to destructuring the inside object direct we use aliases too here
+// const {html, css} = user.skills;
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Destructuring Function Parameters
+
+*/
+
+const user = {
+    theName: "Alakel",
+    theAge: 32,
+    theTitle: "Developer",
+    theCountry: "Syria",
+    skills: {
+        html: 70,
+        css: 80
+    }
+};
