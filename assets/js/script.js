@@ -3484,3 +3484,55 @@ function showDetails({theName: n, theAge: e, skills: {css}} = user) {
 
 ///////////////////////////////////
 
+// About Array Analysis
+// Arrays have built -in methods to analyse the contents of the array.Most of these methods take a function that returns true or false as an argument.Such a function is called a predicate.
+
+// The built -in methods are meant to be used instead of a for loop or the built -in forEach method:
+
+// Example of analysis using a built-in method:
+
+// const numbers = [1, 'two', 3, 'four'];
+// numbers.indexOf('two');
+// // => 1
+
+// The includes() 
+// method determines whether an array includes a certain value among its entries, returning true or false as appropriate. 
+
+// const numbers = [1, 'two', 3, 'four'];
+// numbers.includes(1);
+// => true
+// numbers.includes('one');
+// => false
+
+
+
+// The every() method tests whether 
+// all elements in the array pass the test implemented by the provided function. It returns a Boolean value. 
+
+// const numbers = [1, 3, 5, 7, 9];
+// numbers.every((num) => num % 2 !== 0);
+// => true
+
+
+// The some() method tests whether at least one element in the array passes the test
+//  implemented by the provided function.
+
+// const numbers = [1, 3, 5, 7, 9];
+// numbers.some((num) => num % 2 !== 0);
+// => true
+
+// The find() method returns the value of the first element in the provided array that satisfies 
+// the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+// const numbers = [1, 3, 5, 7, 9];
+// numbers.find((num) => num < 5);
+// => 1
+
+// The findIndex() method returns the index of the first element in the array that satisfies 
+// the provided testing function.Otherwise,  it returns - 1, indicating that no element passed the test
+
+// const numbers = [1, 3, 5, 7, 9];
+// numbers.findIndex((num) => num > 7);
+// => 4
+// numbers.findIndex((num) => num > 9);
+// => -1
