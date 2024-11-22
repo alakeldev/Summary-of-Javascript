@@ -3786,3 +3786,294 @@ Methods:
 
 // console.log(myMap.has(false)); // true   the key is inside the myMap
 // console.log(myMap.has("baba")); // false   the key is not inside the myMap
+
+///////////////////////////////
+
+/*
+Map vs WeakMap
+
+WeakMap Allows grabage collector to do its task but not map
+
+
+Map => Key Can be anything
+WeakMap => key can be object only
+
+*/
+
+// let mapUser = {theName: "Alakel"};
+
+// let myMap = new Map();
+
+// myMap.set(mapUser, "Object Value");
+
+// mapUser = null;
+
+// console.log(myMap);
+
+// console.log("#".repeat(20))
+
+// let wMapUser = { theName: "Alakel" };;
+
+// let myWeakMap = new WeakMap();
+
+
+
+// myWeakMap.set("Name"," Value");      // error
+// console.log(myWeakMap); // error here error 
+
+// myWeakMap.set(wMapUser, "Object Value");
+
+// console.log(myWeakMap);
+
+// you cannot use foreach , size no size use in Weak Map
+
+// wMapUser = null;
+
+// console.log(myWeakMap);
+
+///////////////////////////////////////////////////////////////
+
+
+
+/*
+Array Methods :
+Array from Iterable => array.from
+Array.from(iterable, mapfun, this)
+    variable
+    string numbers
+    set
+    using the map function
+    arrow function
+    shorten the method + use arguments
+*/
+
+// console.log(Array.from("Alakel"));  // [ 'A', 'l', 'a', 'k', 'e', 'l' ]
+
+// console.log(Array.from(1234)); // []   it's not iterable the 1234 number so it will return []
+// console.log(Array.from("1234")); // [ '1', '2', '3', '4' ]
+
+// console.log(Array.from("12345", function(num) {
+//     return +num + +num   // use unary operator to make it deal with numbers not string =>  [ 2, 4, 6, 8, 10 ]
+// }));
+
+// let myArray = [1,1,1,2,3,4];
+
+// let mySet = new Set(myArray);
+
+
+// console.log(mySet); // Set(4) { 1, 2, 3, 4 }
+// console.log(Array.from(mySet));   // [1, 2, 3, 4]
+
+
+
+// console.log([new Set(myArray)]); // here we put [] because we want to return array [ Set(4) { 1, 2, 3, 4 } ]
+
+
+// console.log([...new Set(myArray)]); // use spread operator so we can get array in easy way [ 1, 2, 3, 4 ]
+
+
+
+// Important to understand the argument word
+// function af() {
+//     return Array.from(arguments);
+// }
+// console.log(af("Alakel", "Abode", "Abdullah", 1, 2, 3)); // [ 'Alakel', 'Abode', 'Abdullah', 1, 2, 3 ]
+
+
+//////////////////////////////////////////////////
+
+/*
+Array Methods
+    Array.copyWithin(Target, start => optional, end => optional)
+    Copy part of an array to another location in the same array
+    any negative value will count from the end
+    Target
+        index to copy part to
+        if at or greater than array length nothing will be copied
+    Start
+        Index To start copying from
+        if Ommited = start from index 0
+    End
+    Index to end copying from
+    Not including the end
+    if ommited = reach to end 
+
+*/
+
+// let myArray = [10, 20, 30, 40, 50, "A", "B"];
+
+// myArray.copyWithin(3);  // [10, 20, 30, 10, 20, 30, 40]
+
+// myArray.copyWithin(4, 6); // // [10, 20, 30, 40, 'B', 'A', 'B']
+// myArray.copyWithin(4, -1); // // [10, 20, 30, 40, 'B', 'A', 'B']
+// myArray.copyWithin(1, -2); // // [10, 'A', 'B', 40, 50, 'A', 'B']
+// myArray.copyWithin(1, -2, -1); // // [10, 'A', 30, 40, 50, 'A', 'B']
+// console.log(myArray); 
+
+////////////////////////////////////////////////////////////////////////
+
+/*
+Array Methods
+    Array.some(callbackfun(element, index, array), this argument)
+        CallbackFunc => function to run on every element on the given array
+            Element => the current element to process
+            Index => Index of the current element
+            Array => the current array working with
+        This Argument => value to use as this when executing callback func
+
+    using
+        chech if element exists in array
+        check if number in range
+    
+*/
+
+// let nums = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+
+// let check = nums.some(function(e) {
+//     console.log(`Test ${e}`); // here it will print to test 6 only then will break the console
+//     return e > 5;
+// });
+
+// console.log(check); // true
+
+
+// let myNumber = 10;
+
+// let check = nums.some(function(e) {
+//     return e > this;  // this here is related to myNumber in the next line
+// }, myNumber);
+
+// console.log(check); // false
+
+
+
+
+// function checkValues(arr, val) {
+//     return arr.some(function(e) {
+//         return e === val;
+//     })
+// }
+
+// console.log(checkValues(nums, 20)); // false
+// console.log(checkValues(nums, 5)); // true
+
+
+// let range = {
+//     min: 10,
+//     max: 20,
+// }
+// let checkNumberInRange = nums.some(function(e) {
+//     return e >= this.min && e <= this.max;
+// }, range)
+
+// console.log(checkNumberInRange); // true
+
+//////////////////////////////////////////////
+
+
+/*
+Array Methods
+    Array.every(callbackfun(element, index, array), this argument)
+        callbackfun => function to run on every element on the given array
+            Element => the current element to process
+            Index => Index of the current element
+            array => the current array working with
+        This Argument => value to use as this when executing callbackfun
+*/
+
+// const locations = {
+//     20: "Place 1",
+//     30: "Place 2",
+//     10: "Place 3",
+//     40: "Place 4",
+    
+// };
+
+// let mainLocation = 15;
+
+// let myLocationsArray = Object.keys(locations);
+
+// console.log(myLocationsArray);  // [ '10', '20', '30', '40' ]
+
+// let locationsArrayNumbers = myLocationsArray.map((n) => +n);
+
+// console.log(locationsArrayNumbers);  // [ 10, 20, 30, 40 ]
+
+// let check = locationsArrayNumbers.every((e) => e > this, mainLocation);
+
+// console.log(check); /// false  because the number 10 is inside the array
+
+
+/////////////////////////////////////////////
+
+/*
+Spread Syntax and use cases
+"Allow Iterable to expand in place"
+
+// spead with String => expand string
+
+// concatenate arrays
+
+// push inside array
+
+// use with math object
+
+// spread with objects => merge objects
+
+*/
+
+// console.log("alakel"); // alakel
+// console.log(..."alakel"); // a l a k e l
+// console.log([..."alakel"]); // ['a', 'l', 'a', 'k', 'e', 'l']
+
+
+
+// let myArray1 = [1, 2, 3];
+// let myArray2 = [4, 5, 6];
+
+
+// let allArrays = [...myArray1, ...myArray2];
+// console.log(allArrays);  // [ 1, 2, 3, 4, 5, 6 ]
+
+
+// let copiedArray = [...myArray1]; 
+// console.log(copiedArray); // [ 1, 2, 3 ]
+
+
+
+// let allFriends = ["Alakel", "Abdullah", "Abode"];
+// let thisYearFriends = ["LALA", "Pooo"];
+
+// console.log(allFriends); // [ 'Alakel', 'Abdullah', 'Abode' ]
+
+// // allFriends.push("LALA", "Pooo");   // with using push() and write the elements by hand
+// allFriends.push(...thisYearFriends); // with using spread operator and name of the list
+
+// console.log(allFriends); // [ 'Alakel', 'Abdullah', 'Abode', 'LALA', 'Pooo' ]
+
+
+
+// let myNums = [10, 20, -100, 100, 1000, 500];
+// console.log(Math.max(...myNums)); // 1000
+
+
+
+
+// let ObjOne = {
+//     a: 1,
+//     b: 2,
+
+// };
+
+
+// let ObjTwo = {
+//     c: 3,
+//     d: 4,
+
+// };
+
+// console.log({ ...ObjOne, ...ObjTwo, e: 5 }); // { a: 1, b: 2, c: 3, d: 4, e: 5 }
+
+
+///////////////////////////////////////////////////////////////////
+
