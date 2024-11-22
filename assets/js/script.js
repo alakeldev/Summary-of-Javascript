@@ -3453,18 +3453,18 @@ Destructuring Function Parameters
 
 */
 
-const user = {
-    theName: "Alakel",
-    theAge: 32,
-    theTitle: "Developer",
-    theCountry: "Syria",
-    skills: {
-        html: 70,
-        css: 80
-    }
-};
+// const user = {
+//     theName: "Alakel",
+//     theAge: 32,
+//     theTitle: "Developer",
+//     theCountry: "Syria",
+//     skills: {
+//         html: 70,
+//         css: 80
+//     }
+// };
 
-showDetails(user);     
+// showDetails(user);
 
 // function showDetails(obj) {
 //     console.log(`Your name is ${obj.theName}`);
@@ -3475,11 +3475,11 @@ showDetails(user);
 
 //
 
-function showDetails({theName: n, theAge: e, skills: {css}} = user) {
-    console.log(`Your name is ${n}`);
-    console.log(`Your age is ${e}`);
-    console.log(`Your css skill progress is ${css}`);
-}
+// function showDetails({theName: n, theAge: e, skills: {css}} = user) {
+//     console.log(`Your name is ${n}`);
+//     console.log(`Your age is ${e}`);
+//     console.log(`Your css skill progress is ${css}`);
+// }
 
 
 ///////////////////////////////////
@@ -3495,8 +3495,8 @@ function showDetails({theName: n, theAge: e, skills: {css}} = user) {
 // numbers.indexOf('two');
 // // => 1
 
-// The includes() 
-// method determines whether an array includes a certain value among its entries, returning true or false as appropriate. 
+// The includes()
+// method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
 
 // const numbers = [1, 'two', 3, 'four'];
 // numbers.includes(1);
@@ -3506,8 +3506,8 @@ function showDetails({theName: n, theAge: e, skills: {css}} = user) {
 
 
 
-// The every() method tests whether 
-// all elements in the array pass the test implemented by the provided function. It returns a Boolean value. 
+// The every() method tests whether
+// all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
 
 // const numbers = [1, 3, 5, 7, 9];
 // numbers.every((num) => num % 2 !== 0);
@@ -3521,14 +3521,14 @@ function showDetails({theName: n, theAge: e, skills: {css}} = user) {
 // numbers.some((num) => num % 2 !== 0);
 // => true
 
-// The find() method returns the value of the first element in the provided array that satisfies 
+// The find() method returns the value of the first element in the provided array that satisfies
 // the provided testing function. If no values satisfy the testing function, undefined is returned.
 
 // const numbers = [1, 3, 5, 7, 9];
 // numbers.find((num) => num < 5);
 // => 1
 
-// The findIndex() method returns the index of the first element in the array that satisfies 
+// The findIndex() method returns the index of the first element in the array that satisfies
 // the provided testing function.Otherwise,  it returns - 1, indicating that no element passed the test
 
 // const numbers = [1, 3, 5, 7, 9];
@@ -3536,3 +3536,253 @@ function showDetails({theName: n, theAge: e, skills: {css}} = user) {
 // => 4
 // numbers.findIndex((num) => num > 9);
 // => -1
+
+/////////////////
+
+// Set Data Type
+
+/*
+Syntax: new Set(Iterable)
+    Object to store unique values
+    Cannot acces elements by index
+
+
+Properties:
+    Size
+
+Methods:
+    add
+    delete
+    clear
+    has
+*/
+
+// let myData = [1, 1, 1, 2, 3];
+
+// let myUniqueData = new Set([1, 1, 1, 2, 3]); // or new Set(myData)  or new Set().add(1).add(1).add(1).add(2).add(3)
+
+
+// console.log(myData);  // [1, 1, 1, 2, 3]
+// console.log(myUniqueData); // Set(3) { 1, 2, 3 }
+// console.log(myUniqueData.size); // 3
+// console.log(myUniqueData[0]); // undefined becuase you cannot access Set items with using indexes
+
+
+// myUniqueData.delete(2);
+// console.log(myUniqueData.delete(2));  // true becuase the element is inside the Set
+// console.log(myUniqueData); // Set(2) { 1, 3 }
+// console.log(myUniqueData.size); // 2
+
+
+// myUniqueData.clear();
+// console.log(myUniqueData);
+// console.log(myUniqueData.size);
+
+
+// console.log(myUniqueData.has("A")); // false
+// console.log(myUniqueData.has("a".toUpperCase())); // false
+// console.log(myUniqueData.has(1)); // true
+
+
+/////////////////////////////////////////
+
+// Set vs WeakSet
+
+/*
+the weakset is weak
+meaning reference to objects in a Weakset are held weakly
+if no other references to an object stored in the weakset exist
+those objects can be garbage collected
+*/
+
+/*
+Set => can store any data values
+WeakSet => collect of objects only 
+
+--
+
+Set => have size property
+WeakSet => Does not has size property
+
+--
+
+Set => have keys, values, entries
+WeakSet => Doesnot has clear, keys, values and entries
+
+
+please note note important that values and keys are alias key words to each other with the Set
+-- 
+
+Set => can use forEach
+WeakSet => cannot use forEach
+
+Usage: store objects and removes them once they become inaccessible
+
+
+please check the use cases of the WeakSet to understand how it works on the live projects
+*/
+
+// below focus on SET //
+
+// let mySet = new Set([1, 1, 1, 2, "A", "A"]);
+
+// console.log(mySet); // Set(3) { 1, 2, 'A' }
+
+// let iterator = mySet.keys();
+
+// console.log(iterator); // [Set Iterator] { 1, 2, 'A' }
+// console.log(iterator.next()); // { value: 1, done: false }  the next elements is 1 and its status false it means that the iterations operation not finished there are another elemnts
+// // to see done: true you must be reach to the end of the iteration in our example you want to reach to "A"
+
+// console.log(iterator.next().value); // 1
+// console.log(iterator.next().value); // 2
+// console.log(iterator.next().value); // "A"
+// console.log(iterator.next().value); //
+// console.log(iterator.next()); // { value: undefined, done: true }
+
+
+// mySet.forEach((e) => console.log(e)); // will print all the elements one by one loop
+
+
+
+
+// below focus on WeakSet //
+
+// let myWeakSet = new WeakSet([1, 1, 1, 2, 3, "A", "A"]);
+
+// console.log(myWeakSet); // invalid value used in weak set error
+
+// let myWeakSet = new WeakSet([{A: 1, B: 2}]);
+
+// console.log(myWeakSet); // it works
+
+// you cannot iterate on the WeakSet and you don't have values, keys and entries to iterate on them
+
+/////////////////////////////////////////////////////////////
+
+// Map Data Type
+/*
+Syntax: new Map(Iterable with key/value)
+Map vs Object
+
+object use prototype to it has default keys
+
+Map => Does not contain key by default
+object => has default key
+
+--
+
+Map => key can be anything [function, object, any primitive data types]
+object => string or symbol
+
+--
+
+Map => ordered by insertion
+object => Not 100% till now
+
+--
+
+Map => Get items by size
+
+Object => need to do manually
+example:
+const myObject = { name: "Alice", age: 30, occupation: "Engineer" }; const length = Object.keys(myObject).length
+
+--
+
+Map => can be directly Iterated
+Object => not directly and need to use object.key() and so on
+
+-- 
+
+Map => better proformance when add or remove data
+object => low proformance when comparing to map 
+
+
+
+*/
+
+// let myObject = {}; // here it has prototype
+// let myEmptyObject = Object.create(null); // here you create object with null prototype
+
+// let myMap = new Map();
+
+// console.log(myObject);
+// console.log(myMap);
+
+
+// let myNewObject = {
+//     10: "Number",
+//     "10": "String",
+
+// };
+
+// console.log(myNewObject[10]); // here its going to overwrite on the previous one becuase 10 and "10" are same so it will print String here
+// it's a problem 
+
+// let myNewMap = new Map();
+// myNewMap.set(10, "Number");
+// myNewMap.set("10", "String");
+// myNewMap.set(true, "bool");
+// myNewMap.set({a: 1, b: 2}, "Object");
+// myNewMap.set(function doSomething() {}, "function");
+
+// console.log(myNewMap.get(10));
+// console.log(myNewMap.get("10"));
+
+// console.log("######");
+
+// console.log(myNewObject); // { '10': 'String' }
+// console.log(myNewMap);
+// /*
+// {
+//   10 => 'Number',
+//   '10' => 'String',
+//   true => 'bool',
+//   { a: 1, b: 2 } => 'Object',
+//   [Function: doSomething] => 'function'
+// }
+// */
+
+//////////////
+
+/*
+Map Data type
+Methods:
+    set
+    get
+    delete
+    clear
+    has
+*/
+
+
+// let myMap = new Map([
+//     [10, "number"],
+//     ["name", "string"],
+//     [false, "boolean"]
+// ]);
+
+
+
+// myMap.set(10, "number");
+// myMap.set("name", "string");
+// console.log(myMap); // Map(2) { 10 => 'number', 'name' => 'string' }
+
+
+
+// console.log(myMap.get(10)); // number
+// console.log(myMap.get("name")); // string
+// console.log(myMap.get(false)); // boolean
+
+// console.log(myMap.size); // 3
+
+// console.log(myMap.delete("name")); // true becuase the key is already inside the myMap
+// console.log(myMap.size); // 2
+// console.log(myMap.delete("Baba")); // false becuase the key is Not already inside the myMap
+
+// myMap.clear()
+// console.log(myMap.size); // 0
+
+// console.log(myMap.has(false)); // true   the key is inside the myMap
+// console.log(myMap.has("baba")); // false   the key is not inside the myMap
