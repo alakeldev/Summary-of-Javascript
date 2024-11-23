@@ -4195,5 +4195,96 @@ Part 2
 // console.log(practice.match(practiceRe));  // [ 'Os8Os' ]
 
 
+
+// if you want to choose specific letter or letter like ace only 
+// /[ace]/g;
+
+// if you want all letters small and capita
+// /[a-zA-Z]/g;
+
+
 /////////////////////////////////////////////////////////////////////
 
+
+/*
+Character Classes
+. => matches any character, expect newline or other line terminators 
+\w => matches words characters. [a-z, A-Z, 0-9 and underscore]
+\W => matches none word characters 
+\d => matches digits from 0 to 9
+\D => matches non-digit characters
+\s => matches whitespace character
+\S => matches none whitespace character
+
+*/
+
+// let email = "O@@@g...com O@g.com o@g.net A@Y.com O-g.com o@s.org 1@1.com";
+
+// let dot = /./g;
+// console.log(email.match(dot)); // return all including the whitespaces (exlcude the new line)
+
+// let word = /\w/g; 
+// console.log(email.match(word)); //[a-z, A-Z, 0-9 and underscore]
+
+// let valid = /\w@\w.(com|net)/g;
+
+// console.log(email.match(valid)); // [ 'O@g.com', 'o@g.net', 'A@Y.com', '1@1.com' ]
+
+
+////////////////////////////////////////////////////////////////
+
+// Part 2 of Character Classes 
+
+// \b => matches at the beginning or end of a word
+// \B => matches not at the beginning/end of a word
+
+// test Method
+// pattern.test(input)     
+// it return true or false
+
+// let names = "Alakel 1Spam 2Spam Spam3 Spam4 Abdullah Abode Aspamo";
+
+// let re = /(\bspam|spam\b)/ig;
+// console.log(names.match(re)); // [ 'Spam', 'Spam', 'Spam', 'Spam' ]
+
+// let reTest = /\W/;
+// console.log(/(\bspam|spam\b)/ig.test("Alakel")); // false
+// console.log(/(\bspam|spam\b)/ig.test("1Spam")); // true
+// console.log(/(\bspam|spam\b)/ig.test("Spam1")); // true
+
+// console.log(reTest.test("alakel")); //false
+// console.log(reTest.test(names)); //true   \W non a word character
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Regular expression 
+Quantifiers
+n+ => one or more
+n* => zero or more
+n? => zero or one
+*/
+
+
+let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // all emails
+
+let mailsRe = /\w@\w\w.sa/ig;
+console.log(mails.match(mailsRe)); // [ 'o@nn.sa' ]
+
+let mailsQuReg = /\w+@\w+.(com|net)/ig; // if you want all domain you delete (com|net) and write only \w+
+console.log(mails.match(mailsQuReg)); // [ 'osama@gmail.com', 'elzero@gmail.net' ]
+
+
+
+//
+let nums = "0110 10 150 05120 0560 350 00"; // 0 numbers or No 0
+
+let numsRe = /0\d*0/gi;
+console.log(nums.match(numsRe)); // [ '0110', '05120', '0560', '00' ]
+
+//
+let urls = "https://google.com http://www.website.net web.com"; // http + https
+
+let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+console.log(urls.match(urlsRe)); //['https://google.com', 'http://www.website.net', 'web.com']
