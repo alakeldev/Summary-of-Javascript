@@ -4267,24 +4267,33 @@ n? => zero or one
 */
 
 
-let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // all emails
+// let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // all emails
 
-let mailsRe = /\w@\w\w.sa/ig;
-console.log(mails.match(mailsRe)); // [ 'o@nn.sa' ]
+// let mailsRe = /\w@\w\w.sa/ig;
+// console.log(mails.match(mailsRe)); // [ 'o@nn.sa' ]
 
-let mailsQuReg = /\w+@\w+.(com|net)/ig; // if you want all domain you delete (com|net) and write only \w+
-console.log(mails.match(mailsQuReg)); // [ 'osama@gmail.com', 'elzero@gmail.net' ]
+// let mailsQuReg = /\w+@\w+.(com|net)/ig; // if you want all domain you delete (com|net) and write only \w+
+// console.log(mails.match(mailsQuReg)); // [ 'osama@gmail.com', 'elzero@gmail.net' ]
 
 
-
-//
-let nums = "0110 10 150 05120 0560 350 00"; // 0 numbers or No 0
-
-let numsRe = /0\d*0/gi;
-console.log(nums.match(numsRe)); // [ '0110', '05120', '0560', '00' ]
 
 //
-let urls = "https://google.com http://www.website.net web.com"; // http + https
+// let nums = "0110 10 150 05120 0560 350 00"; // 0 numbers or No 0
 
-let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
-console.log(urls.match(urlsRe)); //['https://google.com', 'http://www.website.net', 'web.com']
+// let numsRe = /0\d*0/gi;
+// console.log(nums.match(numsRe)); // [ '0110', '05120', '0560', '00' ]
+
+//
+// let urls = "https://google.com http://www.website.net web.com"; // http + https
+
+// let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+// console.log(urls.match(urlsRe)); //['https://google.com', 'http://www.website.net', 'web.com']
+
+///////////////////////////////////////////////////////////
+
+/*
+Quantifiers Part 2
+
+
+
+*/
