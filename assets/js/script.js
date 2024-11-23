@@ -4077,3 +4077,123 @@ Spread Syntax and use cases
 
 ///////////////////////////////////////////////////////////////////
 
+// Regular Expression
+
+/*
+
+Email
+IP
+Phone 
+URL
+
+*/
+
+// Example to know why we want the Regular expression
+
+// let str1 = "10 20 100 1000 5000";
+// let str2 = "Os1 Os12 Os123 Os123Os";
+
+
+// let invalidEmail = "Alakel@@@gmail....com";
+
+// let validEmail = "a@nn.de";
+
+// let ip = "192.168.2.1"; // IPv4
+
+// let url = "google.com"
+// let url = "google.com/"
+// let url = "https://google.com/"
+
+// syntax
+    /*
+    /pattern/modifier(s);
+    new RegExp("Pattern", "modifier(s)")
+
+    Modifiers => flags   what is the meaning of modifiers = it's a way to change the search way
+    i => case-insensitive
+    g => global
+    m => Multilines
+
+    search methods
+        match(pattern)
+    
+
+    match()
+        matches a string against a regular expression pattern
+        returns an array with the matches
+        return null if no match is found
+    */
+
+// let myString = "Hello Alakel Developer I love Coding alakel";
+
+// let regex = /Alakel/;
+
+// console.log(myString.match(regex));
+
+/*
+[
+  'Alakel',
+  index: 6,
+  input: 'Hello Alakel Developer I love Coding alakel',
+  groups: undefined
+]
+  */
+
+// let regex = /alakel/ig; // [ 'Alakel', 'alakel' ]
+
+// console.log(myString.match(regex));
+
+
+
+///////////////////////////////////////////////
+
+// Regular Experssion 
+
+/*
+Ranges
+
+Part 1
+
+    (X|Y) => X or Y
+    [0-9] => 0 to 9
+    [^0-9] => any character not 0-9
+
+Part 2
+
+    [a-z]
+    [^a-z]
+    [A-Z]
+    [^A-Z]
+    [abc]
+    [^abc]
+
+*/
+
+// let tld = "Com Net Org Info Code Io"
+// let tldRe = /(org|info|io)/ig; // [ 'Org', 'Info', 'Io' ]
+
+// console.log(tld.match(tldRe));
+
+// ///---
+// let nums = "12345678910";
+
+// let numsRe = /[0-2]/g;  // [ '1', '2', '1', '0' ]
+
+// console.log(nums.match(numsRe));
+
+// ///----
+// let notNums = "12345678910";
+
+// let notNumsRe = /[^0-2]/g;  // ['3', '4', '5','6', '7', '8','9']
+
+// console.log(nums.match(notNumsRe));
+
+// // ------
+
+// let practice = "Os1 Os1Os Os2 Os8 Os8Os";
+// let practiceRe = /Os[5-9]Os/g;
+// console.log(practice.match(practiceRe));  // [ 'Os8Os' ]
+
+
+/////////////////////////////////////////////////////////////////////
+
