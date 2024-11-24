@@ -4392,6 +4392,30 @@ https://regexr.com/
 
 */
 
+
+/*
+you can use split with regular expression:
+
+Split
+
+The split() method in JavaScript represents a different way of using and manipulating strings with regular expressions.
+
+In this way, we will be using regex in order to divide a given string by recognizing a pattern, e.g. str.split(/[,.\s]/). 
+
+This pattern will be used as the separator.
+
+example:
+
+const str = 'hello,user.how are.you';
+
+const result = str.split(/[,.\s]/);
+
+console.log(result);
+// => ['hello', 'user', 'how', 'are', 'you']
+
+*/
+
+
 ///////////////////////////////////////////////////////
 
 // OOP (Object Oriented Programming)
