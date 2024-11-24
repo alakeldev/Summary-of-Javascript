@@ -3718,7 +3718,7 @@ object => low proformance when comparing to map
 // };
 
 // console.log(myNewObject[10]); // here its going to overwrite on the previous one becuase 10 and "10" are same so it will print String here
-// it's a problem 
+// it's a problem
 
 // let myNewMap = new Map();
 // myNewMap.set(10, "Number");
@@ -3819,7 +3819,7 @@ WeakMap => key can be object only
 
 
 // myWeakMap.set("Name"," Value");      // error
-// console.log(myWeakMap); // error here error 
+// console.log(myWeakMap); // error here error
 
 // myWeakMap.set(wMapUser, "Object Value");
 
@@ -3908,7 +3908,7 @@ Array Methods
 // myArray.copyWithin(4, -1); // // [10, 20, 30, 40, 'B', 'A', 'B']
 // myArray.copyWithin(1, -2); // // [10, 'A', 'B', 40, 50, 'A', 'B']
 // myArray.copyWithin(1, -2, -1); // // [10, 'A', 30, 40, 50, 'A', 'B']
-// console.log(myArray); 
+// console.log(myArray);
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -3986,7 +3986,7 @@ Array Methods
 //     30: "Place 2",
 //     10: "Place 3",
 //     40: "Place 4",
-    
+
 // };
 
 // let mainLocation = 15;
@@ -4036,7 +4036,7 @@ Spread Syntax and use cases
 // console.log(allArrays);  // [ 1, 2, 3, 4, 5, 6 ]
 
 
-// let copiedArray = [...myArray1]; 
+// let copiedArray = [...myArray1];
 // console.log(copiedArray); // [ 1, 2, 3 ]
 
 
@@ -4147,7 +4147,7 @@ URL
 
 ///////////////////////////////////////////////
 
-// Regular Experssion 
+// Regular Experssion
 
 /*
 Ranges
@@ -4196,7 +4196,7 @@ Part 2
 
 
 
-// if you want to choose specific letter or letter like ace only 
+// if you want to choose specific letter or letter like ace only
 // /[ace]/g;
 
 // if you want all letters small and capita
@@ -4223,7 +4223,7 @@ Character Classes
 // let dot = /./g;
 // console.log(email.match(dot)); // return all including the whitespaces (exlcude the new line)
 
-// let word = /\w/g; 
+// let word = /\w/g;
 // console.log(email.match(word)); //[a-z, A-Z, 0-9 and underscore]
 
 // let valid = /\w@\w.(com|net)/g;
@@ -4233,13 +4233,13 @@ Character Classes
 
 ////////////////////////////////////////////////////////////////
 
-// Part 2 of Character Classes 
+// Part 2 of Character Classes
 
 // \b => matches at the beginning or end of a word
 // \B => matches not at the beginning/end of a word
 
 // test Method
-// pattern.test(input)     
+// pattern.test(input)
 // it return true or false
 
 // let names = "Alakel 1Spam 2Spam Spam3 Spam4 Abdullah Abode Aspamo";
@@ -4340,3 +4340,58 @@ $ => End with something
 
 ///////////////////////////////////////////////////
 
+/*
+
+Regular expresion
+
+replace
+replace all
+*/
+
+// let txt = "We Love Programming and @ Because @ Is Amazing";
+
+// console.log(txt.replace("@", "Javascript")); //We Love Programming and Javascript Because @ Is Amazing
+
+// console.log(txt.replaceAll("@", "Javascript")); // We Love Programming and Javascript Because Javascript Is Amazing
+
+
+// let re = /@/ig;
+
+// console.log(txt.replaceAll(re, "Javascript")); //  We Love Programming and Javascript Because Javascript Is Amazing
+// console.log(txt.replaceAll(/@/ig, "Javascript")); //  We Love Programming and Javascript Because Javascript Is Amazing
+
+
+/////////////////////////////////////////////////////
+
+/*
+Regular Expression
+
+Form Validation Practice just for Practice
+just example below 
+
+*/
+
+// document.getElementById("register").onsubmit = function () {
+//     let phoneInput = document.getElementById("phone").value;
+
+//     let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/;  //(1234) 567-8910
+
+//     let validationResult = phoneRe.test(phoneInput);
+//     if(validationResult === false) {
+        // return false
+    // }
+//     return true;
+// }
+
+////////////////////////////////
+
+/*
+regex playground 
+
+https://regexr.com/
+
+*/
+
+///////////////////////////////////////////////////////
+
+// OOP (Object Oriented Programming)
