@@ -4294,6 +4294,49 @@ n? => zero or one
 /*
 Quantifiers Part 2
 
+n{x} => number of
+n{x,y} => range
+n{x,} => at least x
 
 
 */
+
+// let serials = "S100S S3000S S50000S S950000S";
+
+// console.log(serials.match(/s\d{3}s/ig)); // S[Three Number]S               [ 'S100S' ]
+// console.log(serials.match(/s\d{4,5}s/ig)); // S[Four or Five Number]S      [ 'S3000S', 'S50000S' ]
+// console.log(serials.match(/s\d{4,}s/ig)); // S[At least Four]S             [ 'S3000S', 'S50000S', 'S950000S' ]
+
+
+//////////////////////////////////////////////////////////
+
+
+// Regular expression
+
+/*
+Quantifiers
+
+$ => End with something
+^ => Start with something
+?= => follwed by something
+?! => Not follwed by something
+
+*/
+
+// let myString = "We Love Programming";
+// let names = "1OsamaZ 2AhmedZ 3Mohammed 4MoustafaZ 5GamalZ";
+
+// console.log(/ing$/ig.test(myString)); // true
+// console.log(/lz$/g.test(names)); // false
+
+// console.log(/^we/ig.test(myString)); //true
+// console.log(/^2/ig.test(names)); //false
+// console.log(/^\d/ig.test(names)); //true
+// console.log(/^\w/ig.test(names)); //true
+// console.log(/^\s/ig.test(names)); //false
+
+// console.log(names.match(/\d\w{5}(?=z)/ig)); // [ '1Osama', '2Ahmed', '5Gamal' ]
+// console.log(names.match(/\d\w{8}(?!z)/ig)); // [ '3Mohammed' ]
+
+///////////////////////////////////////////////////
+
