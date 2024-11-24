@@ -4419,3 +4419,111 @@ console.log(result);
 ///////////////////////////////////////////////////////
 
 // OOP (Object Oriented Programming)
+
+/*
+OOP is a paradigm or style of code
+OOP use the concept of object to design a computer program
+it's not new => Simula s the first OOP programming language at 1960
+some language are support OOP and some of them are not
+
+Object is a package contains properties and functions that work together to produce something in your application.
+Functions Called Methods
+
+
+With OOP you will be able to create a large and complex software atchiteture in organized ways.
+With OOP you will be able to hide certain parts of code in your project with encapsulation to prevent mess with the code.
+With OOP you will be able to reacte resable object to use it your application easily with inheritance.
+*/
+
+/////////
+
+// Constructor function : with constructor function we create instance from the constructor
+
+// function User(id, username, salary) {
+//     this.i = id;
+//     this.u = username;
+//     this.s = salary + 1000;
+// }
+
+// let userOne = new User(100, "Alakel", 10000);
+
+// let userTwo = new User(200, "Abode", 2000);
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.s);
+
+/////////////////////////////////////////////////////
+
+// Constructor function new syntax:
+
+// class User {
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username;
+//         this.s = salary;
+//     }
+// }
+
+// let userOne = new User(100, "Alakel", 10000);
+
+// let userTwo = new User(200, "Abode", 2000);
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.s);
+
+
+// ////// IMPORTANT TO USE WITH REAL SCENARIOS
+// console.log(userOne instanceof User);  // true
+// console.log(userOne.constructor === User);  // true
+
+//////////////////////////////////////////////////
+
+// OOP deal with properites and methods
+
+// class User {
+//     constructor(id, username, salary) {
+//         // Properties
+//         this.i = id;
+//         this.u = username || "Unknown";
+//         this.s = salary < 6000 ? salary + 500 : salary ;
+//         this.msg = function () {
+//             return `Hello ${this.u} Your Salary is ${this.s}`
+//         }
+//     }
+
+//     // methods
+
+//     writeMessage() {
+//         return `Hello ${this.u} your Salary is ${this.s}`;
+//     }
+// }
+
+// let userOne = new User(100, "Alakel", 10000);
+
+// let userTwo = new User(200, "", 2000);
+
+// console.log(userOne.i);
+// console.log(userOne.u);
+// console.log(userOne.s);
+// console.log(userOne.msg());
+// console.log(userOne.writeMessage());
+
+// console.log(userTwo.i);
+// console.log(userTwo.u);
+// console.log(userTwo.msg); // without () it's return a native code
+// console.log(userTwo.msg());
+// console.log(userTwo.writeMessage); // without () it's return a native code
+// console.log(userTwo.writeMessage());
+
+/////////////////////////////////////////////////////////////////
+
