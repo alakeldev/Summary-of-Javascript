@@ -4814,3 +4814,168 @@ Object Meta Data and Descriptor also here if not give value for descrptors so it
 
 ///////////////////////////////////////////////////////////////
 
+// Data and Time
+/*
+Date Constructor
+
+    Static Methods
+        Date.now()
+    
+    to track time you need starting point
+    epoch time or unix time in computer since is the number of seconds since january 1, 1970
+    why 1970 [829 days to 136 years]
+
+    search for 
+    year 2038 problem in computer since
+
+    please be note that 1000 Mill seconds = 1 second
+*/
+
+// let dateNow = new Date();
+
+// console.log(dateNow);
+
+// console.log(Date.now());  // 1732654591498   from 1 jan 1970 till now in mill seconds
+
+// let seconds = Date.now() / 1000; // Number of seconds
+
+// console.log(seconds);
+
+// let minutes = seconds / 60; // Number of minutes
+
+// console.log(minutes);
+
+// let hours = minutes / 60; // number of hours
+
+// console.log(hours);
+
+// let days = hours / 24; // number of days
+
+// console.log(days);
+
+// let years = days / 365; // number of years
+
+// console.log(years);
+
+
+///////////////////////////////////////////////////////
+
+/*
+Date and Time 
+    getTime() => Number of Milliseconds
+    getDate() => Day of the month
+    getFullYear()
+    getMonth() => Zero Based
+    getDay() => Day of the Week
+    getHours()
+    getMinutes()
+    getSeconds()
+*/
+
+// let dateNow = new Date();
+
+// let birthDay = new Date("Oct 15, 93");
+
+// let dateDiff = dateNow - birthDay;
+
+// console.log(dateDiff); // 982016303751 in mill seconds
+
+// console.log(dateDiff / 1000 / 60 / 60 / 24 / 365); // 31 years my age
+
+// console.log(dateNow.getTime()); // time value in mill seconds start of time till now
+// console.log(dateNow.getDate()); // 26 the day of the current month
+// console.log(dateNow.getFullYear()); // print the crrent year most use cases in copy right of the website
+// console.log(dateNow.getMonth()); // here will brith the month index so it's index start from 0 = january
+// console.log(dateNow.getDay()); // get day of the week by index start from 0 = sunday
+// console.log(dateNow.getHours()); //
+// console.log(dateNow.getMinutes()); //
+// console.log(dateNow.getSeconds()); //
+
+/////////////////////////////////////////////////////////
+
+/*
+Set Date and Time
+
+    setTime(Milliseconds)
+    setDate() => Day of the month [Negativ and positive]
+    setFullYear(year, month => optional [0-11], day => [1-31])
+    setMonth(Month [0-11], Day => optional [1-31] [negative and positive])
+    setHours(Hours [0-23], Minutes => optional [1-59], Seconds => optional [0-59], MS => optional [0-999])
+    setMinutes(Minutes [0-59], Seconds => optional [1-59], MS => optional [0-999])
+    setSeconds(Seconds [0-59],  MS => optional [0-999])
+
+*/
+
+// let dateNow = new Date()
+// console.log(dateNow);  // 2024-11-26T22:41:31.695Z
+
+// console.log("#".repeat(30));
+
+// dateNow.setTime(0); // below the result after we setTime(0) used on dateNow 
+// console.log(dateNow); // 1970-01-01T00:00:00.000Z
+
+// console.log("#".repeat(30));
+
+// dateNow.setTime(10000); // below the result after we setTime(1000) used on dateNow 10000 = 10 seconds
+// console.log(dateNow); // 1970-01-01T00:00:10.000Z
+
+// console.log("#".repeat(30));
+
+// dateNow.setDate(0);   // 2024-10-31T22:46:31.627Z  it bring the last day of the previous month
+// console.log(dateNow);
+// console.log("#".repeat(30));
+// dateNow.setDate(-1);   // 2024-10-30T22:47:37.733Z  it bring the day before the last day of the previous month
+// console.log(dateNow);
+
+// console.log("#".repeat(30));
+// dateNow.setDate(30);   // 2024-11-30T22:48:40.138Z it brings the last day of the current month if the month 30 days
+// console.log(dateNow);
+
+// console.log("#".repeat(30));
+// dateNow.setDate(31);   // 2024-12-01T22:49:27.427Z it brings the last day of the current month if the month 31 days
+// console.log(dateNow);   // if not so it will bring the first day of the next month
+
+
+
+// console.log("#".repeat(30));
+// dateNow.setFullYear(2020, 1);  // 2020-11-26T22:51:16.041Z number one after 2020 it means the index of the month and here it means February
+// console.log(dateNow);  
+
+
+
+// console.log("#".repeat(30));
+// dateNow.setFullYear(2020, 13);  // 2021-02-26T22:53:03.610Z number 13 it means two months over the 2020 year so it means febraruy 2021
+// console.log(dateNow);            // you can use negative values like -2 or -14 so it will go back
+
+
+
+// dateNow.setMonth(0);  // 2024-01-26T22:55:34.334Z it means 0 = january month
+// console.log(dateNow);
+
+// dateNow.setMonth(15);  // 2025-04-26T21:56:36.053Z it adds 4 months more so the result is 2024 april 
+// console.log(dateNow);
+
+///////////////////////////////////////////////////////////////
+
+/*
+Formating Date and Time
+
+    new Date(timestamp)
+    new Date(Date String)
+    new Date(Numeric Values)
+
+
+Format
+    "Oct 15 1993"
+    "10/25/1993"
+    "1993-10-15" => ISO International Standard
+    "1993 10"
+    "1993"
+    "93"
+    1993, 9, 15, 2, 10, 0
+    1993, 9, 15
+    "1993-10-15t06:10:00Z"
+
+    Date.parse("String") // read date from a string
+*/
+
