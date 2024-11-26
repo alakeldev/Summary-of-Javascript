@@ -4527,3 +4527,290 @@ With OOP you will be able to reacte resable object to use it your application ea
 
 /////////////////////////////////////////////////////////////////
 
+// Update properties and build in constructor
+
+
+// class User {
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username;
+//         this.s = salary;
+//     }
+
+//     updateName(newName) {
+//         this.u = newName;
+//     }
+// }
+
+// let userOne = new User(100, "Alakel", 5000);
+
+// console.log(userOne.u);
+// userOne.updateName("Abdullah");
+// console.log(userOne.u);
+
+
+
+// // build in constructor
+
+// let strOne = "Alakel";
+// let strTwo = new String("Alakel");
+
+// console.log(typeof strOne); // string
+// console.log(typeof strTwo); // object
+
+// console.log(strOne instanceof String); // false // here it's not instance of String constructor
+// console.log(strTwo instanceof String); // true
+
+// // but you can say below both strOne and strTwo used String constructor to create them
+// console.log(strOne.constructor === String); // true
+// console.log(strTwo.constructor === String); // true
+
+
+// also you can use Number build in constructor it's same above
+
+////////////////////////////////////////////////////////
+
+/*
+Class
+Static properties and methods (all static properties and methods those related to the class it self and not to the created object)
+*/
+
+// class User {
+//     // static property
+//     static count = 0;
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username;
+//         this.s = salary;
+//         User.count++;
+//     }
+
+//     // static methods
+//     static sayHello() {
+//         return `Hello From Class`;
+//     }
+
+//     static countMembers() {
+//         return `${this.count} Members Created.`
+//     }
+// }
+
+// let userOne = new User(100, "Alakel", 5000);
+// let userTwo = new User(1001, "Abdullah", 5000);
+// let userthree = new User(1002, "maya", 5000);
+
+
+// console.log(userOne.u); // Alakel
+// console.log(userTwo.u); // Abdullah
+// console.log(userTwo.count); // undefined
+// console.log(User.count); // 0
+// // console.log(userOne.sayHello()); // error Error
+// console.log(User.sayHello()); // Hello From Class
+// console.log(User.countMembers()); // 3 Members Created.
+
+/////////////////////////////////////////////////////
+
+
+/*
+Class Inheritance
+*/
+
+// Parent Class
+// class User {
+//     constructor(id, username) {
+//         this.i = id;
+//         this.u = username;
+//     }
+
+//     sayHello() {
+//         return `Hello ${this.u}`;
+//     }
+// }
+
+// // Derived Class
+// class Admin extends User {
+//     constructor(id, username, permissions) {
+//         super(id, username);
+//         this.p = permissions;
+//     }
+// }
+
+// let userOne = new User(100, "Alakel");
+
+// console.log(userOne.u); // Alakel
+// console.log(userOne.sayHello()); // Hello Alakel
+
+
+// let adminOne = new Admin(110, "Abdullah", 1);
+
+// console.log(adminOne.i); // 110
+// console.log(adminOne.u); // Abdullah
+// console.log(adminOne.p); // 1
+// console.log(adminOne.sayHello()); // Hello Abdullah
+
+// ///// Derived Class
+// class Superman extends Admin {
+//     constructor(id, username, permissions, ability) {
+//         super(id, username, permissions);
+//         this.a = ability;
+//     }
+// }
+/////////////////////////////////////////////////////////////
+
+/*
+Class Encapsulation:
+    class fields are public by default
+    Guards the data against illegal access
+    helps to achieve the target without revealing its complex details
+    (Hidden Implemination)
+    will reduce human errors
+    make the app more flexible and manageable
+    simplifies the app
+*/
+
+// class User {
+//     // Privet Property it must be declared before use it
+//     #e;
+//     constructor(id, username, eSalary) {
+//         this.i = id;
+//         this.u = username;
+//         this.#e = eSalary;
+//     }
+
+//     getSalary() {
+//         return parseInt(this.#e);
+//     }
+// }
+
+// let userOne = new User(100, "Alakel", "5000 Gneh");
+// console.log(userOne.u); // Alakel
+
+
+// console.log(userOne.#e); // Error Property '#e' is not accessible outside class 'User' because it has a private identifier.
+// console.log(userOne.e * 0.3); // NaN   becuase we using "5000 Gneh" in the example above when we create new instance
+
+
+// console.log(userOne.getSalary()); // 5000
+
+////////////////////////////////////////////////////////////////////////
+
+/*
+Prototype
+    Prototypes are the mechanism by which javascrupt objects
+    inherit features from one to another
+*/
+
+// class User {
+//     constructor(id, username) {
+//         this.i = id;
+//         this.u = username
+//     }
+
+//     sayHello() {
+//         return `Hello ${this.u}`;
+//     }
+// }
+
+// let userOne = new User(100, "Alakel");
+// console.log(userOne.u);
+
+// console.log(User.prototype); // {} object and you find feautres inside it
+// let strOne = "Alakel"; // here this string created using String constructor
+// console.log(String.prototype); // {}object and you find feautres inside it
+
+
+
+// // add to prototype chain and extend build in constructor features
+
+
+// console.log(userOne);
+
+// User.prototype.sayWelcome = function () {  // here we make a chain
+//     return `Welcome ${this.u}`;
+// };
+
+
+
+// Object.prototype.love = "Alakel Love you"; // here we added extend feature(property) to buildin object contructor
+
+// console.log(userOne.love); // Alakel Love you
+
+
+// here we added extend feature(method) to buildin String contructor
+// String.prototype.addDotBeforeAndAfter = function(val) {
+//     return `.${this}.`
+// }
+
+// let myString = "Alakel";
+
+// console.log(myString.addDotBeforeAndAfter()); // .Alakel.
+
+
+////////////////////////////////////////////////////
+
+/*
+Object Meta Data and descriptor , when you don't set value for descriptor so its default value is false
+    writeable
+    enumerable
+    configurable [Cannot delete or refoncifgure]
+*/
+
+// const myObject = {
+//     a: 1,
+//     b: 2,
+// };
+
+// Object.defineProperty(myObject, "c", {
+//     writable: false,  // here you cannot rewrite (change) its value of this property again after defin it as 3
+//     enumerable: false,  // here you exclude this property from any loop, iteration operation
+//     configurable: false, // here it will prevent you from editing or deleteing operation (also cannot redefine)
+//     value: 3,
+// });
+
+// myObject.c = 100; // here we can change its value because of writeable is true, if it's false you cannot change its value
+
+// for(let prop in myObject) {
+//     console.log(prop, myObject[prop])       // a 1 b 2
+// }
+
+// console.log(delete myObject.c);  // use delete operator we can delete sepecific property in the object (here return false)
+
+// console.log(myObject); // {a: 1, b: 2, c: 3}
+
+
+///////////////////////////////////////////////////////////////
+
+/*
+Object Meta Data and Descriptor also here if not give value for descrptors so its false by default
+    Define Multiple properties
+    Check descriptors
+*/
+
+// const myObject = {
+//     a: 1,
+//     b: 2,
+// };
+
+// Object.defineProperties(myObject, {
+//     c: {
+//         configurable: true,
+//         value: 3
+//     },
+//     d: {
+//         configurable: true,
+//         value: 4
+//     },
+//     e: {
+//         configurable: true,
+//         value: 5
+//     },
+// });
+
+// console.log(myObject); // {a: 1, b: 2, c: 3, d: 4, e: 5}
+
+// console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+// console.log(Object.getOwnPropertyDescriptors(myObject));
+
+
+///////////////////////////////////////////////////////////////
+
