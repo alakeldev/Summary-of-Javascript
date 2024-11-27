@@ -4972,10 +4972,299 @@ Format
     "1993 10"
     "1993"
     "93"
-    1993, 9, 15, 2, 10, 0
+    1993, 9, 15, 2, 10, 0   // here 9 => month October by index the time 2:10 
     1993, 9, 15
     "1993-10-15t06:10:00Z"
 
     Date.parse("String") // read date from a string
 */
 
+// console.log(Date.parse("Oct 15 1993"));  // 750639600000  my birthday in milliseconds
+
+// let date1 = new Date(0);
+// console.log(date1);
+
+// let date2 = new Date(750639600000);  // here i put my birthday in milliseconds and give me my birthday 1993-10-14T23:00:00.000Z
+// console.log(date2);
+
+// let date3 = new Date("10-15-1993"); // 1993-10-14T23:00:00.000Z
+// console.log(date3);
+
+// let date4 = new Date("10/25/1993"); // 1993-10-24T23:00:00.000Z
+// console.log(date4);
+
+// let date5 = new Date("10 25 1993"); // 1993-10-24T23:00:00.000Z
+// console.log(date5);
+
+// let date6 = new Date("10@25@1993"); // 1993-10-24T23:00:00.000Z
+// console.log(date6);
+
+// let date7 = new Date("1993-10-15"); // 1993-10-15T00:00:00.000Z
+// console.log(date7);
+
+// let date8 = new Date("1993-10"); // 1993-10-01T00:00:00.000Z
+// console.log(date8);
+
+// let date9 = new Date("93"); // 1992-12-31T23:00:00.000Z
+// console.log(date9);
+
+// let date10 = new Date(1993, 9, 15, 2, 10, 0); //  1993-10-15T01:10:00.000Z
+// console.log(date10);
+
+// let date11 = new Date(1993, 9, 15); // 1993-10-14T23:00:00.000Z
+// console.log(date11);
+
+//////////////////////////////////////////////////////////////////
+
+/*
+
+Track operations time example below to understand
+
+
+    please Search for below they make same thing the did with Date() in below example  
+
+        performance.now()
+        performance.mark()
+
+*/
+
+// start time
+// let start = new Date()
+
+// // operation
+// for(let i = 0; i < 10000; i++) {
+//     console.log(i);
+// }
+
+// // end time
+// let end = new Date()
+
+
+// // operation duration
+// let duration = end -  start;
+
+// console.log(duration);
+
+//////////////////////////////////////////////////////////////////////////
+
+
+/*
+Generators
+    Generator Function Run its code when required
+    Generator Function Return Special Object [Generator Object]
+    Generators Are Iterable
+*/
+
+// function* generateNumbers() {
+//     yield 1;
+//     // alert("Hello After Yield 1");
+//     // console.log("Hello After Yield 1")
+//     yield 2;
+//     yield 3;
+//     yield 4;
+//     yield 5;
+// }
+
+// let generator = generateNumbers();
+
+// console.log(typeof generator);  // object
+// console.log(generator);   // Object [Generator] {}
+
+// console.log(generator.next()); // { value: 1, done: false }  فالس تعني لسا العملية الانتاجية لم تنتهي تبع اليلد 
+
+// console.log(generator.next().value); // 1
+// console.log(generator.next().done); // false
+
+// console.log(generator.next()); // { value: 2, done: false }
+// console.log(generator.next()); // { value: 3, done: false }
+// console.log(generator.next()); //{ value: 4, done: false }
+// console.log(generator.next()); // { value: 5, done: false }
+// console.log(generator.next()); // {value: undefined, done: true}   ترو يعني عملية الانتاجية انتهت 
+
+
+// for (let value of generateNumbers()) {
+//     console.log(value);
+// }
+
+// for (let value of generator) {
+//     console.log(value);
+// }
+
+// above with for loop it will print the yield values important to note that
+
+// please be note if you uncomment the part of geneator.next() and you want also to run the for loop using the variable name generator
+// the code will not print for the for loop becuase the yield operation already done with the next and cannot be done another time using same variable
+// عملية الانتاجية انتهت بعد تنفيذ النيكست باستخدام المتغير جينيراتور و لن تطبع شيئا في عملية الفور لوب باستخدام المتغير نفسه الا اذا عملت القسم تبع النيسكت كومينت
+// او اذا استخدمت بالفور لوب الفنكنشن جينيراتور نومبرز مرة ثانية بدون استخدام المتغير الذي استخدم في النيكست
+
+////////////////////////////////////////
+
+/*
+Delegate Generator
+
+*/
+
+// function* generateNums() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+
+
+// function* generateLetters() {
+//     yield "A";
+//     yield "B";
+//     yield "C";
+// }
+
+// function* generateAll() {
+//     yield* generateNums();
+//     yield* generateLetters();
+//     yield* [4, 5, 6];
+// }
+
+// let generator = generateAll();
+
+// console.log(generator);
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// // console.log(generator.return("Closed and exit")); // it will close the generator and yield operation (if you want to stop the operation)
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+
+/*
+the out put for the above example is below:
+
+{ value: 1, done: false }
+{ value: 2, done: false }
+{ value: 3, done: false }
+{ value: 'A', done: false }
+{ value: 'B', done: false }
+{ value: 'C', done: false }
+{ value: 4, done: false }
+{ value: 5, done: false }
+{ value: 6, done: false }
+{ value: undefined, done: true }
+
+*/
+
+
+///////////////////////////////////////////////////////
+
+
+/*
+Generate inifite Numbers
+use Return Inside generators
+*/
+
+// function* generateNumbers() {
+//     // yield 1;
+//     // yield 2;
+//     // // return "A";   here it will break the generator function done: true 
+//     // yield 3;
+//     // yield 4;
+
+//     let index = 0;
+
+//     while(true) {
+//         yield index++
+//     }
+// }
+
+// let generator = generateNumbers();
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// important to know in generator function the inifite loop like a while will not work till you call the next and will generate
+// for your infinite as you want and as much you want without make break your system becuase of the inifite loop as you see above
+// it will print and logout the code :
+
+/*
+{ value: 0, done: false }
+{ value: 1, done: false }
+{ value: 2, done: false }
+{ value: 3, done: false }
+{ value: 4, done: false }
+
+
+because of the next() control the inifite and generate the inifite loop
+*/
+
+///////////////////////////////////////////////////////////////////////////
+
+/*
+Modules
+    Import and Export
+المودل هوي وحدة برمجية بتنفذ وظيفة معينة 
+
+
+inside the html file you gonna add inside the body tag
+
+<script src="main.js" type="module"> </script>
+<script src="app.js" type="module"> </script>
+
+inside 
+main.js
+
+export let a = 10:
+export let arr = [1, 2, 3, 4];
+
+export function sayHello() {
+    return "Hello";
+}
+
+
+// you can make export in the last of the code for what you want exactly to export like below and no need to write export like above:
+
+export {
+    a, arr, sayHello
+}
+
+
+inside the app.js file
+
+import {a, arr, sayHello as h} from "./main.js"
+console.log(a);
+console.log(arr);
+console.log(h());
+
+*/
+
+
+/////////////////////////////////////////////////////////////////
+
+/*
+    Modules
+        Export Alias
+        Named Export
+        Default Export it must be import without {} , also you can rename it direct on the import file with the name that you want becuase it's default and knows as default and it can be anonyumou function and call it with the name that you want without issues
+        Import All
+        if you want to import all
+        import * as all from "./main.js";
+            to use things inside this module after importing it
+            all.myNumber
+            all.myString
+            all.sayHello()
+*/
+
+//////////////////////////////////////////////////////////////////////
+
+
+/*
+JSON
+
+What is JSON:
+
+*/
