@@ -5331,6 +5331,90 @@ you can use website to reformate you json code example for these websites : http
 /////////////////////////////////////////////////////////////////////////
 
 /*
-What is API
+What is API = Application programming interface
+    API overview
+    Tools to test API
+    Preview Github API
+    my API on github : https://api.github.com/users/alakeldev , https://api.github.com/users/alakeldev/repos
 
+
+    JSON Site can create and help you to create online JSON files to use it in your project for testing with live link
+                                        https://www.myjsons.com/
 */
+
+
+/*
+JSON
+IMPORTANT TO UNDERSTAND:
+
+JSON.parse => convert text data to JS object
+JSON.stringify => convert JS object to JSON
+*/
+
+// // store the text date string data inside variable
+// const myJsonObjectFromServer = '{"Username": "Alakel", "Age": 31}';
+// console.log(typeof myJsonObjectFromServer);
+// console.log(myJsonObjectFromServer);
+
+// // convert this text data that getting from the server to JS object and store it inside variable
+// const myJsObject = JSON.parse(myJsonObjectFromServer);
+// console.log(typeof myJsObject);
+// console.log(myJsObject);
+
+// // change the JS object values
+// myJsObject["Username"] = "Abdullah";
+// myJsObject["Age"] = 32;
+
+// // convert the JS object to JSON
+// const myJsonObjectToServer = JSON.stringify(myJsObject);
+// console.log(typeof myJsonObjectToServer);
+// console.log(myJsonObjectToServer);
+
+
+//////////////////////////////////////////////////////////
+
+/*
+To Understand Ajax, Fetch, Promises
+
+Asynchronous vs Synchronous Programming
+
+Synchronous
+    Operations Runs in sequence
+    Each operation must wait for the previous one to complete
+
+Asynchronous
+    Operations Runs in Parallel
+    This means that an operation can occur while another one is still being processed
+
+
+    Facebook as example
+    simulation
+
+Search on:
+
+    Javascript in a single-Threaded
+    Multi Threaded Languages
+*/
+
+
+
+//Synchronous:
+
+// console.log("1")
+// console.log("2")
+// window.alert("Operation")  // here it will stop the log of 3 till the alert operation is done
+// console.log("3")
+
+
+
+//Asynchronous:
+
+// console.log("1");
+// console.log("2");
+// setTimeout(() => {
+//     console.log("operation")
+// }, 2000)
+// console.log("3");
+
+////////////////////////////////////////////////////
+
