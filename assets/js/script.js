@@ -4911,7 +4911,7 @@ Set Date and Time
 
 // console.log("#".repeat(30));
 
-// dateNow.setTime(0); // below the result after we setTime(0) used on dateNow 
+// dateNow.setTime(0); // below the result after we setTime(0) used on dateNow
 // console.log(dateNow); // 1970-01-01T00:00:00.000Z
 
 // console.log("#".repeat(30));
@@ -4939,7 +4939,7 @@ Set Date and Time
 
 // console.log("#".repeat(30));
 // dateNow.setFullYear(2020, 1);  // 2020-11-26T22:51:16.041Z number one after 2020 it means the index of the month and here it means February
-// console.log(dateNow);  
+// console.log(dateNow);
 
 
 
@@ -4952,7 +4952,7 @@ Set Date and Time
 // dateNow.setMonth(0);  // 2024-01-26T22:55:34.334Z it means 0 = january month
 // console.log(dateNow);
 
-// dateNow.setMonth(15);  // 2025-04-26T21:56:36.053Z it adds 4 months more so the result is 2024 april 
+// dateNow.setMonth(15);  // 2025-04-26T21:56:36.053Z it adds 4 months more so the result is 2024 april
 // console.log(dateNow);
 
 ///////////////////////////////////////////////////////////////
@@ -5070,7 +5070,7 @@ Generators
 // console.log(typeof generator);  // object
 // console.log(generator);   // Object [Generator] {}
 
-// console.log(generator.next()); // { value: 1, done: false }  فالس تعني لسا العملية الانتاجية لم تنتهي تبع اليلد 
+// console.log(generator.next()); // { value: 1, done: false }  فالس تعني لسا العملية الانتاجية لم تنتهي تبع اليلد
 
 // console.log(generator.next().value); // 1
 // console.log(generator.next().done); // false
@@ -5079,7 +5079,7 @@ Generators
 // console.log(generator.next()); // { value: 3, done: false }
 // console.log(generator.next()); //{ value: 4, done: false }
 // console.log(generator.next()); // { value: 5, done: false }
-// console.log(generator.next()); // {value: undefined, done: true}   ترو يعني عملية الانتاجية انتهت 
+// console.log(generator.next()); // {value: undefined, done: true}   ترو يعني عملية الانتاجية انتهت
 
 
 // for (let value of generateNumbers()) {
@@ -5168,7 +5168,7 @@ use Return Inside generators
 // function* generateNumbers() {
 //     // yield 1;
 //     // yield 2;
-//     // // return "A";   here it will break the generator function done: true 
+//     // // return "A";   here it will break the generator function done: true
 //     // yield 3;
 //     // yield 4;
 
@@ -5266,5 +5266,71 @@ console.log(h());
 JSON
 
 What is JSON:
+    Javascript Object Notation
+    Format for sharing data between server and client
+    JSON derived from Javascript
+    Alternative to XML
+    File Extension is .json
+
+
+Why JSON ?
+    Easy to use and Read
+    Used By Most Programming language and its frameworks
+    You can covert JSON object to JS Object and vice versa
+
+
+                JSON vs XML
+
+text based fromat       -       markup language
+lightweight             -       Heavier
+Does not use Tags       -       using tags
+Shorter                 -       Not Short
+can use arrays          -       cannot use arrays
+Not support comments    -       Support Comments
+
+*/
+
+/*
+JSON Syntax
+    Data added inside Curly braces {  }
+    Data added with key : value
+    key should be string wrapped in double qoutes
+    Data separated by comma
+    square brackets [] for arrays
+    curly braces  {} for objects
+
+
+available data types
+    String
+    Number
+    Object
+    Array
+    Boolean Values 
+    Null
+*/
+
+/*
+Example JSON:
+
+{
+    "string": "Alakel",
+    "number": 2000,
+    "object": {
+        "SY": "Damascus",
+        "KSA": "MAKA"
+    },
+    "array": ["HTML", "CSS", "JS"],
+    "boolean": true,
+    "null": null
+}
+
+
+you can use website to reformate you json code example for these websites : https://jsonformatter.org/json-viewer
+*/
+
+/////////////////////////////////////////////////////////////////////////
+
+/*
+What is API
 
 */
