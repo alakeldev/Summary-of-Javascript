@@ -5418,3 +5418,183 @@ Search on:
 
 ////////////////////////////////////////////////////
 
+/*
+Call Stack  ||  Stack Trace
+    Javascript Engine uses a call stack to manage execution contexts
+    Mechanism to make the interpreter track your calls
+    When function called it added to the stack
+    when function executed it removed from the stack
+    after function is finished executing the interpreter continue from the last point
+    work using LIFO principle => last in first out
+    code execution is synchronous
+    called stack detect web API methods and leave it to the browser to handle it
+
+Web API
+    Methods available from the environment => Browser
+    check the link below to know more about that:
+    https://developer.mozilla.org/en-US/docs/Web/API
+*/
+// setTimeout(() => {console.log("Web API")}, 0); // even if it's 0 it will print after all the below functions because of:
+                                            // called stack detect web API methods and leave it to the browser to handle it
+
+// function one() {
+//     console.log("One");
+// }
+
+// function two() {
+//     one()
+//     console.log("Two");
+// }
+
+// function three() {
+//     two()
+//     console.log("Three");
+// }
+
+// three();
+
+/*
+############################################
+############################################
+############################################
+############################################
+############################################
+############################################
+*/
+
+/*
+Event Loop + Callback Queue
+
+Story:
+    Javascript is a single threaded language "All operations executed in single thread"
+    Call stack track all calls
+    Every function is done its poped out
+    when you call asynchronous function it sent to Browser API
+    Asynchronous Function like setTimeout start its own thread
+    Browser API act as a second thread
+    API finish waiting and send back the function for processing
+    Browser API add the callback to callback Queue
+    Event loop wait for call stack to be empty
+    Event loop get callback from callback Queue and add it to call stack
+    Callback Queue follow FIFO "First in First Out" Rule
+*/
+// console.log("one");
+
+// setTimeout(() => {
+//     console.log("three")
+// }, 0);
+
+// setTimeout(() => {
+//     console.log("four")
+// }, 0);
+
+// setTimeout(() => {
+//     console.log(myVar);   // here you will not get an error because you use variable before declare it becuase of the rules of the asynchronous setTimeout()
+// }, 0);
+
+// console.log("two");
+
+// let myVar = 100;
+
+// console.log(myVar);
+
+// myVar += 100;
+
+// console.log(myVar);
+
+/*
+the out put for the above example:
+
+one
+two
+100
+200
+three
+four
+
+
+
+a very important note to be understand:
+These APIs can include functions that are synchronous and asynchronous.
+for example the setTimeout() will use event loop, but console.log() will synchrounously write to the browser's console
+(implementations vary between engines), fetch will call an asynchronous function that can be awaited
+*/
+
+/////////////////////////////////////////////////
+
+/*
+What is AJAX: Asynchronous Javascript and XML
+
+    Asynchronous Javascript and XML
+    It's Approach to use many technologies together [HTML, CSS, JS, DOM]
+    It use "XMLHttpRequest" Object to interact with the server
+    you can fetch data or send data without page refresh
+    Examples:
+        Youtube Studio
+        Google Drive
+        Upload Article photo
+        Form check name
+
+Test new XMLHttpRequest();
+Request and Response
+Status code
+
+*/
+
+
+// let req = new XMLHttpRequest();
+
+// console.log(req);
+
+// check the browser console and check there to understand what its logged
+
+///////////////////////////////////////////////////////////////////////////////////
+
+/*
+Ajax: IMPORTANT IMPORTANT BELOW TO UNDERSTAND
+    Ready State => state of the request
+    [0] Request not initialized
+    [1] Server Connection Established
+    [2] Request Received
+    [3] Processing Request
+    [4] Request is finished and response is ready
+    Status
+    [200] Response is successful
+    [404] Not Found
+
+*/
+
+// let myRequest = new XMLHttpRequest();
+// myRequest.open("GET", "https://api.github.com/users/alakeldev/repos", true);   // here you can set request method (get, post...) + this call is synchronous or asynchronou + authentication username + password
+// myRequest.send(); // here send for the request method above
+
+// console.log(myRequest);
+
+// myRequest.onreadystatechange = function () {   // here we use onreadystatechange
+//     console.log(myRequest.readyState);
+//     console.log(myRequest.status);
+//     if (this.readyState === 4 && this.status === 200) {
+//         // console.log(this.responseText);   
+//         let jsData = JSON.parse(this.responseText); // here we use responseText to get the response
+//         // console.log(jsData);
+//         for(let i = 0; i < jsData.length; i++) {
+//             let div = document.createElement("div");
+//             let repoName = document.createTextNode(jsData[i].full_name);
+//             div.appendChild(repoName);
+//             document.body.appendChild(div);
+//         }
+//     };
+// };
+
+/*
+
+please search for :
+    - Cross Origin API (CORS)  here if the API issue related to the security so please learn and read about API authentication
+    - API authentication
+*/
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
