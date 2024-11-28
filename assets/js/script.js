@@ -2837,119 +2837,7 @@ you would call the reduce() method on the array  of numbers, and the callback fu
 as its parameter would serve the purpose of adding  each number to the last and keeping track of the total.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-*//*//*///*//*
-
-// Promises
-
-// const myPormise = new Promise((resolvedFunction, rejectFunction) => {
-// 	let connect = true;
-// 	if(connect) {
-// 		resolvedFunction("Connection Established");
-// 	} else {
-// 		rejectFunction("Connection Failed");
-// 	}
-// }).then(
-// 	(resolveValue) => console.log(`Good ${resolveValue}`),
-// 	(rejectValue) => console.log(`Bad ${rejectValue}`)
-
-// );
-
-// console.log(myPromise); // pending state here while it print first before the previous code start run
-
-// // Promise, then, catch, finally   (Here need to focus and use it always with promises)
-// /*
-// Important to understand the three status below to good deal with Promises
-// Then => Promise is successful use the resolved data
-// catch => Promise is failed, catch the error
-// Finally => Promise successfull or failed finally do something
-// */
-
-
-// /*
-// Example in real life:
-// We will go to the meeting, promise me that we will find the 4 employees
-// .then(we will choose two people)
-// .then(we will test them to get one of them)
-// .catch(No one came)
-
-// */
-
-// const myPromise = new Promise((resolveFunction, rejectFunction) => {
-// 	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
-// 	if(employees,length == 4) {
-// 		resolveFunction(employees)
-// 	} else {
-// 		rejectFunction(Error("The Number of Employees are not 4"))
-// 	}
-// });
-
-
-// myPromise.then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 2;
-// 		return resolveValue;
-// 	});
-
-// myPromise.then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		return resolveValue;
-// 	});
-
-// myPromise.then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		console.log(`The choosen Employee is ${resolveValue}`)
-// 	});
-
-
-/* بالمثال اللي قبل اذا شفت ال
-then
-مالن تشاين يعني مالن متصلين مشان هيك كل وحدة فين بترجع اييرور بالكونسول كل وحدة فين يعني بينطلع 3 مررات اذا كان الشرط ما تحقق و راح عالايلس
-
-*/
-
-
-// myPromise.then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 2;
-// 		return resolveValue;
-// 	}).then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		return resolveValue;
-// 	}).then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		console.log(`The choosen Employee is ${resolveValue}`)
-// 	});
-// /*
-// بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين
-// chaining
-// */
-
-
-// myPromise.then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 2;
-// 		return resolveValue;
-// 	}).then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		return resolveValue;
-// 	}).then(
-// 	(resolveValue) => {
-// 		resolveValue.length = 1;
-// 		console.log(`The choosen Employee is ${resolveValue}`)
-// 	}).catch((rejectedReason) => console.log(rejectedReason))
-// 	.finally(console.log("the operation is done!"));
-
-/*
-هون بالمثال اللي قبل استعملنا 
-catch and finally
-الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
-*/
-
+*//*//*///*//* *//*//*///*//**//*//*///*//**//*//*///*//**//*//*///*//**//*//*///*//**//*//*///*//**//*//*///*//*
 
 
 // What is the BOM:
@@ -5596,5 +5484,162 @@ please search for :
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+Pyramid of DOM || Callback hell
+
+what is callback
+    Callback hell example
+
+what is callback
+    a Function that is passed into another one as an argument to be executed later
+    Functio to handle photos
+    [1] Download photo from URL
+    [2] Resize photo
+    [3] Add logo to the photo
+    [4] Show the photo in Website
+*/
+
+// function makeItRed(e) {
+//     e.target.style.color = "red";
+// }
+
+// let p = document.querySelector(".test");
+
+// p.addEventListener("click", makeItRed);
+
+// function iamACallback() {
+//     console.log("I'm callback")
+// }
+
+// setTimeout(iamACallback, 2000);
+
+// setTimeout(() => {
+//     console.log("Download photo from URL")
+//     setTimeout(() => {
+//         console.log("Resize photo")
+//         setTimeout(() => {
+//             console.log("Add logo to the photo")
+//             setTimeout(() => {
+//                 console.log("Show the photo in Website")
+//             }, 1000);
+//         }, 1000);
+//     }, 1000);
+// }, 1000);
+
+/////////////////////////////////////////////////////
+
+
+// Promises
+
+// const myPormise = new Promise((resolvedFunction, rejectFunction) => {
+// 	let connect = true;
+// 	if(connect) {
+// 		resolvedFunction("Connection Established");
+// 	} else {
+// 		rejectFunction("Connection Failed");
+// 	}
+// }).then(
+// 	(resolveValue) => console.log(`Good ${resolveValue}`),
+// 	(rejectValue) => console.log(`Bad ${rejectValue}`)
+
+// );
+
+// console.log(myPromise); // pending state here while it print first before the previous code start run
+
+// // Promise, then, catch, finally   (Here need to focus and use it always with promises)
+// /*
+// Important to understand the three status below to good deal with Promises
+// Then => Promise is successful use the resolved data
+// catch => Promise is failed, catch the error
+// Finally => Promise successfull or failed finally do something
+// */
+
+
+// /*
+// Example in real life:
+// We will go to the meeting, promise me that we will find the 4 employees
+// .then(we will choose two people)
+// .then(we will test them to get one of them)
+// .catch(No one came)
+
+// */
+
+// const myPromise = new Promise((resolveFunction, rejectFunction) => {
+// 	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
+// 	if(employees,length == 4) {
+// 		resolveFunction(employees)
+// 	} else {
+// 		rejectFunction(Error("The Number of Employees are not 4"))
+// 	}
+// });
+
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	});
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	});
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	});
+
+
+/* بالمثال اللي قبل اذا شفت ال
+then
+مالن تشاين يعني مالن متصلين مشان هيك كل وحدة فين بترجع اييرور بالكونسول كل وحدة فين يعني بينطلع 3 مررات اذا كان الشرط ما تحقق و راح عالايلس
+
+*/
+
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	});
+// /*
+// بالمثال اللي فوق رجع ايررور واحد لانو تشيند يعني متصلين
+// chaining
+// */
+
+
+// myPromise.then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 2;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		return resolveValue;
+// 	}).then(
+// 	(resolveValue) => {
+// 		resolveValue.length = 1;
+// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 	}).catch((rejectedReason) => console.log(rejectedReason))
+// 	.finally(console.log("the operation is done!"));
+
+/*
+هون بالمثال اللي قبل استعملنا 
+catch and finally
+الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
+*/
 
 
