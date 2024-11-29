@@ -4584,7 +4584,7 @@ Class Encapsulation:
 
 /*
 Prototype
-    Prototypes are the mechanism by which javascrupt objects
+    Prototypes are the mechanism by which javascript objects
     inherit features from one to another
 */
 
@@ -5462,7 +5462,7 @@ Ajax: IMPORTANT IMPORTANT BELOW TO UNDERSTAND
 //     console.log(myRequest.readyState);
 //     console.log(myRequest.status);
 //     if (this.readyState === 4 && this.status === 200) {
-//         // console.log(this.responseText);   
+//         // console.log(this.responseText);
 //         let jsData = JSON.parse(this.responseText); // here we use responseText to get the response
 //         // console.log(jsData);
 //         for(let i = 0; i < jsData.length; i++) {
@@ -5533,6 +5533,29 @@ what is callback
 
 // Promises
 
+/*
+Promis in javascript is like promise in real life
+Promis is something that will happen in the future
+promis avoid callback hell
+prmis is the object that represent the status of an asynchronous operation and its resulting value
+
+
+Prmoie status
+    Pending: Initial state
+    Fulfilled: complete successfully
+    Rejected: Failed
+
+Story:
+    One a promise has been called, it will start in a pending state
+    the created promise will eventually end in a resolved state or in a rejected state
+    calling the callback functions (passed to then and catch) upon finishing
+
+then
+    task 2 optional arguments [callback for successs or failure]
+*/
+
+
+
 // const myPormise = new Promise((resolvedFunction, rejectFunction) => {
 // 	let connect = true;
 // 	if(connect) {
@@ -5547,6 +5570,10 @@ what is callback
 // );
 
 // console.log(myPromise); // pending state here while it print first before the previous code start run
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
 
 // // Promise, then, catch, finally   (Here need to focus and use it always with promises)
 // /*
@@ -5563,15 +5590,16 @@ what is callback
 // .then(we will choose two people)
 // .then(we will test them to get one of them)
 // .catch(No one came)
-
 // */
+
+
 
 // const myPromise = new Promise((resolveFunction, rejectFunction) => {
 // 	let employees = ["Alakel", "Abode", "Abdullah", "Akole"]
-// 	if(employees,length == 4) {
+// 	if(employees.length === 4) {
 // 		resolveFunction(employees)
 // 	} else {
-// 		rejectFunction(Error("The Number of Employees are not 4"))
+// 		rejectFunction(Error("The total number of employees are not 4"))
 // 	}
 // });
 
@@ -5579,19 +5607,19 @@ what is callback
 // myPromise.then(
 // 	(resolveValue) => {
 // 		resolveValue.length = 2;
-// 		return resolveValue;
+// 		return resolveValue;    // ["Alakel", "Abode"]
 // 	});
 
 // myPromise.then(
 // 	(resolveValue) => {
 // 		resolveValue.length = 1;
-// 		return resolveValue;
+// 		return resolveValue;    // ["Alakel"]
 // 	});
 
 // myPromise.then(
 // 	(resolveValue) => {
 // 		resolveValue.length = 1;
-// 		console.log(`The choosen Employee is ${resolveValue}`)
+// 		console.log(`The choosen Employee is ${resolveValue}`) // The choosen Employee is Alakel
 // 	});
 
 
@@ -5639,7 +5667,284 @@ then
 /*
 هون بالمثال اللي قبل استعملنا 
 catch and finally
-الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
+الكاتش هون رجعتلنا الاييرور المكتوب بالايلس بالبروميس بدون اي مشاكل و الفاينلي هون نفذت طباعة بالكونسل بغض النظر عن حالة البروميس حتطبع
 */
 
 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+Promise and XHR = XMLHttpRequest
+
+example with using promise with XMLHttpRequest
+*/
+
+
+// const getData = (apiLink) => {
+//     return new Promise((resolve, reject) => {
+
+//         let myRequest = new XMLHttpRequest();
+//         myRequest.onload = function () {
+//             if (this.readyState === 4 && this.status === 200) {
+//                 resolve(JSON.parse(this.responseText));
+//             } else {
+//                 reject(Error("No Data Found"));
+//             }
+//         };
+
+//         myRequest.open("GET", apiLink);
+//         myRequest.send();
+//     })
+// }
+
+// getData("https://api.github.com/users/alakeldev/repos").then(
+//     (result) => {
+//         result.length = 10;
+//         return result;
+//     }
+// ).then((result) => console.log(result[0].full_name)).catch((rej) => console.log(rej));
+
+
+////////////////////////////////////////////////////////////////
+
+
+/*
+Fetch API
+    return a representation of the entire HTTP response
+
+*/
+
+// fetch("https://api.github.com/users/alakeldev/repos").then((result) => {
+//     // console.log(result);
+//     let myData = result.json();
+//     // console.log(myData);
+//     return myData;
+// })
+// .then((fullData) => {
+//     fullData.length = 10;
+//     return myData;
+// })
+// .then((tenData) => console.log(tenData[0].full_name));
+
+/////////////////////////////////////////////////////////////
+
+
+
+/*
+Promise
+    all   => it takes array of promises and it will return promise but it must be all these promises resolve so it will take from each promise its resolved value
+            // if one from these promises got reject so it will reject for this promise that all return it
+
+
+    allSettled  => Creates a Promise that is resolved with an array of results when 
+                  all of the provided Promises resolve or reject.
+    
+    
+    race => Creates a Promise that is resolved or rejected when any of the provided Promises are resolved or rejected.
+    اللي بيسبق بياكول فستوق من البروميسات
+*/
+
+
+
+// const myFirstPromise = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//         resolve("I am first Promise");
+//     }, 5000);
+// });
+
+// const mySecondPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("I am second Promise");
+//     }, 1000);
+// });
+
+// const myThirdPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("I am third Promise");
+//     }, 2000);
+// });
+
+
+// هون بيمشسي عالبروميسي و بييشيك عليهن بس يطلعلو واحد ريجيكت بوقف و برجع الريجيكت و بينتهي
+// اذا في اكتر من ريجيكت بين البروميسس برجع اول ريجيكت بيطلعلو بغض النظر عن عدد الريجيكت لانو برجع اول ريجيكت و بيخلص
+// Promise.all([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+//     (resValues) => { console.log(resValues)},
+//     (rejValue) => { console.log(`Rejected : ${rejValue}`) } // Rejected : I am third Promise
+// );
+
+
+
+
+// Promise.allSettled([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+//     (resValues) => { console.log(resValues) },
+//     (rejValue) => { console.log(`Rejected : ${rejValue}`) } // Rejected : I am third Promise
+// );
+
+/*
+[
+  { status: 'fulfilled', value: 'I am first Promise' },
+  { status: 'fulfilled', value: 'I am second Promise' },
+  { status: 'rejected', reason: 'I am third Promise' }
+]
+*/
+
+// هون اول بروميس حيطلع بوشو بغض النظر ريجيكت او ريسولفد حيرجعوا و تخلص القصة بغض النظر الاسرع فقط
+// Promise.race([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+//     (resValues) => { console.log(resValues) },
+//     (rejValue) => { console.log(`Rejected : ${rejValue}`) }
+// );
+
+// I am second Promise
+
+
+
+//////////////////////////////////////////////////////////////////
+
+/*
+Async
+    Using Async word before a function, that means this function is return a promise
+    Async and await help in creating asynchronous promis behaviour with cleaner style
+*/
+
+
+////////// the new Promise Syntax
+// function getData() {
+//     return new Promise((res, rej) => {
+//         let users = ["Alakel"];
+//         if(users.length > 0) {
+//             res("users are found");
+//         } else {
+//             rej("no users are found");
+//         }
+//     });
+// }
+
+
+// getData().then((res) => console.log(res), (rej) => console.log(rej));
+
+
+
+
+
+
+
+//// without using Async word:     the syntax here using Promise.resolve and Promise.reject
+// function getData() {
+
+//     let users = ["Alakel"];
+//     if (users.length > 0) {
+//         return Promise.resolve("users found");
+//     } else {
+//         return Promise.reject("users Not found");
+//     }
+// }
+
+
+// getData().then((res) => console.log(res), (rej) => console.log(rej));
+
+
+
+
+
+
+///////// with using Async word   IMPORTANT IMPORTANT IMPORTANT IMPORTANT
+
+// async function getData() {    // here is means this function will return promise
+
+//     let users = ["Alakel"];
+//     if (users.length > 0) {
+//         return ("users found");
+//     } else {
+//         throw new Error("No Users Found");
+//     }
+// }
+
+// console.log(getData());   //it returns             Promise {<fulfilled>: 'users found'}
+
+// getData().then((res) => console.log(res), (rej) => console.log(rej));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/*
+Await 
+    Await works only inside Async functions
+    Await make javascript wait for the promise result
+    Await is more elegant syntax of getting promise result
+*/
+
+// const myPromise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         res("I'm good Promise");
+//         // rej(Error("I'm bad prmise"));
+//     }, 3000);
+// });
+
+// async function readData() {
+//     console.log("Before Promise");
+//     // myPromise.then((resValue) => {console.log(resValue)});
+//     console.log(await myPromise);
+//     // console.log(await myPromise.catch((err) => err));
+//     console.log("After Promise");
+// }
+
+// readData();
+
+/*
+Before Promise
+I'm good Promise
+After Promise
+*/
+
+
+/////////////////////////////////////////////////////////////////////
+
+/*
+Async & await with try, catch, finally
+
+*/
+
+
+// const myPromise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         rej("I'm bad developer")
+//     }, 3000);
+// });
+
+// async function readData() {
+//     console.log("Before Promise");
+//     try {      // here it will try if your promise is resolve
+//         console.log(await myPromise);
+//     } catch (reason) {      // here it will catch the reject / error from your promise
+//         console.log(`Reason: ${reason}`);
+//     } finally {             // here it will proceed after resolve or reject your promise
+//         console.log("After promise")
+//     }
+// }
+
+
+// readData();
+
+// await word in below example not about just awaiting,,,,, it also bring the data in more clean way without using .then...
+
+// async function fetchData() {
+//     console.log("Before Fetch");
+//     try {     
+//         let myData = await fetch("https://api.github.com/users/alakeldev/repos");
+//         console.log(myData);  // here it will print the full HTTP response 
+//         console.log(myData.json());  // here it will bring the promise 
+//         console.log(await myData.json());  // here it will bring you the data direct important to understand here the await
+//     } catch (reason) {                      // await word help us to get the date without using .then inside it it's enough to write await
+//         console.log(`Reason: ${reason}`);
+//     } finally {            
+//         console.log("After Fetch")
+//     }
+// }
+
+// fetchData();
+
+
+
+////////////////////////////////The End//////////////////////////////////////////////////////
