@@ -6005,3 +6005,68 @@ The statements break and continue do not exist in this context.
 
 */
 ////////////////////////////////The End//////////////////////////////////////////////////////
+
+
+/* 
+list methods that deal with arrays:
+
+///////////////Methods that affect the original array:
+
+.push() Adds elements to the end.
+
+.pop()  Removes the last element.
+
+.shift() Removes the first element.
+
+.unshift()  Adds elements to the beginning.
+
+.splice() Adds/removes elements at a specific index.
+
+.sort() Sorts elements in place.
+
+.reverse()  Reverses elements in place.
+
+.fill() Fills array with static value.
+
+.copyWithin()  Copies part of an array within the same array.
+
+/////////////////Methods that create a shallow copy and do not affect the original:
+
+.slice() Returns a shallow copy of a portion.
+
+.concat() Concatenates arrays.
+
+.map() Returns a new array with the results of a function.
+
+.filter()  Returns a new array with elements that pass a test.
+
+.flat() Flattens nested arrays.
+
+.flatMap()  Maps and flattens.
+
+///////////Methods that return a single value, Boolean, or something else without affecting the array:
+
+.reduce() and reduceRight(): Return a single value, not an array.
+
+.forEach() Executes a function for each
+
+.find() Returns the first matching element.
+
+.findIndex() Returns the index of the first matching element.
+
+.some() Checks if at least one element meets a condition.
+
+.every() Checks if all elements meet a condition.
+
+.indexOf() Returns the first index of a given element.
+
+.lastIndexOf() Returns the last index of a given element.
+
+.includes() Checks if an array includes a certain element.
+
+.join() Joins all elements of an array into a string.
+
+.isArray() Checks if it's an array.
+/////////////////////////////////////////
+from(): Creates an array from an iterable.
+*/
