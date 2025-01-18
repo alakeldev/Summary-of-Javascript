@@ -6011,62 +6011,124 @@ The statements break and continue do not exist in this context.
 list methods that deal with arrays:
 
 ///////////////Methods that affect the original array:
+let fruits = ['apple', 'banana'];
 
 .push() Adds elements to the end.
+fruits.push('orange'); // ['apple', 'banana', 'orange']
 
 .pop()  Removes the last element.
+fruits.pop(); // ['apple', 'banana']
 
 .shift() Removes the first element.
+fruits.shift(); // ['banana']
 
 .unshift()  Adds elements to the beginning.
+fruits.unshift('strawberry'); // ['strawberry', 'banana']
 
 .splice() Adds/removes elements at a specific index.
+fruits.splice(1, 0, 'kiwi'); // ['strawberry', 'kiwi', 'banana']
 
 .sort() Sorts elements in place.
+fruits.sort(); // ['banana', 'kiwi', 'strawberry']
 
 .reverse()  Reverses elements in place.
+fruits.reverse(); // ['strawberry', 'kiwi', 'banana']
 
 .fill() Fills array with static value.
+fruits.fill('mango', 1, 2); // ['strawberry', 'mango', 'banana']
 
 .copyWithin()  Copies part of an array within the same array.
+fruits.copyWithin(0, 1, 2); // ['mango', 'mango', 'banana']
 
 /////////////////Methods that create a shallow copy and do not affect the original:
+let fruits = ['apple', 'banana', 'cherry'];
 
 .slice() Returns a shallow copy of a portion.
+let sliced = fruits.slice(1, 3); // ['banana', 'cherry']
 
 .concat() Concatenates arrays.
+let moreFruits = ['kiwi', 'grape'];
+let allFruits = fruits.concat(moreFruits); // ['apple', 'banana', 'cherry', 'kiwi', 'grape']
 
 .map() Returns a new array with the results of a function.
+let lengths = fruits.map(fruit => fruit.length); // [5, 6, 6]
 
 .filter()  Returns a new array with elements that pass a test.
+let shortNames = fruits.filter(fruit => fruit.length <= 5); // ['apple']
 
 .flat() Flattens nested arrays.
+let nestedArray = [1, [2, 3], [4, [5]]];
+let flatArray = nestedArray.flat(); // [1, 2, 3, 4, [5]]
 
 .flatMap()  Maps and flattens.
+let flatMapped = fruits.flatMap(fruit => fruit.split(''));
+// ['a', 'p', 'p', 'l', 'e', 'b', 'a', 'n', 'a', 'n', 'a', 'c', 'h', 'e', 'r', 'r', 'y']
 
 ///////////Methods that return a single value, Boolean, or something else without affecting the array:
+const numbers = [1, 2, 3, 4];
 
 .reduce() and reduceRight(): Return a single value, not an array.
+let sum = numbers.reduce((acc, curr) => acc + curr, 0); // 10
 
 .forEach() Executes a function for each
+numbers.forEach(num => console.log(num)); // 1, 2, 3, 4
 
 .find() Returns the first matching element.
+let found = numbers.find(num => num > 2); // 3
 
 .findIndex() Returns the index of the first matching element.
+let foundIndex = numbers.findIndex(num => num > 2); // 2
 
 .some() Checks if at least one element meets a condition.
+let hasNegative = numbers.some(num => num < 0);  // false
 
 .every() Checks if all elements meet a condition.
+let allPositive = numbers.every(num => num > 0); // true
 
 .indexOf() Returns the first index of a given element.
+let indexOfTwo = numbers.indexOf(2); // 1
 
 .lastIndexOf() Returns the last index of a given element.
+let lastIndexOfTwo = [1, 2, 3, 2].lastIndexOf(2);  // 3
 
 .includes() Checks if an array includes a certain element.
+let includesThree = numbers.includes(3); // true
 
 .join() Joins all elements of an array into a string.
+let joinedNumbers = numbers.join('-');  // '1-2-3-4'
 
 .isArray() Checks if it's an array.
+let isArray = Array.isArray(numbers);  // true
+
 /////////////////////////////////////////
-from(): Creates an array from an iterable.
+Array.from(): Creates an array from an iterable.
+
+// Creates an array from a string
+const arrayFromString = Array.from('Hello');
+console.log(arrayFromString); // Output: ['H', 'e', 'l', 'l', 'o']
+
+// Creates an array from a Set
+const mySet = new Set([1, 2, 3, 4, 5]);
+const arrayFromSet = Array.from(mySet);
+console.log(arrayFromSet); // Output: [1, 2, 3, 4, 5]
+
+// Creates an array from arguments explination for the example below number 1
+The arguments object is a specific built-in feature in JavaScript, 
+automatically available inside any function to capture all passed arguments. 
+In your example, you're using args as a parameter, 
+which won't have the same automatic array-like object behavior as arguments.
+
+number 1
+function createArray() {
+  return Array.from(arguments);
+}
+console.log(createArray(1, 2, 3)); // Output: [1, 2, 3]
+
+number 2
+function createArray(args) {
+  return Array.from(args);
+}
+console.log(createArray([1, 2, 3])); // Output: [1, 2, 3]
+
+In this case, you're passing an array [1, 2, 3] as a single argument, and args will correctly capture that array.
 */
