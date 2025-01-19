@@ -6132,3 +6132,142 @@ console.log(createArray([1, 2, 3])); // Output: [1, 2, 3]
 
 In this case, you're passing an array [1, 2, 3] as a single argument, and args will correctly capture that array.
 */
+
+
+
+
+//******************************************//
+
+// Javascript String methods:
+// - charAt(): Returns the character at a specified index.
+let str = "Hello, World!";
+console.log(str.charAt(0)); // "H"
+
+// - concat(): Joins two or more strings.
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1.concat(", ", str2)); // "Hello, World"
+
+// - includes(): Checks if a string contains a specified substring.
+let str = "Hello, World!";
+console.log(str.includes("World")); // true
+
+// - indexOf(): Returns the index of the first occurrence of a specified value.
+let str = "Hello, World!";
+console.log(str.indexOf("World")); // 7
+
+// - lastIndexOf(): Returns the index of the last occurrence of a specified value.
+let str = "Hello, World! Hello again!";
+console.log(str.lastIndexOf("Hello")); // 14
+
+// - slice(): Extracts a part of a string and returns it as a new string.
+let str = "Hello, World!";
+console.log(str.slice(7, 12)); // "World"
+
+// - split(): Splits a string into an array of substrings.
+let str = "Hello, World!";
+console.log(str.split(", ")); // ["Hello", "World!"]
+
+// - substring(): Extracts characters between two specified indices.
+let str = "Hello, World!";
+console.log(str.substring(7, 12)); // "World"
+
+// - toLowerCase(): Converts a string to lowercase.
+let str = "Hello, World!";
+console.log(str.toLowerCase()); // "hello, world!"
+
+// - toUpperCase(): Converts a string to uppercase.
+let str = "Hello, World!";
+console.log(str.toUpperCase()); // "HELLO, WORLD!"
+
+// - trim(): Removes whitespace from both ends of a string.
+let str = "   Hello, World!   ";
+console.log(str.trim()); // "Hello, World!"
+
+// - endsWith(): Checks if a string ends with a specified string.
+let str = "Hello, World!";
+console.log(str.endsWith("World!")); // true
+
+// - repeat(): Repeats a string a specified number of times.
+let str = "Hello";
+console.log(str.repeat(3)); // "HelloHelloHello"
+
+// - replace(): Replaces matches with a new substring.
+let str = "Hello, World!";
+console.log(str.replace("World", "JavaScript")); // "Hello, JavaScript!"
+
+// - search(): Searches for a match and returns its position.
+let str = "Hello, World!";
+console.log(str.search("World")); // 7
+
+// - startsWith(): Checks if a string starts with a specified string.
+let str = "Hello, World!";
+console.log(str.startsWith("Hello")); // true
+
+// - localeCompare(): Compares two strings in the current locale.
+let str1 = "abc";
+let str2 = "def";
+console.log(str1.localeCompare(str2)); // -1 (str1 < str2)
+
+// - match(): Retrieves matches based on a regular expression.
+let str = "Hello, World!";
+console.log(str.match(/o/g)); // ["o", "o"]
+
+// - padEnd(): Pads the current string with another string until a given length.
+let str = "Hello";
+console.log(str.padEnd(10, ".")); // "Hello....."
+
+// - padStart(): Pads the start of the string with another string until a given length.
+let str = "Hello";
+console.log(str.padStart(10, ".")); // ".....Hello"
+
+//**********************************************************************////
+
+// Javascript number methods:
+
+// - Math.round(): Rounds to nearest integer.
+let num = 2.5;
+console.log(Math.round(num)); // 3
+
+// - Math.ceil(): Rounds up to next integer.
+let num = 2.1;
+console.log(Math.ceil(num)); // 3
+
+// - Math.floor(): Rounds down to next integer.
+let num = 2.9;
+console.log(Math.floor(num)); // 2
+
+// - Math.trunc(): Removes decimal fraction.
+let num = 2.9;
+console.log(Math.trunc(num)); // 2
+
+// - Math.abs(): Returns absolute value.
+let num = -7;
+console.log(Math.abs(num)); // 7
+
+// - Math.pow(): Raises to the power of.
+console.log(Math.pow(2, 3)); // 8
+
+// - Math.sqrt(): Calculates square root.
+console.log(Math.sqrt(16)); // 4
+
+// - Math.max(): Finds maximum value.
+console.log(Math.max(3, 5, 1)); // 5
+
+// - Math.min(): Finds minimum value.
+console.log(Math.min(3, 5, 1)); // 1
+
+// - Math.random(): Generates random number.
+console.log(Math.random()); // Random number between 0 and 1
+
+// - Number.isInteger(): Checks if integer.
+let num = 4;
+console.log(Number.isInteger(num)); // true
+
+// - Number.parseFloat(): Converts string to float.
+let str = "12.34";
+console.log(Number.parseFloat(str)); // 12.34
+
+// - Number.parseInt(): Converts string to integer.
+let str = "123";
+console.log(Number.parseInt(str)); // 123
