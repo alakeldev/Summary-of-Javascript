@@ -35,12 +35,77 @@ The Main Sections In JS:
 "To add styling from the console: we are useing 'Directive (%c)' before the world or sentence that we want to add style on it".
 
 - * Web API (console is related to Web API (Application Programming Interface) *
+Some of Web API Objects:
+
+- console: For logging information for debugging.
+- document: To interact with and manipulate HTML elements.
+- window: Represents the browser window, offering control over it.
+- navigator: Provides information about the browser.
+- fetch: For making network requests to servers.
+- localStorage and sessionStorage: For storing data in the browser.
+- ********XMLHttpRequest: An older way to make network requests, still in use.
+- history: To interact with the browser's session history, such as navigating through pages.
+- geolocation: For accessing the user's location.
+- Canvas: Allows you to draw graphics on a web page.
+- Blob: Represents binary data, useful for file manipulations.
+- Notification: Enables web pages to send notifications to the user.
+
 - * ES6 (check this website to check the difference between the ES new version and old versions // http://es6-features.org/#Constants)
 */
 //-------------------------------------------------------------------------------------------------------------------------
 
 
 /*/*//*/*//*/*//*
+
+DATA Structures in Javascript:
+Arrays: Ordered collections of elements, accessible by index.
+Objects: Unordered collections of key-value pairs.
+Sets: Collections of unique values.
+Maps: Collections of key-value pairs with iterable keys.
+WeakSets: Similar to sets, but with weakly held objects.
+WeakMaps: Similar to maps, but with weakly held keys.
+With these, you can also create:
+Linked Lists: Sequences of nodes, each pointing to the next.
+Trees: Hierarchical structures with parent-child relationships.
+Stacks: Last In, First Out collections.
+Queues: First In, First Out collections.
+Heaps: Binary trees for priority queues.
+Graphs: Structures for representing networks of nodes.
+
+Maps Example (Data Structures):
+
+// Create a Map to represent a phonebook
+let phoneBook = new Map();
+
+// Add contacts with names as keys and phone numbers as values
+phoneBook.set('Julia', '123-4567');
+phoneBook.set('Michael', '234-5678'');
+phoneBook.set('Sara', '345-6789'');
+
+// Check if a contact exists
+if (phoneBook.has('Julia')) {
+    console.log('Julia\'s number is: ', phoneBook.get('Julia'));
+    // 'Julia's number is: 123-4567'
+}
+
+// Remove a contact
+phoneBook.delete('Michael');
+
+// Iterate over the phonebook
+for (let [name, number] of phoneBook) {
+    console.log(name, ':', number);
+    // 'Julia : 123-4567'
+    // 'Sara : 345-6789'
+}
+///////////////////////////////////////
+let extendedPhoneBook = new Map();
+
+extendedPhoneBook.set('Julia', { phone: '123-4567', countryCode: '00' });
+extendedPhoneBook.set('Michael', { phone: '234-5678', countryCode: '01' });
+extendedPhoneBook.set('Sara', { phone: '345-6789', countryCode: '01' });
+
+console.log(extendedPhoneBook);
+////////////////////////////////////////////////////
 
 Data Types:
 
@@ -6140,134 +6205,134 @@ In this case, you're passing an array [1, 2, 3] as a single argument, and args w
 
 // Javascript String methods:
 // - charAt(): Returns the character at a specified index.
-let str = "Hello, World!";
-console.log(str.charAt(0)); // "H"
+// let str = "Hello, World!";
+// console.log(str.charAt(0)); // "H"
 
-// - concat(): Joins two or more strings.
-let str1 = "Hello";
-let str2 = "World";
-console.log(str1.concat(", ", str2)); // "Hello, World"
+// // - concat(): Joins two or more strings.
+// let str1 = "Hello";
+// let str2 = "World";
+// console.log(str1.concat(", ", str2)); // "Hello, World"
 
-// - includes(): Checks if a string contains a specified substring.
-let str = "Hello, World!";
-console.log(str.includes("World")); // true
+// // - includes(): Checks if a string contains a specified substring.
+// let str = "Hello, World!";
+// console.log(str.includes("World")); // true
 
-// - indexOf(): Returns the index of the first occurrence of a specified value.
-let str = "Hello, World!";
-console.log(str.indexOf("World")); // 7
+// // - indexOf(): Returns the index of the first occurrence of a specified value.
+// let str = "Hello, World!";
+// console.log(str.indexOf("World")); // 7
 
-// - lastIndexOf(): Returns the index of the last occurrence of a specified value.
-let str = "Hello, World! Hello again!";
-console.log(str.lastIndexOf("Hello")); // 14
+// // - lastIndexOf(): Returns the index of the last occurrence of a specified value.
+// let str = "Hello, World! Hello again!";
+// console.log(str.lastIndexOf("Hello")); // 14
 
-// - slice(): Extracts a part of a string and returns it as a new string.
-let str = "Hello, World!";
-console.log(str.slice(7, 12)); // "World"
+// // - slice(): Extracts a part of a string and returns it as a new string.
+// let str = "Hello, World!";
+// console.log(str.slice(7, 12)); // "World"
 
-// - split(): Splits a string into an array of substrings.
-let str = "Hello, World!";
-console.log(str.split(", ")); // ["Hello", "World!"]
+// // - split(): Splits a string into an array of substrings.
+// let str = "Hello, World!";
+// console.log(str.split(", ")); // ["Hello", "World!"]
 
-// - substring(): Extracts characters between two specified indices.
-let str = "Hello, World!";
-console.log(str.substring(7, 12)); // "World"
+// // - substring(): Extracts characters between two specified indices.
+// let str = "Hello, World!";
+// console.log(str.substring(7, 12)); // "World"
 
-// - toLowerCase(): Converts a string to lowercase.
-let str = "Hello, World!";
-console.log(str.toLowerCase()); // "hello, world!"
+// // - toLowerCase(): Converts a string to lowercase.
+// let str = "Hello, World!";
+// console.log(str.toLowerCase()); // "hello, world!"
 
-// - toUpperCase(): Converts a string to uppercase.
-let str = "Hello, World!";
-console.log(str.toUpperCase()); // "HELLO, WORLD!"
+// // - toUpperCase(): Converts a string to uppercase.
+// let str = "Hello, World!";
+// console.log(str.toUpperCase()); // "HELLO, WORLD!"
 
-// - trim(): Removes whitespace from both ends of a string.
-let str = "   Hello, World!   ";
-console.log(str.trim()); // "Hello, World!"
+// // - trim(): Removes whitespace from both ends of a string.
+// let str = "   Hello, World!   ";
+// console.log(str.trim()); // "Hello, World!"
 
-// - endsWith(): Checks if a string ends with a specified string.
-let str = "Hello, World!";
-console.log(str.endsWith("World!")); // true
+// // - endsWith(): Checks if a string ends with a specified string.
+// let str = "Hello, World!";
+// console.log(str.endsWith("World!")); // true
 
-// - repeat(): Repeats a string a specified number of times.
-let str = "Hello";
-console.log(str.repeat(3)); // "HelloHelloHello"
+// // - repeat(): Repeats a string a specified number of times.
+// let str = "Hello";
+// console.log(str.repeat(3)); // "HelloHelloHello"
 
-// - replace(): Replaces matches with a new substring.
-let str = "Hello, World!";
-console.log(str.replace("World", "JavaScript")); // "Hello, JavaScript!"
+// // - replace(): Replaces matches with a new substring.
+// let str = "Hello, World!";
+// console.log(str.replace("World", "JavaScript")); // "Hello, JavaScript!"
 
-// - search(): Searches for a match and returns its position.
-let str = "Hello, World!";
-console.log(str.search("World")); // 7
+// // - search(): Searches for a match and returns its position.
+// let str = "Hello, World!";
+// console.log(str.search("World")); // 7
 
-// - startsWith(): Checks if a string starts with a specified string.
-let str = "Hello, World!";
-console.log(str.startsWith("Hello")); // true
+// // - startsWith(): Checks if a string starts with a specified string.
+// let str = "Hello, World!";
+// console.log(str.startsWith("Hello")); // true
 
-// - localeCompare(): Compares two strings in the current locale.
-let str1 = "abc";
-let str2 = "def";
-console.log(str1.localeCompare(str2)); // -1 (str1 < str2)
+// // - localeCompare(): Compares two strings in the current locale.
+// let str1 = "abc";
+// let str2 = "def";
+// console.log(str1.localeCompare(str2)); // -1 (str1 < str2)
 
-// - match(): Retrieves matches based on a regular expression.
-let str = "Hello, World!";
-console.log(str.match(/o/g)); // ["o", "o"]
+// // - match(): Retrieves matches based on a regular expression.
+// let str = "Hello, World!";
+// console.log(str.match(/o/g)); // ["o", "o"]
 
-// - padEnd(): Pads the current string with another string until a given length.
-let str = "Hello";
-console.log(str.padEnd(10, ".")); // "Hello....."
+// // - padEnd(): Pads the current string with another string until a given length.
+// let str = "Hello";
+// console.log(str.padEnd(10, ".")); // "Hello....."
 
-// - padStart(): Pads the start of the string with another string until a given length.
-let str = "Hello";
-console.log(str.padStart(10, ".")); // ".....Hello"
+// // - padStart(): Pads the start of the string with another string until a given length.
+// let str = "Hello";
+// console.log(str.padStart(10, ".")); // ".....Hello"
 
-//**********************************************************************////
+// //**********************************************************************////
 
-// Javascript number methods:
+// // Javascript number methods:
 
-// - Math.round(): Rounds to nearest integer.
-let num = 2.5;
-console.log(Math.round(num)); // 3
+// // - Math.round(): Rounds to nearest integer.
+// let num = 2.5;
+// console.log(Math.round(num)); // 3
 
-// - Math.ceil(): Rounds up to next integer.
-let num = 2.1;
-console.log(Math.ceil(num)); // 3
+// // - Math.ceil(): Rounds up to next integer.
+// let num = 2.1;
+// console.log(Math.ceil(num)); // 3
 
-// - Math.floor(): Rounds down to next integer.
-let num = 2.9;
-console.log(Math.floor(num)); // 2
+// // - Math.floor(): Rounds down to next integer.
+// let num = 2.9;
+// console.log(Math.floor(num)); // 2
 
-// - Math.trunc(): Removes decimal fraction.
-let num = 2.9;
-console.log(Math.trunc(num)); // 2
+// // - Math.trunc(): Removes decimal fraction.
+// let num = 2.9;
+// console.log(Math.trunc(num)); // 2
 
-// - Math.abs(): Returns absolute value.
-let num = -7;
-console.log(Math.abs(num)); // 7
+// // - Math.abs(): Returns absolute value.
+// let num = -7;
+// console.log(Math.abs(num)); // 7
 
-// - Math.pow(): Raises to the power of.
-console.log(Math.pow(2, 3)); // 8
+// // - Math.pow(): Raises to the power of.
+// console.log(Math.pow(2, 3)); // 8
 
-// - Math.sqrt(): Calculates square root.
-console.log(Math.sqrt(16)); // 4
+// // - Math.sqrt(): Calculates square root.
+// console.log(Math.sqrt(16)); // 4
 
-// - Math.max(): Finds maximum value.
-console.log(Math.max(3, 5, 1)); // 5
+// // - Math.max(): Finds maximum value.
+// console.log(Math.max(3, 5, 1)); // 5
 
-// - Math.min(): Finds minimum value.
-console.log(Math.min(3, 5, 1)); // 1
+// // - Math.min(): Finds minimum value.
+// console.log(Math.min(3, 5, 1)); // 1
 
-// - Math.random(): Generates random number.
-console.log(Math.random()); // Random number between 0 and 1
+// // - Math.random(): Generates random number.
+// console.log(Math.random()); // Random number between 0 and 1
 
-// - Number.isInteger(): Checks if integer.
-let num = 4;
-console.log(Number.isInteger(num)); // true
+// // - Number.isInteger(): Checks if integer.
+// let num = 4;
+// console.log(Number.isInteger(num)); // true
 
-// - Number.parseFloat(): Converts string to float.
-let str = "12.34";
-console.log(Number.parseFloat(str)); // 12.34
+// // - Number.parseFloat(): Converts string to float.
+// let str = "12.34";
+// console.log(Number.parseFloat(str)); // 12.34
 
-// - Number.parseInt(): Converts string to integer.
-let str = "123";
-console.log(Number.parseInt(str)); // 123
+// // - Number.parseInt(): Converts string to integer.
+// let str = "123";
+// console.log(Number.parseInt(str)); // 123
