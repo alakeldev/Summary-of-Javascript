@@ -105,8 +105,8 @@ extendedPhoneBook.set('Michael', { phone: '234-5678', countryCode: '01' });
 extendedPhoneBook.set('Sara', { phone: '345-6789', countryCode: '01' });
 
 console.log(extendedPhoneBook);
-////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////
 Data Types:
 
 - String
@@ -241,7 +241,7 @@ Arithmetic Operators:
 
 + Addition
 console.log(20 + 20);             // 40
-console.log(20 + "Abdullah");    //10Abdullah
+console.log(20 + "Abdullah");    //"10Abdullah"
 
 - Subtraction
 console.log(30 - 20);            // 10
@@ -285,7 +285,7 @@ Unary Operator
 + Unary Plus
 console.log(+100);      // Number
 console.log(+"100");    // Number
-console.log(+"-100");   // Number
+console.log(+"-100");   // - Number
 console.log(+"Alakel");   // NaN
 console.log(+"15.1");   // Number
 console.log(+0xff);   // HexaDecimal => 255
@@ -297,9 +297,9 @@ console.log(+false);   //0
 - Unary Negation
 console.log(-100);      // Number
 console.log(-"100");    // - Number
-console.log(-"-100");   // +Number
+console.log(-"-100");   // + Number
 console.log(-"Alakel");   // NaN
-console.log(-"15.1");   // -Number
+console.log(-"15.1");   // - Number
 console.log(-0xff);   // HexaDecimal Numeral System => -255
 console.log(-null);   // -0
 console.log(-true);   // -1
@@ -415,6 +415,8 @@ console.log(Number.isInteger(100));      // true
 console.log(Number.isNaN("alakel"));  // false
 console.log(Number.isNaN("alakel" / 20));  // true
 
+* isNaN performs type coercion before the check.
+* Number.isNaN does not perform type coercion and only checks if the value is precisely NaN.
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
 /*/*//*/*//*//*
@@ -692,11 +694,11 @@ let student = true;
 
 if (disc === true) {
     price -= discamount;
-} else if (county === "Syria") {
+} else if (country === "Syria") {
     if (student === true) {
-        price -= discamount + 40;
-    }else {
         price -= discamount + 10;
+    }else {
+        price -= discamount + 5;
     }
 }
 
@@ -775,7 +777,7 @@ console.log(Boolean(null));  // false
 Nullish Coalescing Operator:
 It will return the alt value only with Null and undefined
 
-price;
+let price;
 price = null;
 
 console.log(`The Price Is ${price ?? 200}`);   // 200
@@ -1033,7 +1035,7 @@ let allFriends = myUniFriends.concat(myNewFriends, mySchoolFriends , "Jomana", [
 console.log(allFriends);  //["Mazen", "Faten", "Wafaa", "Ahmad","Samar", "Layan", "Shady", "Rawan", "Sawsan", "George","Jomana", "Saya","Faya"]
 
 
-- join(Seprator)  return STRING default seprator in ,
+- join(Seprator)  return STRING default seprator is ,
 
 related to previous Example:
 
@@ -1069,7 +1071,7 @@ for(let i = 0; i < myFriends.length; i++) {
 
 Example: 3 
 
-let myFriends = [1, 2, "Mazen", "Faten",3, 4, "Wafaa", "Ahmad", "Alakel"];
+let myFriends = [1, 2, "Mazen", "Faten", 3, 4, "Wafaa", "Ahmad", "Alakel"];
 let onlyNames = [];
 
 for(let i = 0; i < myFriends.length; i++){
