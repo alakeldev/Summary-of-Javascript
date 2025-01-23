@@ -1215,7 +1215,7 @@ let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "Iphone"];
 
 let index = 0;
 
-while(i < products.length) {
+while(index < products.length) {
     console.log(products[index]);     //   Keyboard ------> Iphone
     index++;
 }
