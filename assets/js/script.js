@@ -2302,7 +2302,7 @@ document.body.appendChild(myElement);                       // (4) now append my
 
 - You can Write Comment and add it to the body in html page:
 
-let myComment = document.creatComent("This is Div");
+let myComment = document.creatComment("This is Div");
 
 // Append comment to element
 
@@ -2791,9 +2791,9 @@ const update = (item, val) => [...item, val];
 
 let updatedSubjects = update(subjects, 'Electronics');
 
-console.log(updatedSubjects);
+console.log(updatedSubjects); // ['maths', 'english', 'cad', 'Electronics']
 
-console.log(students[0]);
+console.log(students[0]); // still the original object not effected with changes becuase the spread operator create shallow copy
 
 
 
@@ -2803,7 +2803,7 @@ let mixedLetters = ['b', 'd', 'a', 'c', 'f', 'e'];
 
 let moreMixedLetters = [...mixedLetters, 'h', 'k', 'g', 'j', 'i', 'l' ];
 
-console.log(moreMixedLetters);
+console.log(moreMixedLetters); // ['b', 'd', 'a', 'c', 'f', 'e', 'h', 'k', 'g', 'j', 'i', 'l']
 
 const updateSortReverse = (arr, ...letters) => {
     let combinedArray = [...arr, ...letters];
@@ -2851,9 +2851,9 @@ const makeList = (arr, student) => {
 };
 
 let [first, second, ...rest] = makeList(students, 'John');
-console.log(first);
-console.log(second);
-console.log(rest);
+console.log(first); // 'art'
+console.log(second); // 'cad'
+console.log(rest); // ['english', 'maths', 'science']
 -------------------------------------------------------------------------------
 
 const numbers = [1, 2, 3, 4, 5];
