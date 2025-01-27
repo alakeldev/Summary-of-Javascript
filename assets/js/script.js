@@ -1583,7 +1583,7 @@ Higher Order Functions:
 
 Syntax:     arrayname.map(call back function(Element, Index, Array){ }, this argument)
 Element => the current element being processed in the array.
-Index => thei ndex of the current element being processed in the array.
+Index => the index of the current element being processed in the array.
 Array => the current Array.
 
 Note : Map Always return a NEW ARRAY
@@ -1653,7 +1653,7 @@ let inv = invertedNumbers.map(function(ele){
     return -ele;
 })
 
-console.log(inv);     // -1, 10, 20, -15, -100, 30
+console.log(inv);     // [-1, 10, 20, -15, -100, 30]
 
 
     /3/  this Example need more focus to understand it
@@ -1700,7 +1700,7 @@ let evenNumbers = numbers.filter(function (ele) {
     return ele % 2 === 0 ? true : false;
 });
 
-console.log(evenNumbers);   // 20, 2, 10
+console.log(evenNumbers);   // [20, 2, 10]
 
 ----------------------------------------------------------------------------------------
 
@@ -1762,6 +1762,28 @@ forEach(Call back function(Element, Index, Array) { }, this argument)
 Note: it doesn't return anything [undefined], Also break will not break the loop
 
 - it's very important higher order function and examples will be in real life scenarios.
+
+let students = [
+    { name: "Alice", score: 85 },
+    { name: "Bob", score: 58 },
+    { name: "Charlie", score: 95 }
+];
+
+students.forEach((student, index, array) => {
+    student.pass = student.score >= 60;
+    console.log(`Student ${index + 1}: ${student.name}, Pass: ${student.pass}`);
+});
+
+console.log(students);
+
+// the logout will be :
+
+[
+    { name: "Alice", score: 85, pass: true },
+    { name: "Bob", score: 58, pass: false },
+    { name: "Charlie", score: 95, pass: true }
+]
+
 
 *//*//*///*//*
 //-------------------------------------------------------------------------------------------------------------------------
@@ -2005,7 +2027,7 @@ the reason of that because when we call the function inside the function doubleA
 inside the scope of user object not inside the copyObj scope so here it made problem
 so the sloution here to avoid these issues we are using this becuase this is related to an object that we are in *
 
-again the previouse Emaples with Solitoion to this issue
+again the previouse example with solution to this issue
 
 let user = {
     age: 29,
@@ -2960,7 +2982,7 @@ save data inside browser to use later
 
 // let promptMsg = prompt("Which suitable day to you ?", "write day with three characters");
 
-// console.log(promptMsg); // will return what use write so it will collect the user enter, the second parameter is same placeholder
+// console.log(promptMsg); // will return what user write so it will collect the user enter, the second parameter is same placeholder
 
 // /*
 // call function after waiting a period of a time
@@ -3024,7 +3046,7 @@ clearInterval(Identifire)
 
 
 // //
-// setInterval(sayMsg, 1000);
+// setInterval(sayMsg, 1000, "Alakel", 30);
 
 // function sayMsg(user, age) {
 //     console.log(`Hello I'm Message for ${user} his age is ${age}`);
@@ -5302,8 +5324,8 @@ What is API = Application programming interface
 JSON
 IMPORTANT TO UNDERSTAND:
 
-JSON.parse => convert text data to JS object
-JSON.stringify => convert JS object to JSON
+JSON.parse => convert JSON string - text data into Javascript object.
+JSON.stringify => convert Javascript object into JSON string.
 */
 
 // // store the text date string data inside variable
